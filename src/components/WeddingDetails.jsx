@@ -1,0 +1,149 @@
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { Calendar, Clock } from 'lucide-react'
+import { weddingConfig } from '../config/weddingConfig'
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger)
+
+const WeddingDetails = ({ countdown }) => {
+  const sectionRef = useRef(null)
+  const countdownRef = useRef(null)
+  const dateTimeRef = useRef(null)
+
+  useEffect(() => {
+    // Scroll-triggered animations
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reverse"
+      }
+    })
+
+    // Section title animation
+    tl.fromTo(".section-title", 
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+    )
+
+    // Countdown container animation
+    tl.fromTo(countdownRef.current, 
+      { opacity: 0, y: 50, scale: 0.9 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power2.out" },
+      "-=0.3"
+    )
+
+    // Countdown numbers stagger animation
+    tl.fromTo(".countdown-number", 
+      { opacity: 0, y: 30 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.8, 
+        ease: "power2.out",
+        stagger: 0.2
+      },
+      "-=0.5"
+    )
+
+    // Wedding date/time animation
+    tl.fromTo(dateTimeRef.current, 
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
+      "-=0.3"
+    )
+
+    // Decorative elements animation
+    tl.fromTo(".decorative-dot", 
+      { opacity: 0, scale: 0, rotation: 0 },
+      { 
+        opacity: 1, 
+        scale: 1, 
+        rotation: 360, 
+        duration: 1, 
+        ease: "back.out(1.7)",
+        stagger: 0.2
+      },
+      "-=0.5"
+    )
+
+    // Continuous animations for countdown numbers
+    // Removed scale animation for cleaner look
+
+    // Floating animation for decorative dots
+    gsap.to(".decorative-dot", {
+      y: -10,
+      duration: 3,
+      ease: "power1.inOut",
+      yoyo: true,
+      repeat: -1,
+      stagger: 0.3
+    })
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+    }
+  }, [])
+
+  return (
+    <section
+      ref={sectionRef}
+      id="details"
+      className="text-center py-20"
+    >
+     
+
+      {/* Countdown Timer */}
+      <div
+        ref={countdownRef}
+        className="mb-12 max-w-4xl mx-auto"
+      >
+        <h3 className="text-2xl font-serif text-wedding-700 mb-8">Counting Down to Our Special Day</h3>
+        
+        {/* Decorative Line */}
+        <div className="flex justify-center items-center mb-8">
+          <div className="w-56 h-px bg-wedding-400 origin-left"></div>
+          <div className="w-3 h-3 bg-[#ad8369] rounded-full mx-4"></div>
+          <div className="w-56 h-px bg-wedding-400 origin-right"></div>
+        </div>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-serif text-[#ad8369] mb-2 countdown-number">
+              {countdown.days}
+            </div>
+            <div className="text-wedding-600 font-medium">Days</div>
+          </div>
+          
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-serif text-[#ad8369] mb-2 countdown-number">
+              {countdown.hours}
+            </div>
+            <div className="text-wedding-600 font-medium">Hours</div>
+          </div>
+          
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-serif text-[#ad8369] mb-2 countdown-number">
+              {countdown.minutes}
+            </div>
+            <div className="text-wedding-600 font-medium">Minutes</div>
+          </div>
+          
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-serif text-[#ad8369] mb-2 countdown-number">
+              {countdown.seconds}
+            </div>
+            <div className="text-wedding-600 font-medium">Seconds</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  )
+}
+
+export default WeddingDetails 

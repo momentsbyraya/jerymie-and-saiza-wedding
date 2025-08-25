@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #ad8369;
+  }
+}
+
+@layer components {
+  .wedding-gradient {
+    background: #212639;
+  }
+  
+  .wedding-text {
+    color: #ad8369;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #bfa094 0%, #a18072 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .card-shadow {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .elegant-border {
+    border: 1px solid rgba(191, 160, 148, 0.2);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} 
