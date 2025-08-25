@@ -103,7 +103,7 @@ const FAQ = () => {
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className={`border ${themeConfig.borders.theme}/30 rounded-2xl overflow-hidden transition-all duration-300 hover:${themeConfig.borders.theme}/50`}
+              className={`border ${themeConfig.borders.theme} rounded-2xl overflow-hidden transition-all duration-300 hover:${themeConfig.borders.theme}`}
             >
               {/* Question Header */}
               <button
