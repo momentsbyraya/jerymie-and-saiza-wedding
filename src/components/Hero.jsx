@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { weddingConfig } from '../config/weddingConfig'
+import { themeConfig } from '../config/themeConfig'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -10,6 +11,22 @@ const Hero = () => {
   const heroRef = useRef(null)
   const contentRef = useRef(null)
   const floatingElementsRef = useRef(null)
+  const [maxHeight, setMaxHeight] = useState('100vh')
+
+  useEffect(() => {
+    const updateMaxHeight = () => {
+      if (window.innerWidth > 1300) {
+        setMaxHeight('800px')
+      } else {
+        setMaxHeight('100vh')
+      }
+    }
+
+    updateMaxHeight()
+    window.addEventListener('resize', updateMaxHeight)
+
+    return () => window.removeEventListener('resize', updateMaxHeight)
+  }, [])
 
   useEffect(() => {
     // Initial entrance animation
@@ -51,18 +68,6 @@ const Hero = () => {
       delay: 1
     })
 
-    // Parallax effect on scroll
-    gsap.to(heroRef.current, {
-      y: -50,
-      ease: "none",
-      scrollTrigger: {
-        trigger: heroRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true
-      }
-    })
-
     // Corner elements entrance
     gsap.fromTo(".corner-element", 
       { opacity: 0, scale: 0 },
@@ -81,6 +86,9 @@ const Hero = () => {
     <section
       ref={heroRef}
       className="relative h-screen w-full overflow-hidden"
+      style={{
+        maxHeight: maxHeight
+      }}
     >
       {/* Background Image */}
       <div 
@@ -96,34 +104,34 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/30"></div>
 
       {/* Content */}
-      <div ref={contentRef} className="relative z-10 flex items-center justify-center h-full text-center text-white px-4">
+      <div ref={contentRef} className={`relative z-10 flex items-center justify-center h-full text-center ${themeConfig.text.primary} px-4`}>
         <div className="max-w-4xl">
            {/* Wedding Announcement */}
-          <div className="text-lg md:text-xl lg:text-2xl font-serif mb-6 text-white/60">
+          <div className={`text-lg md:text-xl lg:text-2xl font-serif mb-6 ${themeConfig.text.primary}/60`}>
             We're getting married!
           </div>
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-script mb-6">
+          <h2 className={`text-5xl md:text-7xl lg:text-8xl font-script mb-6 ${themeConfig.text.primary}`}>
             {weddingConfig.couple.together}
           </h2>
           {/* Decorative Line */}
           <div className="flex justify-center items-center mb-6">
-            <div className="w-24 h-px bg-white/50 origin-left"></div>
-            <div className="w-2 h-2 bg-[#ad8369] rounded-full mx-4"></div>
-            <div className="w-24 h-px bg-white/50 origin-right"></div>
+            <div className={`w-24 h-px ${themeConfig.text.primary}/50 origin-left`}></div>
+            <div className={`w-2 h-2 ${themeConfig.backgrounds.theme} rounded-full mx-4`}></div>
+            <div className={`w-24 h-px ${themeConfig.text.primary}/50 origin-right`}></div>
           </div>
           
           {/* Wedding Date */}
-          <div className="text-xl md:text-2xl lg:text-3xl font-serif text-white/60">
+          <div className={`text-xl md:text-2xl lg:text-3xl font-serif ${themeConfig.text.primary}/60`}>
             {weddingConfig.wedding.date.split('-').reverse().join('-')}
           </div>
         </div>
       </div>
 
       {/* Decorative Corner Elements */}
-      <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white/50 rounded-tl-lg corner-element"></div>
-      <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-white/50 rounded-tr-lg corner-element"></div>
-      <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-white/50 rounded-bl-lg corner-element"></div>
-      <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-white/50 rounded-br-lg corner-element"></div>
+      <div className={`absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 ${themeConfig.borders.primary.replace('border-', 'border-')}/50 rounded-tl-lg corner-element`}></div>
+      <div className={`absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 ${themeConfig.borders.primary.replace('border-', 'border-')}/50 rounded-tr-lg corner-element`}></div>
+      <div className={`absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 ${themeConfig.borders.primary.replace('border-', 'border-')}/50 rounded-bl-lg corner-element`}></div>
+      <div className={`absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 ${themeConfig.borders.primary.replace('border-', 'border-')}/50 rounded-br-lg corner-element`}></div>
 
       {/* Floating Elements */}
     </section>

@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  
   body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;

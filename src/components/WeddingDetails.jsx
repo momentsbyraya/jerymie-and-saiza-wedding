@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Calendar, Clock } from 'lucide-react'
 import { weddingConfig } from '../config/weddingConfig'
+import { themeConfig } from '../config/themeConfig'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -93,7 +94,7 @@ const WeddingDetails = ({ countdown }) => {
     <section
       ref={sectionRef}
       id="details"
-      className="text-center py-20"
+      className={`text-center py-20 ${themeConfig.backgrounds.primary}`}
     >
      
 
@@ -102,42 +103,42 @@ const WeddingDetails = ({ countdown }) => {
         ref={countdownRef}
         className="mb-12 max-w-4xl mx-auto"
       >
-        <h3 className="text-2xl font-serif text-wedding-700 mb-8">Counting Down to Our Special Day</h3>
+        <h3 className={`text-2xl font-serif ${themeConfig.text.primary} mb-8`}>Counting Down to Our Special Day</h3>
         
         {/* Decorative Line */}
         <div className="flex justify-center items-center mb-8">
-          <div className="w-56 h-px bg-wedding-400 origin-left"></div>
-          <div className="w-3 h-3 bg-[#ad8369] rounded-full mx-4"></div>
-          <div className="w-56 h-px bg-wedding-400 origin-right"></div>
+          <div className={`w-56 h-px ${themeConfig.backgrounds.theme} origin-left`}></div>
+          <div className={`w-3 h-3 ${themeConfig.backgrounds.theme} rounded-full mx-4`}></div>
+          <div className={`w-56 h-px ${themeConfig.backgrounds.theme} origin-right`}></div>
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-serif text-[#ad8369] mb-2 countdown-number">
+            <div className={`text-4xl md:text-5xl font-serif ${themeConfig.text.theme} mb-2 countdown-number`}>
               {countdown.days}
             </div>
-            <div className="text-wedding-600 font-medium">Days</div>
+            <div className={`${themeConfig.text.secondary} font-medium`}>Days</div>
           </div>
           
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-serif text-[#ad8369] mb-2 countdown-number">
+            <div className={`text-4xl md:text-5xl font-serif ${themeConfig.text.theme} mb-2 countdown-number`}>
               {countdown.hours}
             </div>
-            <div className="text-wedding-600 font-medium">Hours</div>
+            <div className={`${themeConfig.text.secondary} font-medium`}>Hours</div>
           </div>
           
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-serif text-[#ad8369] mb-2 countdown-number">
+            <div className={`text-4xl md:text-5xl font-serif ${themeConfig.text.theme} mb-2 countdown-number`}>
               {countdown.minutes}
             </div>
-            <div className="text-wedding-600 font-medium">Minutes</div>
+            <div className={`${themeConfig.text.secondary} font-medium`}>Minutes</div>
           </div>
           
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-serif text-[#ad8369] mb-2 countdown-number">
+            <div className={`text-4xl md:text-5xl font-serif ${themeConfig.text.theme} mb-2 countdown-number`}>
               {countdown.seconds}
             </div>
-            <div className="text-wedding-600 font-medium">Seconds</div>
+            <div className={`${themeConfig.text.secondary} font-medium`}>Seconds</div>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import RSVPModal from './RSVPModal'
+import { themeConfig } from '../config/themeConfig'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -50,7 +51,7 @@ const CTASection = () => {
     <>
       <section
         ref={sectionRef}
-        className="relative h-screen w-full overflow-hidden"
+        className="relative h-screen xl:max-h-[800px] w-full overflow-hidden"
       >
         {/* Background Image */}
         <div 
@@ -68,7 +69,7 @@ const CTASection = () => {
         {/* Main Content */}
         <div ref={contentRef} className="relative z-10 flex items-center justify-center h-full px-4">
           <div className="text-center">
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-script text-white mb-8 leading-tight">
+            <h2 className={`text-5xl md:text-7xl lg:text-8xl font-script ${themeConfig.text.primary} mb-8 leading-tight`}>
               We Await Your Presenve
             </h2>
            
@@ -79,7 +80,7 @@ const CTASection = () => {
         <div ref={buttonRef} className="absolute bottom-8 right-8 z-20">
           <button
             onClick={openRSVPModal}
-            className="group relative px-16 py-4 bg-[#ad8369] hover:bg-[#ad8369]/80 text-white font-serif text-lg md:text-xl rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            className={`group relative px-16 py-4 ${themeConfig.buttons.theme} ${themeConfig.text.primary} font-serif text-lg md:text-xl rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl`}
           >
             <span className="relative z-10">RSVP</span>
             <div className="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>

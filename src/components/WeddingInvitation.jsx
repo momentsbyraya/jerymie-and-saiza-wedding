@@ -9,6 +9,7 @@ import DressCode from './DressCode'
 import Gallery from './Gallery'
 import FAQ from './FAQ'
 import MapDirections from './MapDirections'
+import GiftRegistry from './GiftRegistry'
 import CTASection from './CTASection'
 
 const WeddingInvitation = () => {
@@ -51,6 +52,9 @@ const WeddingInvitation = () => {
         
         {/* Map & Directions Section */}
         <MapDirections />
+        
+        {/* Gift Registry Section */}
+        <GiftRegistry />
         
         {/* FAQ Section */}
         <FAQ />

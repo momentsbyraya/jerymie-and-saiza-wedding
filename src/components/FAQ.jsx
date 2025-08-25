@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ChevronDown } from 'lucide-react'
+import { themeConfig } from '../config/themeConfig'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -89,11 +90,11 @@ const FAQ = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20"
+      className={`py-20 ${themeConfig.backgrounds.primary}`}
     >
       <div className="container mx-auto px-4">
         {/* Section Title */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-script text-[#ad8369] mb-16 text-center faq-title">
+        <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.accent} mb-16 text-center faq-title`}>
           Frequently Asked Questions
         </h2>
         
@@ -102,20 +103,21 @@ const FAQ = () => {
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className="border border-[#ad8369]/30 rounded-2xl overflow-hidden transition-all duration-300 hover:border-[#ad8369]/50"
+              className={`border ${themeConfig.borders.theme}/30 rounded-2xl overflow-hidden transition-all duration-300 hover:${themeConfig.borders.theme}/50`}
             >
               {/* Question Header */}
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-[#ad8369]/5 transition-colors duration-200"
+                className={`w-full px-6 py-4 text-left flex items-center justify-between hover:${themeConfig.backgrounds.theme}/5 transition-colors duration-200`}
               >
-                <h3 className="text-lg md:text-xl font-serif text-[#ad8369] pr-4">
+                <h3 className={`text-lg md:text-xl font-serif ${themeConfig.text.theme} pr-4`}>
                   {faq.question}
                 </h3>
                 <ChevronDown 
-                  className={`w-5 h-5 text-[#ad8369] transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
+                  className={`w-5 h-5 ${themeConfig.text.theme} transition-transform duration-300`}
+                  style={{
+                    transform: openIndex === index ? 'rotate(180deg)' : 'rotate(0deg)'
+                  }}
                 />
               </button>
               
@@ -126,7 +128,7 @@ const FAQ = () => {
                 }`}
               >
                 <div className="px-6 pb-4">
-                  <p className="text-white font-serif leading-relaxed">
+                  <p className={`${themeConfig.text.secondary} font-serif leading-relaxed`}>
                     {faq.answer}
                   </p>
                 </div>

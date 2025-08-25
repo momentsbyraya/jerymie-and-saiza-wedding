@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { themeConfig } from '../config/themeConfig'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -48,7 +49,7 @@ const Gallery = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-[#212639]"
+      className={`py-20 ${themeConfig.backgrounds.secondary}`}
     >
       <div className="container mx-auto px-4">
         {/* Gallery Grid */}
