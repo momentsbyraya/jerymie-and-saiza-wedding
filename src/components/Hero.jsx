@@ -115,9 +115,9 @@ const Hero = () => {
           </h2>
           {/* Decorative Line */}
           <div className="flex justify-center items-center mb-6">
-            <div className={`w-24 h-px ${themeConfig.text.primary}/50 origin-left`}></div>
-            <div className={`w-2 h-2 ${themeConfig.backgrounds.theme} rounded-full mx-4`}></div>
-            <div className={`w-24 h-px ${themeConfig.text.primary}/50 origin-right`}></div>
+            <div className="w-24 h-px bg-white/50 origin-left"></div>
+            <div className="w-2 h-2 bg-[#ad8369] rounded-full mx-4"></div>
+            <div className="w-24 h-px bg-white/50 origin-right"></div>
           </div>
           
           {/* Wedding Date */}
