@@ -68,7 +68,7 @@ const DressCode = () => {
       <div ref={contentRef} className="relative z-10 flex items-center justify-center h-full px-4">
         <div className="max-w-5xl w-full">
         {/* Content Container with Primary Background */}
-        <div ref={contentRef} className={`${themeConfig.backgrounds.secondary} rounded-3xl p-12 border-2 ${themeConfig.borders.theme}/30`}>
+        <div ref={contentRef} className={`${themeConfig.backgrounds.secondary} rounded-3xl p-12 border-2 ${themeConfig.borders.theme}`}>
           {/* Main Dress Code */}
           <div className="text-center mb-12">
             <h3 className={`text-3xl md:text-4xl font-script ${themeConfig.text.theme} mb-6`}>
@@ -88,10 +88,10 @@ const DressCode = () => {
 
           {/* Color Theme Circles */}
           <div className="flex justify-center items-center mb-12 space-x-4 sm:space-x-8">
-            <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full ${themeConfig.backgrounds.secondary} border-4 ${themeConfig.borders.primary}`}></div>
-            <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full ${themeConfig.backgrounds.theme} border-4 ${themeConfig.borders.primary}`}></div>
-            <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full bg-wedding-200 border-4 ${themeConfig.borders.primary}`}></div>
-            <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full bg-wedding-600 border-4 ${themeConfig.borders.primary}`}></div>
+            <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full ${themeConfig.backgrounds.secondary} border-4 border-white`}></div>
+            <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full ${themeConfig.backgrounds.theme} border-4 border-white`}></div>
+            <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full bg-wedding-200 border-4 border-white`}></div>
+            <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full bg-wedding-600 border-4 border-white`}></div>
           </div>
 
           
