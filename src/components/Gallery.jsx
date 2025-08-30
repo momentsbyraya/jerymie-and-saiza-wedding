@@ -51,7 +51,7 @@ const Gallery = () => {
       ref={sectionRef}
       className={`py-20 ${themeConfig.backgrounds.secondary}`}
     >
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Gallery Grid */}
         <div ref={galleryRef} className="max-w-7xl mx-auto">
           {/* First Row - 3 Photos */}

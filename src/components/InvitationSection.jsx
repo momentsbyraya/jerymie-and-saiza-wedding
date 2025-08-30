@@ -51,7 +51,7 @@ const InvitationSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen xl:max-h-[800px] w-full overflow-hidden"
+      className="relative py-20 w-full overflow-hidden"
     >
       {/* Background Image */}
       <div 
@@ -67,8 +67,9 @@ const InvitationSection = () => {
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content */}
-      <div ref={contentRef} className={`relative z-10 flex items-center justify-center h-full ${themeConfig.text.primary} px-4`}>
-        <div className="max-w-5xl w-full">
+      <div ref={contentRef} className={`relative z-10 flex items-center justify-center py-12 ${themeConfig.text.primary}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl w-full mx-auto">
           {/* Section Title */}
           <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.primary} mb-12 text-center`}>
             Wedding Day Schedule
@@ -162,8 +163,7 @@ const InvitationSection = () => {
               </div>
             </div>
           </div>
-
-          
+        </div>
         </div>
       </div>
     </section>

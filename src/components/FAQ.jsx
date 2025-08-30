@@ -92,7 +92,7 @@ const FAQ = () => {
       ref={sectionRef}
       className={`py-20 ${themeConfig.backgrounds.primary}`}
     >
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.accent} mb-16 text-center faq-title`}>
           Frequently Asked Questions

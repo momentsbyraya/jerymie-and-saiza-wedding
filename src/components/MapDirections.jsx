@@ -77,7 +77,7 @@ const MapDirections = () => {
       ref={sectionRef}
       className={`relative py-20 ${themeConfig.backgrounds.primary}`}
     >
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div ref={contentRef} className="text-center mb-16">
           <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.theme} mb-6`}>

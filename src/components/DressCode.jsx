@@ -49,7 +49,7 @@ const DressCode = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen xl:max-h-[800px] w-full overflow-hidden"
+      className="relative py-20 w-full overflow-hidden"
     >
       {/* Background Image */}
       <div 
@@ -65,10 +65,11 @@ const DressCode = () => {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
-      <div ref={contentRef} className="relative z-10 flex items-center justify-center h-full px-4">
-        <div className="max-w-5xl w-full">
+      <div ref={contentRef} className="relative z-10 flex items-center justify-center py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl w-full mx-auto">
         {/* Content Container with Primary Background */}
-        <div ref={contentRef} className={`${themeConfig.backgrounds.secondary} rounded-3xl p-12 border-2 ${themeConfig.borders.theme}`}>
+            <div className={`${themeConfig.backgrounds.secondary} rounded-3xl p-6 sm:p-8 lg:p-12 border-2 ${themeConfig.borders.theme}`}>
           {/* Main Dress Code */}
           <div className="text-center mb-12">
             <h3 className={`text-3xl md:text-4xl font-script ${themeConfig.text.theme} mb-6`}>
@@ -93,8 +94,7 @@ const DressCode = () => {
             <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full bg-wedding-200 border-4 border-white`}></div>
             <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full bg-wedding-600 border-4 border-white`}></div>
           </div>
-
-          
+            </div>
         </div>
       </div>
       </div>

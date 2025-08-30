@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { getTimeUntilWedding } from '../config/weddingConfig'
 import Hero from './Hero'
-import WeddingDetails from './WeddingDetails'
+import Counter from './Counter'
 import InvitationSection from './InvitationSection'
 import LoveStory from './LoveStory'
 import DressCode from './DressCode'
@@ -31,37 +31,37 @@ const WeddingInvitation = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="main-container">
+      <main className="main-container">
         {/* Hero Section */}
-        <Hero />
+        <section><Hero /></section>
         
         {/* Wedding Details */}
-        <WeddingDetails countdown={countdown} />
+        <section><Counter countdown={countdown} /></section>
         
         {/* Invitation Section - Full Width */}
-        <InvitationSection />
+        <section><InvitationSection /></section>
         
         {/* Love Story Section */}
-        <LoveStory />
+        <section><LoveStory /></section>
         
         {/* Dress Code Section */}
-        <DressCode />
+        <section><DressCode /></section>
         
         {/* Gallery Section */}
-        <Gallery />
+        <section><Gallery /></section>
         
         {/* Map & Directions Section */}
-        <MapDirections />
+        <section><MapDirections /></section>
         
         {/* Gift Registry Section */}
-        <GiftRegistry />
+        <section><GiftRegistry /></section>
         
         {/* FAQ Section */}
-        <FAQ />
+        <section><FAQ /></section>
         
         {/* CTA Section - Full Width */}
-        <CTASection />
-      </div>
+        <section><CTASection /></section>   
+      </main>
     </div>
   )
 }

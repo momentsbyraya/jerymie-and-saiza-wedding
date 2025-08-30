@@ -8,7 +8,7 @@ import { themeConfig } from '../config/themeConfig'
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
 
-const WeddingDetails = ({ countdown }) => {
+const Counter = ({ countdown }) => {
   const sectionRef = useRef(null)
   const countdownRef = useRef(null)
   const dateTimeRef = useRef(null)
@@ -96,14 +96,13 @@ const WeddingDetails = ({ countdown }) => {
       id="details"
       className={`text-center py-20 ${themeConfig.backgrounds.primary}`}
     >
-     
-
-      {/* Countdown Timer */}
-      <div
-        ref={countdownRef}
-        className="mb-12 max-w-4xl mx-auto"
-      >
-        <h3 className={`text-2xl font-serif ${themeConfig.text.primary} mb-8`}>Counting Down to Our Special Day</h3>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Countdown Timer */}
+        <div
+          ref={countdownRef}
+          className="mb-12 max-w-4xl mx-auto"
+        >
+        <h3 className={`text-2xl font-serif ${themeConfig.text.primary} mb-8 px-12`}>Counting Down to Our Special Day</h3>
         
         {/* Decorative Line */}
         <div className="flex justify-center items-center mb-8">
@@ -142,9 +141,10 @@ const WeddingDetails = ({ countdown }) => {
           </div>
         </div>
       </div>
+      </div>
 
     </section>
   )
 }
 
-export default WeddingDetails 
+export default Counter 
