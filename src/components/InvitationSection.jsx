@@ -68,7 +68,7 @@ const InvitationSection = () => {
 
       {/* Content */}
       <div ref={contentRef} className={`relative z-10 flex items-center justify-center py-12 ${themeConfig.text.primary}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                          <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
           <div className="max-w-5xl w-full mx-auto">
           {/* Section Title */}
           <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.primary} mb-12 text-center`}>

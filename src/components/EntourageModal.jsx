@@ -71,7 +71,7 @@ const EntourageModal = ({ isOpen, onClose }) => {
       />
       
       {/* Modal Content */}
-      <div className={`relative ${themeConfig.backgrounds.secondary} rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto`}>
+      <div className={`relative ${themeConfig.backgrounds.secondary} rounded-2xl max-w-[1300px] w-full max-h-[90vh] overflow-y-auto`}>
         {/* Header */}
         <div className={`flex items-center justify-between p-6 border-b ${themeConfig.borders.primary}`}>
           <h3 className={`text-2xl font-script ${themeConfig.text.primary}`}>Wedding Entourage</h3>

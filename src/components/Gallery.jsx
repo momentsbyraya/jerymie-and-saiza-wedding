@@ -49,9 +49,9 @@ const Gallery = () => {
   return (
     <section
       ref={sectionRef}
-      className={`py-20 ${themeConfig.backgrounds.secondary}`}
+      className={`py-20 w-full ${themeConfig.backgrounds.secondary}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
         {/* Gallery Grid */}
         <div ref={galleryRef} className="max-w-7xl mx-auto">
           {/* First Row - 3 Photos */}

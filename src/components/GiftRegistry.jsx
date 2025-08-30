@@ -44,7 +44,7 @@ const GiftRegistry = () => {
   return (
     <>
       {/* Gift Registry Section */}
-      <section className="relative py-20 xl:max-h-[800px] bg-gray-900">
+      <section className="relative py-20 xl:max-h-[800px] w-full bg-gray-900">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -58,7 +58,7 @@ const GiftRegistry = () => {
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding} relative z-10`}>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-script text-white mb-6">
               Gift Registry

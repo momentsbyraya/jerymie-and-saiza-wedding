@@ -77,9 +77,9 @@ const LoveStory = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-gray-900"
+      className="py-20 w-full bg-gray-900"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
         {/* Section Title */}
         <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.theme} mb-16 text-center love-story-title`}>
           Our Love Story

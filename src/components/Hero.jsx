@@ -104,9 +104,9 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/30"></div>
 
       {/* Content */}
-      <div ref={contentRef} className={`relative z-10 flex items-center justify-center h-full text-center ${themeConfig.text.primary}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+              <div ref={contentRef} className={`relative z-10 flex items-center justify-center h-full text-center ${themeConfig.text.primary}`}>
+          <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
+            <div className="max-w-4xl mx-auto">
            {/* Wedding Announcement */}
           <div className={`text-lg md:text-xl lg:text-2xl font-serif mb-6 ${themeConfig.text.primary}/60`}>
             We're getting married!

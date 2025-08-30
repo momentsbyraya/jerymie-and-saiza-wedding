@@ -8,10 +8,8 @@ function App() {
 
   return (
     <div className="App min-h-screen wedding-gradient">
-      <div className="max-w-[1536px] mx-auto">
-        <WeddingInvitation onOpenRSVP={() => setIsRSVPModalOpen(true)} />
-        <RSVPModal isOpen={isRSVPModalOpen} onClose={() => setIsRSVPModalOpen(false)} />
-      </div>
+      <WeddingInvitation onOpenRSVP={() => setIsRSVPModalOpen(true)} />
+      <RSVPModal isOpen={isRSVPModalOpen} onClose={() => setIsRSVPModalOpen(false)} />
     </div>
   )
 }

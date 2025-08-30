@@ -95,7 +95,7 @@ const RSVPForm = () => {
 
   return (
     <div className="min-h-screen wedding-gradient py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
         {/* Header */}
         <div
           ref={headerRef}

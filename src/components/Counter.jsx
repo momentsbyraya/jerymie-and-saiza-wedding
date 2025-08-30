@@ -94,9 +94,9 @@ const Counter = ({ countdown }) => {
     <section
       ref={sectionRef}
       id="details"
-      className={`text-center py-20 ${themeConfig.backgrounds.primary}`}
+      className={`text-center py-20 w-full ${themeConfig.backgrounds.primary}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
         {/* Countdown Timer */}
         <div
           ref={countdownRef}

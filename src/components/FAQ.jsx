@@ -90,9 +90,9 @@ const FAQ = () => {
   return (
     <section
       ref={sectionRef}
-      className={`py-20 ${themeConfig.backgrounds.primary}`}
+      className={`py-20 w-full ${themeConfig.backgrounds.primary}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
         {/* Section Title */}
         <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.accent} mb-16 text-center faq-title`}>
           Frequently Asked Questions

@@ -66,7 +66,7 @@ const DressCode = () => {
 
       {/* Content */}
       <div ref={contentRef} className="relative z-10 flex items-center justify-center py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
           <div className="max-w-5xl w-full mx-auto">
         {/* Content Container with Primary Background */}
             <div className={`${themeConfig.backgrounds.secondary} rounded-3xl p-6 sm:p-8 lg:p-12 border-2 ${themeConfig.borders.theme}`}>

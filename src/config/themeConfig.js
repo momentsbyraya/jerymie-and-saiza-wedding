@@ -42,6 +42,13 @@ export const themeConfig = {
         theme: 'hover:bg-[#ad8369]/80',     // Custom theme hover
     },
 
+    // Container Configuration
+    container: {
+        maxWidth: 'max-w-[1300px]',
+        padding: 'px-4 sm:px-6 lg:px-8',
+        center: 'mx-auto',
+    },
+
     // Custom CSS Variables (for advanced customization)
     cssVariables: {
         '--primary-bg': '#111827',           // #111827 (gray-900)
