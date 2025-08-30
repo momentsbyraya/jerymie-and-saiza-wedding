@@ -11,8 +11,8 @@
     "couple8": "/images/couple-8.jpg"
   },
   "venues": {
-    "church": "/images/church.jpg",
-    "reception": "/images/reception.jpg"
+    "church": "/images/church.png",
+    "reception": "/images/reception.png"
   },
   "favicon": "/images/favicon.png"
 } 

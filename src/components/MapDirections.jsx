@@ -3,7 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { MapPin, Navigation, Car, Train, Bus, Clock, Phone, Mail } from 'lucide-react'
 import { themeConfig } from '../config/themeConfig'
-import { venues as venuesData } from '../data'
+import { venues as venuesData, images } from '../data'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -90,7 +90,7 @@ const MapDirections = () => {
                 {/* Photo */}
                 <div className="w-full sm:w-1/2 flex-shrink-0 venue-photo">
                   <img
-                    src="/images/church.jpg"
+                    src={images.venues.church}
                     alt="Ceremony Venue"
                     className="w-full h-48 sm:h-full object-cover rounded-lg"
                   />
@@ -153,7 +153,7 @@ const MapDirections = () => {
                 {/* Photo */}
                 <div className="w-full sm:w-1/2 flex-shrink-0 venue-photo">
                   <img
-                    src="/images/reception.jpg"
+                    src={images.venues.reception}
                     alt="Reception Venue"
                     className="w-full h-48 sm:h-full object-cover rounded-lg"
                   />
