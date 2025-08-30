@@ -22,50 +22,50 @@ const LoveStory = () => {
       }
     })
 
-    // Section title animation
+    // Section title animation - Faster
     tl.fromTo(".love-story-title", 
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+      { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }
     )
 
-    // Timeline line animation
+    // Timeline line animation - Faster
     tl.fromTo(".timeline-line", 
       { scaleY: 0, opacity: 0 },
-      { scaleY: 1, opacity: 1, duration: 0.8, ease: "power2.out" },
-      "-=0.3"
+      { scaleY: 1, opacity: 1, duration: 0.4, ease: "power2.out" },
+      "-=0.2"
     )
 
-    // Event markers animation
+    // Event markers animation - Faster with reduced stagger
     tl.fromTo(".event-marker", 
       { scale: 0, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)", stagger: 0.15 },
-      "-=0.3"
+      { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)", stagger: 0.08 },
+      "-=0.2"
     )
 
-    // Events animation with stagger
+    // Events animation with stagger - Faster with reduced stagger
     tl.fromTo(".event-content", 
       { opacity: 0, x: (i) => i % 2 === 0 ? -50 : 50 },
       { 
         opacity: 1, 
         x: 0, 
-        duration: 0.6, 
+        duration: 0.3, 
         ease: "power2.out",
-        stagger: 0.2
+        stagger: 0.1
       },
-      "-=0.3"
+      "-=0.2"
     )
 
-    // Image containers animation with stagger
+    // Image containers animation with stagger - Faster with reduced stagger
     tl.fromTo(".image-container", 
       { opacity: 0, scale: 0.95 },
       { 
         opacity: 1, 
         scale: 1,
-        duration: 0.5, 
+        duration: 0.3, 
         ease: "power2.out",
-        stagger: 0.1
+        stagger: 0.05
       },
-      "-=0.3"
+      "-=0.2"
     )
 
     // Cleanup function
@@ -212,8 +212,29 @@ const LoveStory = () => {
 
             {/* Wedding Day Event - Always at the end */}
             <div className="flex items-center">
+              {/* Left Side - Image */}
               <div className="flex-1 pr-8 hidden sm:block">
-                <div className="event-content text-right">
+                <div className="flex justify-center">
+                  <div className={`w-48 h-48 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container`}>
+                    <img
+                      src={images.hero}
+                      alt="Wedding Day"
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  </div>
+                </div>
+              </div>
+              
+              {/* Timeline Marker */}
+              <div className={`flex-shrink-0 w-4 h-4 ${themeConfig.backgrounds.theme} rounded-full event-marker relative`}>
+                {/* Connecting line from timeline to image/content */}
+                <div className={`absolute right-0 top-1/2 transform -translate-y-1/2 w-16 h-px ${themeConfig.backgrounds.theme} origin-left hidden sm:block`}></div>
+              </div>
+              
+              {/* Right Side - Content */}
+              <div className="flex-1 pl-8 sm:pl-8 pl-4">
+                {/* Content on the right side */}
+                <div className="event-content">
                   <h3 className={`text-2xl md:text-3xl font-script ${themeConfig.text.theme} mb-3`}>
                     Wedding Day
                   </h3>
@@ -224,44 +245,15 @@ const LoveStory = () => {
                     The day we've been dreaming of - when we'll officially become husband and wife. A celebration of our love story and the beginning of our happily ever after together.
                   </p>
                 </div>
-              </div>
-              <div className={`flex-shrink-0 w-4 h-4 ${themeConfig.backgrounds.theme} rounded-full event-marker relative`}>
-                {/* Connecting line from timeline to image/content */}
-                <div className={`absolute left-0 top-1/2 transform -translate-y-1/2 w-16 h-px ${themeConfig.backgrounds.theme} origin-right hidden sm:block`}></div>
-              </div>
-              <div className="flex-1 pl-8 sm:pl-8 pl-4">
-                {/* Image on the right side - Hidden on mobile */}
-                <div className="hidden sm:flex justify-center">
-                  <div className={`w-48 h-48 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container`}>
+                
+                {/* Mobile Image - Below description */}
+                <div className="block sm:hidden mt-4">
+                  <div className={`w-32 h-32 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container mx-auto`}>
                     <img
                       src={images.hero}
                       alt="Wedding Day"
                       className="w-full h-full object-cover rounded-full"
                     />
-                  </div>
-                </div>
-                {/* Mobile description - Always on right side */}
-                <div className="block sm:hidden">
-                  {/* Mobile Image - Above description */}
-                  <div className="mb-4">
-                    <div className={`w-32 h-32 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container mx-auto`}>
-                      <img
-                        src={images.hero}
-                        alt="Wedding Day"
-                        className="w-full h-full object-cover rounded-full"
-                      />
-                    </div>
-                  </div>
-                  <div className="event-content">
-                    <h3 className={`text-2xl md:text-3xl font-script ${themeConfig.text.theme} mb-3`}>
-                      Wedding Day
-                    </h3>
-                    <div className={`text-lg font-serif ${themeConfig.text.theme} mb-4`}>
-                      {formatWeddingDate()}
-                    </div>
-                    <p className={`text-base font-serif ${themeConfig.text.secondary} leading-relaxed`}>
-                      The day we've been dreaming of - when we'll officially become husband and wife. A celebration of our love story and the beginning of our happily ever after together.
-                    </p>
                   </div>
                 </div>
               </div>

@@ -1,5 +1,15 @@
 .App {
   font-family: 'Inter', sans-serif;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure main container doesn't overflow */
+.main-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Custom scrollbar */

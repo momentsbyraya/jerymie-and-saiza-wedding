@@ -57,7 +57,7 @@ const InvitationSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${images.couple.couple1})`,
+          backgroundImage: `url(${images.couple.couple8})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}

@@ -11,6 +11,7 @@ import FAQ from './FAQ'
 import MapDirections from './MapDirections'
 import GiftRegistry from './GiftRegistry'
 import CTASection from './CTASection'
+import EnhancedLazySection from './EnhancedLazySection'
 
 const WeddingInvitation = () => {
   const [countdown, setCountdown] = useState(getTimeUntilWedding())
@@ -30,37 +31,55 @@ const WeddingInvitation = () => {
   }, [])
 
   return (
-    <div className="min-h-screen">
-      <main className="main-container">
-        {/* Hero Section */}
+    <div className="min-h-screen w-full overflow-hidden">
+      <main className="main-container section-container">
+        {/* Hero Section - Always visible */}
         <section><Hero /></section>
         
         {/* Wedding Details */}
-        <section><Counter countdown={countdown} /></section>
+        <EnhancedLazySection animationClass="fade-slide-up" sectionName="counter">
+          <Counter countdown={countdown} />
+        </EnhancedLazySection>
         
         {/* Invitation Section - Full Width */}
-        <section><InvitationSection /></section>
+        <EnhancedLazySection animationClass="fade-scale" sectionName="invitation">
+          <InvitationSection />
+        </EnhancedLazySection>
         
         {/* Love Story Section */}
-        <section><LoveStory /></section>
+        <EnhancedLazySection animationClass="fade-slide-left" sectionName="love-story">
+          <LoveStory />
+        </EnhancedLazySection>
         
         {/* Dress Code Section */}
-        <section><DressCode /></section>
+        <EnhancedLazySection animationClass="fade-slide-right" sectionName="dress-code">
+          <DressCode />
+        </EnhancedLazySection>
         
         {/* Gallery Section */}
-        <section><Gallery /></section>
+        <EnhancedLazySection animationClass="fade-scale" sectionName="gallery">
+          <Gallery />
+        </EnhancedLazySection>
         
         {/* Map & Directions Section */}
-        <section><MapDirections /></section>
+        <EnhancedLazySection animationClass="fade-slide-up" sectionName="map-directions">
+          <MapDirections />
+        </EnhancedLazySection>
         
         {/* Gift Registry Section */}
-        <section><GiftRegistry /></section>
+        <EnhancedLazySection animationClass="fade-slide-left" sectionName="gift-registry">
+          <GiftRegistry />
+        </EnhancedLazySection>
         
         {/* FAQ Section */}
-        <section><FAQ /></section>
+        <EnhancedLazySection animationClass="fade-slide-right" sectionName="faq">
+          <FAQ />
+        </EnhancedLazySection>
         
         {/* CTA Section - Full Width */}
-        <section><CTASection /></section>   
+        <EnhancedLazySection animationClass="fade-scale" sectionName="cta">
+          <CTASection />
+        </EnhancedLazySection>   
       </main>
     </div>
   )

@@ -4,6 +4,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+body {
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #ad8369;
 }
 
 @layer base {
@@ -42,5 +50,18 @@ html {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  /* Prevent transform overflow issues */
+  .transform-safe {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* Ensure sections don't cause horizontal overflow */
+  .section-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
   }
 } 
