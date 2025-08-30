@@ -1,42 +1,12 @@
 import React, { useState } from 'react'
-import { Gift, X, CreditCard, Smartphone, Building } from 'lucide-react'
+import { Gift, X, Building, CreditCard, Smartphone } from 'lucide-react'
 import { themeConfig } from '../config/themeConfig'
+import { paymentMethods as paymentMethodsData } from '../data'
 
 const GiftRegistry = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const paymentMethods = [
-    {
-      name: 'Bank Transfer',
-      icon: <Building className="w-6 h-6" />,
-      qrCode: '/images/qr-bank.png', // You'll need to add this image
-      accountInfo: {
-        bank: 'Bank Name',
-        accountNumber: '1234-5678-9012-3456',
-        accountName: 'Couple Name'
-      }
-    },
-    {
-      name: 'E-Wallet',
-      icon: <Smartphone className="w-6 h-6" />,
-      qrCode: '/images/qr-ewallet.png', // You'll need to add this image
-      accountInfo: {
-        provider: 'E-Wallet Provider',
-        accountNumber: '08xx-xxxx-xxxx',
-        accountName: 'Couple Name'
-      }
-    },
-    {
-      name: 'Digital Banking',
-      icon: <CreditCard className="w-6 h-6" />,
-      qrCode: '/images/qr-digital.png', // You'll need to add this image
-      accountInfo: {
-        bank: 'Digital Bank',
-        accountNumber: '1234-5678-9012-3456',
-        accountName: 'Couple Name'
-      }
-    }
-  ]
+  const { paymentMethods } = paymentMethodsData
 
   const openModal = () => setIsModalOpen(true)
   const closeModal = () => setIsModalOpen(false)
@@ -110,7 +80,9 @@ const GiftRegistry = () => {
                   <div key={index} className={`${themeConfig.backgrounds.secondary} rounded-lg p-6 text-center border border-gray-600`}>
                     <div className="flex items-center justify-center mb-4">
                       <div className={`w-12 h-12 ${themeConfig.backgrounds.accent} rounded-full flex items-center justify-center ${themeConfig.text.primary}`}>
-                        {method.icon}
+                        {method.icon === 'Building' && <Building className="w-6 h-6" />}
+                        {method.icon === 'CreditCard' && <CreditCard className="w-6 h-6" />}
+                        {method.icon === 'Smartphone' && <Smartphone className="w-6 h-6" />}
                       </div>
                     </div>
                     

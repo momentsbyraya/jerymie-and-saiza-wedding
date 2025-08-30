@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ChevronDown } from 'lucide-react'
 import { themeConfig } from '../config/themeConfig'
+import { faq } from '../data'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -12,40 +13,7 @@ const FAQ = () => {
   const sectionRef = useRef(null)
   const accordionRef = useRef(null)
 
-  const faqData = [
-    {
-      question: "What is the dress code for the wedding?",
-      answer: "We kindly request elegant, formal attire. For ladies: cocktail dresses, evening gowns, or elegant separates. For gentlemen: suits, sport coats, dress shirts and ties, or dress pants with dress shoes."
-    },
-    {
-      question: "Can I bring a plus one?",
-      answer: "Please check your invitation for the specific guest count. If you have any questions about bringing additional guests, please contact us directly."
-    },
-    {
-      question: "What time should I arrive?",
-      answer: "We recommend arriving 30 minutes before the ceremony start time to allow for parking and seating. The ceremony will begin promptly at the scheduled time."
-    },
-    {
-      question: "Is there parking available at the venue?",
-      answer: "Yes, there is complimentary parking available at both the ceremony and reception venues. Valet parking will also be available at the reception venue."
-    },
-    {
-      question: "Are children welcome at the wedding?",
-      answer: "While we love your little ones, we have chosen to make our wedding an adults-only celebration. We hope this advance notice means you can still attend and enjoy a night of celebration."
-    },
-    {
-      question: "What should I do if I can't attend?",
-      answer: "If you cannot attend, please RSVP as soon as possible. We understand that circumstances change and appreciate your timely response."
-    },
-    {
-      question: "Is the wedding indoors or outdoors?",
-      answer: "The ceremony will be held outdoors (weather permitting), and the reception will be indoors. We recommend checking the weather forecast and dressing accordingly."
-    },
-    {
-      question: "What type of food will be served?",
-      answer: "We will be serving a plated dinner with multiple course options. Please indicate any dietary restrictions when you RSVP, and we'll do our best to accommodate your needs."
-    }
-  ]
+  const { faqData } = faq
 
   useEffect(() => {
     // Scroll-triggered animations

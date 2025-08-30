@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { gsap } from 'gsap'
-import { getTimeUntilWedding } from '../config/weddingConfig'
+import { getTimeUntilWedding } from '../utils/countdown'
 import Hero from './Hero'
 import Counter from './Counter'
 import InvitationSection from './InvitationSection'

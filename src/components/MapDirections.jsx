@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { MapPin, Navigation, Car, Train, Bus, Clock, Phone, Mail } from 'lucide-react'
-import { weddingConfig } from '../config/weddingConfig'
 import { themeConfig } from '../config/themeConfig'
+import { venues as venuesData } from '../data'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -48,24 +48,16 @@ const MapDirections = () => {
     }
   }, [])
 
-  const getGoogleMapsUrl = (venue) => {
-    const address = `${venue.address}, ${venue.city}, ${venue.state} ${venue.zip}`
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
-  }
-
-  const getDirectionsUrl = (venue, mode = 'driving') => {
-    const address = `${venue.address}, ${venue.city}, ${venue.state} ${venue.zip}`
-    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}&travelmode=${mode}`
-  }
+  // URLs are now provided in the venues data
 
   const venues = {
     ceremony: {
-      ...weddingConfig.venue.ceremony,
+      ...venuesData.ceremony,
       type: 'Ceremony',
       icon: '⛪'
     },
     reception: {
-      ...weddingConfig.venue.reception,
+      ...venuesData.reception,
       type: 'Reception',
       icon: '🎉'
     }
@@ -133,7 +125,7 @@ const MapDirections = () => {
                   
                   <div className="flex flex-col lg:flex-row space-y-3 lg:space-y-0 lg:space-x-3">
                     <a
-                      href={getGoogleMapsUrl(venues.ceremony)}
+                      href={venues.ceremony.googleMapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`venue-button inline-flex items-center justify-center space-x-2 px-4 py-2 w-full lg:w-auto ${themeConfig.buttons.secondary} ${themeConfig.buttons.text} rounded text-sm transition-colors duration-200`}
@@ -142,7 +134,7 @@ const MapDirections = () => {
                       <span>MAP</span>
                     </a>
                     <a
-                      href={getDirectionsUrl(venues.ceremony)}
+                      href={venues.ceremony.directionsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`venue-button inline-flex items-center justify-center space-x-2 px-4 py-2 w-full lg:w-auto ${themeConfig.buttons.secondary} ${themeConfig.buttons.text} rounded text-sm transition-colors duration-200`}
@@ -196,7 +188,7 @@ const MapDirections = () => {
                   
                   <div className="flex flex-col lg:flex-row space-y-3 lg:space-y-0 lg:space-x-3">
                     <a
-                      href={getGoogleMapsUrl(venues.reception)}
+                      href={venues.reception.googleMapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`venue-button inline-flex items-center justify-center space-x-2 px-4 py-2 w-full lg:w-auto ${themeConfig.buttons.secondary} ${themeConfig.buttons.text} rounded text-sm transition-colors duration-200`}
@@ -205,7 +197,7 @@ const MapDirections = () => {
                       <span>MAP</span>
                     </a>
                     <a
-                      href={getDirectionsUrl(venues.reception)}
+                      href={venues.reception.directionsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`venue-button inline-flex items-center justify-center space-x-2 px-4 py-2 w-full lg:w-auto ${themeConfig.buttons.secondary} ${themeConfig.buttons.text} rounded text-sm transition-colors duration-200`}

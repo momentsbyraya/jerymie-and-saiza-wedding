@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { Menu, X, Heart, Calendar, Camera, Mail, MapPin } from 'lucide-react'
-import { weddingConfig } from '../config/weddingConfig'
 import RSVPModal from './RSVPModal'
+import { couples } from '../data'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -87,7 +87,7 @@ const Navigation = () => {
             <div ref={logoRef} className="flex items-center space-x-2">
               <Heart className="h-8 w-8 text-rose-500 nav-heart" />
               <span className="text-xl font-serif font-semibold text-wedding-800">
-                {weddingConfig.couple.together}
+                {couples.couple.names.together}
               </span>
             </div>
 

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { gsap } from 'gsap'
-import { weddingConfig } from '../config/weddingConfig'
 
 const Header = () => {
   useEffect(() => {

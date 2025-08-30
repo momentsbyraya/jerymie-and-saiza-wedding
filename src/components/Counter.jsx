@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Calendar, Clock } from 'lucide-react'
-import { weddingConfig } from '../config/weddingConfig'
 import { themeConfig } from '../config/themeConfig'
+import { couples } from '../data'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)

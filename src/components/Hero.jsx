@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { weddingConfig } from '../config/weddingConfig'
 import { themeConfig } from '../config/themeConfig'
+import { couples, images } from '../data'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -94,7 +94,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${weddingConfig.photos.hero})`,
+          backgroundImage: `url(${images.hero})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -112,7 +112,7 @@ const Hero = () => {
             We're getting married!
           </div>
           <h2 className={`text-5xl md:text-7xl lg:text-8xl font-script mb-6 ${themeConfig.text.primary}`}>
-            {weddingConfig.couple.together}
+            {couples.couple.names.together}
           </h2>
           {/* Decorative Line */}
           <div className="flex justify-center items-center mb-6">
@@ -123,7 +123,11 @@ const Hero = () => {
           
           {/* Wedding Date */}
           <div className={`text-xl md:text-2xl lg:text-3xl font-serif ${themeConfig.text.primary}/60`}>
-            {weddingConfig.wedding.date.split('-').reverse().join('-')}
+            {new Date(couples.couple.wedding.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}
           </div>
           </div>
         </div>

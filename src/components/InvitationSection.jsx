@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { weddingConfig } from '../config/weddingConfig'
 import { themeConfig } from '../config/themeConfig'
+import { venues, images } from '../data'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -57,7 +57,7 @@ const InvitationSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${weddingConfig.photos.gallery[0]})`,
+          backgroundImage: `url(${images.couple.couple1})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -107,10 +107,10 @@ const InvitationSection = () => {
                   Wedding Ceremony
                 </div>
                 <div className={`text-sm font-serif ${themeConfig.text.primary}/90 mb-1`}>
-                  {weddingConfig.venue.ceremony.name}
+                  {venues.ceremony.name}
                 </div>
                 <div className={`text-lg font-serif ${themeConfig.text.primary} font-semibold`}>
-                  {weddingConfig.venue.ceremony.time}
+                  {venues.ceremony.time}
                 </div>
               </div>
 
@@ -123,7 +123,7 @@ const InvitationSection = () => {
                   Cocktail Hour
                 </div>
                 <div className={`text-sm font-serif ${themeConfig.text.primary}/90 mb-1`}>
-                  {weddingConfig.venue.reception.name}
+                  {venues.reception.name}
                 </div>
                 <div className={`text-lg font-serif ${themeConfig.text.primary} font-semibold`}>
                   4:30 PM
@@ -139,10 +139,10 @@ const InvitationSection = () => {
                   Dinner Reception
                 </div>
                 <div className={`text-sm font-serif ${themeConfig.text.primary}/90 mb-1`}>
-                  {weddingConfig.venue.reception.name}
+                  {venues.reception.name}
                 </div>
                 <div className={`text-lg font-serif ${themeConfig.text.primary} font-semibold`}>
-                  {weddingConfig.venue.reception.time}
+                  {venues.reception.time}
                 </div>
               </div>
 

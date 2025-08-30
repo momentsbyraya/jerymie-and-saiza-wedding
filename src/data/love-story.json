@@ -1,0 +1,52 @@
+{
+  "timeline": [
+    {
+      "title": "First Meet",
+      "date": "Tuesday, July 1st, 2023",
+      "description": "It was a chance encounter that would change our lives forever. Our eyes met across the room, and in that moment, we both knew something extraordinary was about to happen.",
+      "image": "couple1"
+    },
+    {
+      "title": "First Date",
+      "date": "Tuesday, July 4th, 2023",
+      "description": "Our first official date was filled with laughter, deep conversations, and the undeniable feeling that we had found something special. That evening, we both knew this was the start of something beautiful.",
+      "image": "couple2"
+    },
+    {
+      "title": "First Kiss",
+      "date": "Saturday, July 15th, 2023",
+      "description": "Under the stars on a warm summer night, we shared our first kiss. It was magical and confirmed what we both felt in our hearts - this was real love.",
+      "image": "couple3"
+    },
+    {
+      "title": "Meeting the Families",
+      "date": "August 2023",
+      "description": "We introduced each other to our families, and it was clear that everyone could see what we saw in each other. The love and acceptance we received made our bond even stronger.",
+      "image": "couple4"
+    },
+    {
+      "title": "First Vacation Together",
+      "date": "September 2023",
+      "description": "We took our first trip together to the mountains. Spending a week in nature, just the two of us, deepened our connection and created memories we'll cherish forever.",
+      "image": "couple5"
+    },
+    {
+      "title": "Moving In Together",
+      "date": "December 2023",
+      "description": "We took the big step of moving in together. Creating our first home together was exciting and made us realize we were building a future as a team.",
+      "image": "couple6"
+    },
+    {
+      "title": "The Proposal",
+      "date": "March 15th, 2024",
+      "description": "On a beautiful spring day, Michael got down on one knee and asked the most important question of our lives. The answer was an immediate and joyful 'Yes!'",
+      "image": "couple7"
+    },
+    {
+      "title": "Wedding Planning",
+      "date": "March 2024 - Present",
+      "description": "Planning our wedding together has been an amazing journey. Every decision we make together brings us closer and makes us more excited for our special day.",
+      "image": "couple8"
+    }
+  ]
+} 

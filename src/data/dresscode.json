@@ -1,0 +1,24 @@
+{
+  "mainDressCode": {
+    "title": "Dress Code",
+    "description": "We kindly request our guests to dress in elegant, formal attire to celebrate our special day."
+  },
+  "colorPalette": [
+    {
+      "name": "color-1",
+      "hex": "#1f2937"
+    },
+    {
+      "name": "color-2",
+      "hex": "#ad8369"
+    },
+    {
+      "name": "color-3",
+      "hex": "#eaddd7"
+    },
+    {
+      "name": "color-4",
+      "hex": "#a18072"
+    }
+  ]
+} 

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { themeConfig } from '../config/themeConfig'
+import { dresscode } from '../data'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -73,10 +74,10 @@ const DressCode = () => {
           {/* Main Dress Code */}
           <div className="text-center mb-12">
             <h3 className={`text-3xl md:text-4xl font-script ${themeConfig.text.theme} mb-6`}>
-              Dress Code
+              {dresscode.mainDressCode.title}
             </h3>
             <p className={`text-lg md:text-xl font-serif ${themeConfig.text.primary} leading-relaxed mb-8`}>
-              We kindly request our guests to dress in elegant, formal attire to celebrate our special day.
+              {dresscode.mainDressCode.description}
             </p>
             
             {/* Decorative line */}
@@ -89,10 +90,14 @@ const DressCode = () => {
 
           {/* Color Theme Circles */}
           <div className="flex justify-center items-center mb-12 space-x-4 sm:space-x-8">
-            <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full ${themeConfig.backgrounds.secondary} border-4 border-white`}></div>
-            <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full ${themeConfig.backgrounds.theme} border-4 border-white`}></div>
-            <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full bg-wedding-200 border-4 border-white`}></div>
-            <div className={`w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full bg-wedding-600 border-4 border-white`}></div>
+            {dresscode.colorPalette.map((color, index) => (
+              <div 
+                key={index} 
+                className="w-12 h-12 sm:w-16 sm:h-16 aspect-square rounded-full border-4 border-white shadow-lg"
+                style={{ backgroundColor: color.hex }}
+                title={color.name}
+              ></div>
+            ))}
           </div>
             </div>
         </div>

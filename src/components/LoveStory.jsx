@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { weddingConfig } from '../config/weddingConfig'
 import { themeConfig } from '../config/themeConfig'
+import { loveStory, images, couples } from '../data'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -74,12 +74,23 @@ const LoveStory = () => {
     }
   }, [])
 
+  // Format wedding date for display
+  const formatWeddingDate = () => {
+    const weddingDate = new Date(couples.couple.wedding.date)
+    return weddingDate.toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+  }
+
   return (
     <section
       ref={sectionRef}
       className="py-20 w-full bg-gray-900"
     >
-              <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
+      <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
         {/* Section Title */}
         <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.theme} mb-16 text-center love-story-title`}>
           Our Love Story
@@ -94,151 +105,112 @@ const LoveStory = () => {
           
           {/* Timeline Events */}
           <div ref={timelineRef} className="space-y-20">
-            
-            {/* Event 1 - First Meet (Right Side) */}
-            <div className="flex items-center">
-              <div className="flex-1 pr-8 hidden sm:block">
-                {/* Image on the left side - Hidden on mobile */}
-                <div className="flex justify-center">
-                  <div className={`w-48 h-48 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container`}>
-                    <img
-                      src="/images/couple-1.jpg"
-                      alt="First Meet"
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className={`flex-shrink-0 w-4 h-4 ${themeConfig.backgrounds.theme} rounded-full event-marker relative`}>
-                {/* Connecting line from timeline to image */}
-                <div className={`absolute right-0 top-1/2 transform -translate-y-1/2 w-16 h-px ${themeConfig.backgrounds.theme} origin-left hidden sm:block`}></div>
-              </div>
-              <div className="flex-1 pl-8 sm:pl-8 pl-4">
-                <div className="event-content">
-                  {/* Mobile Image - Above description */}
-                  <div className="block sm:hidden mb-4">
-                    <div className={`w-32 h-32 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container mx-auto`}>
-                      <img
-                        src="/images/couple-1.jpg"
-                        alt="First Meet"
-                        className="w-full h-full object-cover rounded-full"
-                      />
+            {loveStory.timeline.map((event, index) => (
+              <div key={index} className="flex items-center">
+                {/* Left Side - Image or Content */}
+                <div className="flex-1 pr-8 hidden sm:block">
+                  {index % 2 === 0 ? (
+                    // Image on the left side for even indices
+                    <div className="flex justify-center">
+                      <div className={`w-48 h-48 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container`}>
+                        <img
+                          src={images.couple[event.image]}
+                          alt={event.title}
+                          className="w-full h-full object-cover rounded-full"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <h3 className={`text-2xl md:text-3xl font-script ${themeConfig.text.theme} mb-3`}>
-                    First Meet
-                  </h3>
-                  <div className={`text-lg font-serif ${themeConfig.text.theme} mb-4`}>
-                    Tuesday, July 1st, 2023
-                  </div>
-                  <p className={`text-base font-serif ${themeConfig.text.secondary} leading-relaxed`}>
-                    It was a chance encounter that would change our lives forever. Our eyes met across the room, and in that moment, we both knew something extraordinary was about to happen.
-                  </p>
+                  ) : (
+                    // Content on the left side for odd indices
+                    <div className="event-content text-right">
+                      <h3 className={`text-2xl md:text-3xl font-script ${themeConfig.text.theme} mb-3`}>
+                        {event.title}
+                      </h3>
+                      <div className={`text-lg font-serif ${themeConfig.text.theme} mb-4`}>
+                        {event.date}
+                      </div>
+                      <p className={`text-base font-serif ${themeConfig.text.secondary} leading-relaxed`}>
+                        {event.description}
+                      </p>
+                    </div>
+                  )}
                 </div>
-              </div>
-            </div>
 
-            {/* Event 2 - First Date (Left Side) */}
-            <div className="flex items-center">
-              <div className="flex-1 pr-8 hidden sm:block">
-                <div className="event-content text-right">
-                  <h3 className={`text-2xl md:text-3xl font-script ${themeConfig.text.theme} mb-3`}>
-                    First Date
-                  </h3>
-                  <div className={`text-lg font-serif ${themeConfig.text.theme} mb-4`}>
-                    Tuesday, July 4th, 2023
-                  </div>
-                  <p className={`text-base font-serif ${themeConfig.text.secondary} leading-relaxed`}>
-                    Our first official date was filled with laughter, deep conversations, and the undeniable feeling that we had found something special. That evening, we both knew this was the start of something beautiful.
-                  </p>
+                {/* Timeline Marker */}
+                <div className={`flex-shrink-0 w-4 h-4 ${themeConfig.backgrounds.theme} rounded-full event-marker relative`}>
+                  {/* Connecting line from timeline to image/content */}
+                  <div className={`absolute ${index % 2 === 0 ? 'right-0' : 'left-0'} top-1/2 transform -translate-y-1/2 w-16 h-px ${themeConfig.backgrounds.theme} origin-${index % 2 === 0 ? 'left' : 'right'} hidden sm:block`}></div>
                 </div>
-              </div>
-              <div className={`flex-shrink-0 w-4 h-4 ${themeConfig.backgrounds.theme} rounded-full event-marker relative`}>
-                {/* Connecting line from timeline to image */}
-                <div className={`absolute left-0 top-1/2 transform -translate-y-1/2 w-16 h-px ${themeConfig.backgrounds.theme} origin-right hidden sm:block`}></div>
-              </div>
-              <div className="flex-1 pl-8 sm:pl-8 pl-4">
-                {/* Image on the right side - Hidden on mobile */}
-                <div className="hidden sm:flex justify-center">
-                  <div className={`w-48 h-48 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container`}>
-                    <img
-                      src="/images/couple-2.jpg"
-                      alt="First Date"
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-                </div>
-                {/* Mobile description - Always on right side */}
-                <div className="block sm:hidden">
-                  {/* Mobile Image - Above description */}
-                  <div className="mb-4">
-                    <div className={`w-32 h-32 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container mx-auto`}>
-                      <img
-                        src="/images/couple-2.jpg"
-                        alt="First Date"
-                        className="w-full h-full object-cover rounded-full"
-                      />
-                    </div>
-                  </div>
-                  <div className="event-content">
-                    <h3 className={`text-2xl md:text-3xl font-script ${themeConfig.text.theme} mb-3`}>
-                      First Date
-                    </h3>
-                    <div className={`text-lg font-serif ${themeConfig.text.theme} mb-4`}>
-                      Tuesday, July 4th, 2023
-                    </div>
-                    <p className={`text-base font-serif ${themeConfig.text.secondary} leading-relaxed`}>
-                      Our first official date was filled with laughter, deep conversations, and the undeniable feeling that we had found something special. That evening, we both knew this was the start of something beautiful.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            {/* Event 3 - Marriage Proposal (Right Side) */}
-            <div className="flex items-center">
-              <div className="flex-1 pr-8 hidden sm:block">
-                {/* Image on the left side - Hidden on mobile */}
-                <div className="flex justify-center">
-                  <div className={`w-48 h-48 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container`}>
-                    <img
-                      src="/images/couple-3.jpg"
-                      alt="Marriage Proposal"
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className={`flex-shrink-0 w-4 h-4 ${themeConfig.backgrounds.theme} rounded-full event-marker relative`}>
-                {/* Connecting line from timeline to image */}
-                <div className={`absolute right-0 top-1/2 transform -translate-y-1/2 w-16 h-px ${themeConfig.backgrounds.theme} origin-left hidden sm:block`}></div>
-              </div>
-              <div className="flex-1 pl-8 sm:pl-8 pl-4">
-                <div className="event-content">
-                  {/* Mobile Image - Above description */}
-                  <div className="block sm:hidden mb-4">
-                    <div className={`w-32 h-32 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container mx-auto`}>
-                      <img
-                        src="/images/couple-3.jpg"
-                        alt="Marriage Proposal"
-                        className="w-full h-full object-cover rounded-full"
-                      />
+                {/* Right Side - Content or Image */}
+                <div className="flex-1 pl-8 sm:pl-8 pl-4">
+                  {index % 2 === 0 ? (
+                    // Content on the right side for even indices
+                    <div className="event-content">
+                      {/* Mobile Image - Above description */}
+                      <div className="block sm:hidden mb-4">
+                        <div className={`w-32 h-32 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container mx-auto`}>
+                          <img
+                            src={images.couple[event.image]}
+                            alt={event.title}
+                            className="w-full h-full object-cover rounded-full"
+                          />
+                        </div>
+                      </div>
+                      <h3 className={`text-2xl md:text-3xl font-script ${themeConfig.text.theme} mb-3`}>
+                        {event.title}
+                      </h3>
+                      <div className={`text-lg font-serif ${themeConfig.text.theme} mb-4`}>
+                        {event.date}
+                      </div>
+                      <p className={`text-base font-serif ${themeConfig.text.secondary} leading-relaxed`}>
+                        {event.description}
+                      </p>
                     </div>
-                  </div>
-                  <h3 className={`text-2xl md:text-3xl font-script ${themeConfig.text.theme} mb-3`}>
-                    Marriage Proposal
-                  </h3>
-                  <div className={`text-lg font-serif ${themeConfig.text.theme} mb-4`}>
-                    Tuesday, July 8th, 2023
-                  </div>
-                  <p className={`text-base font-serif ${themeConfig.text.secondary} leading-relaxed`}>
-                    Under the stars on a perfect summer night, surrounded by the beauty of nature, he got down on one knee and asked the question that would begin our journey to forever. A moment of pure magic and love.
-                  </p>
+                  ) : (
+                    // Image on the right side for odd indices
+                    <div className="hidden sm:flex justify-center">
+                      <div className={`w-48 h-48 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container`}>
+                        <img
+                          src={images.couple[event.image]}
+                          alt={event.title}
+                          className="w-full h-full object-cover rounded-full"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Mobile description - Always on right side for odd indices */}
+                  {index % 2 === 1 && (
+                    <div className="block sm:hidden">
+                      {/* Mobile Image - Above description */}
+                      <div className="mb-4">
+                        <div className={`w-32 h-32 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container mx-auto`}>
+                          <img
+                            src={images.couple[event.image]}
+                            alt={event.title}
+                            className="w-full h-full object-cover rounded-full"
+                          />
+                        </div>
+                      </div>
+                      <div className="event-content">
+                        <h3 className={`text-2xl md:text-3xl font-script ${themeConfig.text.theme} mb-3`}>
+                          {event.title}
+                        </h3>
+                        <div className={`text-lg font-serif ${themeConfig.text.theme} mb-4`}>
+                          {event.date}
+                        </div>
+                        <p className={`text-base font-serif ${themeConfig.text.secondary} leading-relaxed`}>
+                          {event.description}
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
-            </div>
+            ))}
 
-            {/* Event 4 - Wedding Day (Left Side) */}
+            {/* Wedding Day Event - Always at the end */}
             <div className="flex items-center">
               <div className="flex-1 pr-8 hidden sm:block">
                 <div className="event-content text-right">
@@ -246,7 +218,7 @@ const LoveStory = () => {
                     Wedding Day
                   </h3>
                   <div className={`text-lg font-serif ${themeConfig.text.theme} mb-4`}>
-                    {weddingConfig.wedding.dayOfWeek}, {weddingConfig.wedding.month} {weddingConfig.wedding.day}, {weddingConfig.wedding.year}
+                    {formatWeddingDate()}
                   </div>
                   <p className={`text-base font-serif ${themeConfig.text.secondary} leading-relaxed`}>
                     The day we've been dreaming of - when we'll officially become husband and wife. A celebration of our love story and the beginning of our happily ever after together.
@@ -254,7 +226,7 @@ const LoveStory = () => {
                 </div>
               </div>
               <div className={`flex-shrink-0 w-4 h-4 ${themeConfig.backgrounds.theme} rounded-full event-marker relative`}>
-                {/* Connecting line from timeline to image */}
+                {/* Connecting line from timeline to image/content */}
                 <div className={`absolute left-0 top-1/2 transform -translate-y-1/2 w-16 h-px ${themeConfig.backgrounds.theme} origin-right hidden sm:block`}></div>
               </div>
               <div className="flex-1 pl-8 sm:pl-8 pl-4">
@@ -262,7 +234,7 @@ const LoveStory = () => {
                 <div className="hidden sm:flex justify-center">
                   <div className={`w-48 h-48 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container`}>
                     <img
-                      src="/images/hero-couple.jpg"
+                      src={images.hero}
                       alt="Wedding Day"
                       className="w-full h-full object-cover rounded-full"
                     />
@@ -274,7 +246,7 @@ const LoveStory = () => {
                   <div className="mb-4">
                     <div className={`w-32 h-32 rounded-full overflow-hidden border-2 ${themeConfig.borders.theme} p-2 image-container mx-auto`}>
                       <img
-                        src="/images/hero-couple.jpg"
+                        src={images.hero}
                         alt="Wedding Day"
                         className="w-full h-full object-cover rounded-full"
                       />
@@ -285,7 +257,7 @@ const LoveStory = () => {
                       Wedding Day
                     </h3>
                     <div className={`text-lg font-serif ${themeConfig.text.theme} mb-4`}>
-                      {weddingConfig.wedding.dayOfWeek}, {weddingConfig.wedding.month} {weddingConfig.wedding.day}, {weddingConfig.wedding.year}
+                      {formatWeddingDate()}
                     </div>
                     <p className={`text-base font-serif ${themeConfig.text.secondary} leading-relaxed`}>
                       The day we've been dreaming of - when we'll officially become husband and wife. A celebration of our love story and the beginning of our happily ever after together.
