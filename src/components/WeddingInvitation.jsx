@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { getTimeUntilWedding } from '../utils/countdown'
 import Hero from './Hero'
 import Counter from './Counter'
+import PhotoSection from './PhotoSection'
 import InvitationSection from './InvitationSection'
 import LoveStory from './LoveStory'
 import DressCode from './DressCode'
@@ -12,6 +13,7 @@ import MapDirections from './MapDirections'
 import GiftRegistry from './GiftRegistry'
 import CTASection from './CTASection'
 import EnhancedLazySection from './EnhancedLazySection'
+import { images } from '../data'
 
 const WeddingInvitation = () => {
   const [countdown, setCountdown] = useState(getTimeUntilWedding())
@@ -41,30 +43,50 @@ const WeddingInvitation = () => {
           <Counter countdown={countdown} />
         </EnhancedLazySection>
         
-        {/* Invitation Section - Full Width */}
-        <EnhancedLazySection animationClass="fade-scale" sectionName="invitation">
-          <InvitationSection />
+        {/* Couple Image Section */}
+        <EnhancedLazySection animationClass="fade-scale" sectionName="couple-image">
+          <PhotoSection 
+            imagePath={images.couple.couple3}
+            title="Together Forever"
+            subtitle="Every love story is beautiful, but ours is my favorite"
+          />
         </EnhancedLazySection>
-        
+
         {/* Love Story Section */}
         <EnhancedLazySection animationClass="fade-slide-left" sectionName="love-story">
           <LoveStory />
+        </EnhancedLazySection>
+
+        {/* Gallery Section */}
+        <EnhancedLazySection animationClass="fade-scale" sectionName="gallery">
+          <Gallery />
+        </EnhancedLazySection>
+        
+        {/* Invitation Section - Full Width */}
+        <EnhancedLazySection animationClass="fade-scale" sectionName="invitation">
+          <InvitationSection />
         </EnhancedLazySection>
         
         {/* Dress Code Section */}
         <EnhancedLazySection animationClass="fade-slide-right" sectionName="dress-code">
           <DressCode />
         </EnhancedLazySection>
-        
-        {/* Gallery Section */}
-        <EnhancedLazySection animationClass="fade-scale" sectionName="gallery">
-          <Gallery />
+
+        {/* Photo Section 2 - After Map & Directions */}
+        <EnhancedLazySection animationClass="fade-slide-left" sectionName="photo-section-2">
+          <PhotoSection 
+            imagePath={images.couple.couple1}
+            title="Our Journey"
+            subtitle="From the first hello to forever, every moment has been magical"
+          />
         </EnhancedLazySection>
         
         {/* Map & Directions Section */}
         <EnhancedLazySection animationClass="fade-slide-up" sectionName="map-directions">
           <MapDirections />
         </EnhancedLazySection>
+        
+        
         
         {/* Gift Registry Section */}
         <EnhancedLazySection animationClass="fade-slide-left" sectionName="gift-registry">
