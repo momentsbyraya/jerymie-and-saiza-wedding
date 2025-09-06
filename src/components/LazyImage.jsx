@@ -23,7 +23,7 @@ const LazyImage = ({
       },
       {
         threshold: threshold,
-        rootMargin: '50px 0px'
+        rootMargin: '200px 0px' // Start loading when 200px away from viewport
       }
     )
 
@@ -44,12 +44,12 @@ const LazyImage = ({
 
   return (
     <div ref={imgRef} className={`relative overflow-hidden ${className}`}>
-      {/* Placeholder/Blur effect */}
+      {/* Placeholder - Completely transparent */}
       {!isLoaded && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
+        <div className="absolute inset-0 bg-transparent flex items-center justify-center">
           {placeholder || (
-            <div className="text-gray-400">
-              <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+            <div className="text-transparent">
+              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
               </svg>
             </div>
@@ -57,17 +57,17 @@ const LazyImage = ({
         </div>
       )}
       
-      {/* Actual image */}
+      {/* Actual image - only show when fully loaded */}
       {isInView && (
         <img
           ref={imageRef}
           src={src}
           alt={alt}
           onLoad={handleImageLoad}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
-          loading="lazy"
+          loading="eager" // Load immediately when in view
           {...props}
         />
       )}

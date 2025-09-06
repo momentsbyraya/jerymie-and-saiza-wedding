@@ -47,8 +47,8 @@ const WeddingInvitation = () => {
         <EnhancedLazySection animationClass="fade-scale" sectionName="couple-image">
           <PhotoSection 
             imagePath={images.couple.couple3}
-            title="Together Forever"
-            subtitle="Every love story is beautiful, but ours is my favorite"
+            title=""
+            subtitle=""
           />
         </EnhancedLazySection>
 
@@ -76,8 +76,8 @@ const WeddingInvitation = () => {
         <EnhancedLazySection animationClass="fade-slide-left" sectionName="photo-section-2">
           <PhotoSection 
             imagePath={images.couple.couple1}
-            title="Our Journey"
-            subtitle="From the first hello to forever, every moment has been magical"
+            title=""
+            subtitle=""
           />
         </EnhancedLazySection>
         

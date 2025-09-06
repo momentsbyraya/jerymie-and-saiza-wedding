@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Gift, X, Building, CreditCard, Smartphone } from 'lucide-react'
 import { themeConfig } from '../config/themeConfig'
 import { paymentMethods as paymentMethodsData } from '../data'
@@ -52,7 +53,7 @@ const GiftRegistry = () => {
       </section>
 
       {/* Modal */}
-      {isModalOpen && (
+      {isModalOpen && createPortal(
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           {/* Backdrop */}
           <div 
@@ -115,7 +116,8 @@ const GiftRegistry = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   )

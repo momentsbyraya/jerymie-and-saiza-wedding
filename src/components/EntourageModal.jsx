@@ -1,4 +1,5 @@
 import React from 'react'
+import { createPortal } from 'react-dom'
 import { X } from 'lucide-react'
 import { themeConfig } from '../config/themeConfig'
 import { entourage } from '../data'
@@ -8,7 +9,7 @@ const EntourageModal = ({ isOpen, onClose }) => {
 
   const { entourageList } = entourage
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div 
@@ -52,7 +53,8 @@ const EntourageModal = ({ isOpen, onClose }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
 

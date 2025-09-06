@@ -64,52 +64,6 @@ const Hero = () => {
         delay: 1.2
       }
     )
-
-    // Floating elements animation
-    gsap.to(".floating-element-1", {
-      y: -15,
-      rotation: 5,
-      duration: 3,
-      ease: "power1.inOut",
-      yoyo: true,
-      repeat: -1
-    })
-
-    gsap.to(".floating-element-2", {
-      y: 15,
-      rotation: -5,
-      duration: 4,
-      ease: "power1.inOut",
-      yoyo: true,
-      repeat: -1,
-      delay: 1
-    })
-
-    // Corner elements entrance
-    gsap.fromTo(".corner-element", 
-      { opacity: 0, scale: 0 },
-      { 
-        opacity: 1, 
-        scale: 1, 
-        duration: 0.8, 
-        ease: "back.out(1.7)", 
-        stagger: 0.1,
-        delay: 2
-      }
-    )
-
-    // Music button entrance animation
-    gsap.fromTo(".music-button", 
-      { opacity: 0, scale: 0, rotation: -180 },
-      { 
-        opacity: 1, 
-        scale: 1, 
-        rotation: 0,
-        duration: 1, 
-        ease: "back.out(1.7)", 
-        delay: 2.5
-      }
-    )
   }, [])
 
   const toggleMusic = () => {

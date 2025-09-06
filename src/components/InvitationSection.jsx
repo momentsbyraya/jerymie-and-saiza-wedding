@@ -13,35 +13,6 @@ const InvitationSection = () => {
   const contentRef = useRef(null)
 
   useEffect(() => {
-    // Scroll-triggered animations
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse"
-      }
-    })
-
-    // Image animation
-    tl.fromTo(imageRef.current, 
-      { opacity: 0, x: -50 },
-      { opacity: 1, x: 0, duration: 1, ease: "power2.out" }
-    )
-
-    // Content animation
-    tl.fromTo(contentRef.current.children, 
-      { opacity: 0, x: 50 },
-      { 
-        opacity: 1, 
-        x: 0, 
-        duration: 1, 
-        ease: "power2.out",
-        stagger: 0.3
-      },
-      "-=0.5"
-    )
-
     // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())

@@ -7,14 +7,13 @@ const PhotoSection = ({
 }) => {
   return (
     <section className="relative py-20 w-full overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${imagePath})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      ></div>
+      {/* Background Image - Load immediately */}
+      <img
+        src={imagePath}
+        alt={title}
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="eager" // Load immediately, not lazy
+      />
       
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-black/20"></div>

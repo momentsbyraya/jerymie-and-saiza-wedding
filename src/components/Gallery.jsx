@@ -12,35 +12,6 @@ const Gallery = () => {
   const galleryRef = useRef(null)
 
   useEffect(() => {
-    // Scroll-triggered animations
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse"
-      }
-    })
-
-    // Section title animation
-    tl.fromTo(".gallery-title", 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
-    )
-
-    // Gallery grid animation with stagger
-    tl.fromTo(galleryRef.current.children, 
-      { opacity: 0, scale: 0.8 },
-      { 
-        opacity: 1, 
-        scale: 1, 
-        duration: 0.8, 
-        ease: "power2.out",
-        stagger: 0.1
-      },
-      "-=0.5"
-    )
-
     // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())

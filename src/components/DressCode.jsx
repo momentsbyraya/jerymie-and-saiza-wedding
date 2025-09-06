@@ -12,35 +12,6 @@ const DressCode = () => {
   const contentRef = useRef(null)
 
   useEffect(() => {
-    // Scroll-triggered animations
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse"
-      }
-    })
-
-    // Section title animation
-    tl.fromTo(".dress-code-title", 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
-    )
-
-    // Content animation with stagger
-    tl.fromTo(contentRef.current.children, 
-      { opacity: 0, y: 30 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 0.8, 
-        ease: "power2.out",
-        stagger: 0.2
-      },
-      "-=0.5"
-    )
-
     // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())

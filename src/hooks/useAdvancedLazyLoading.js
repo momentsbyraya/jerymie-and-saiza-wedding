@@ -14,7 +14,7 @@ export const useAdvancedLazyLoading = (options = {}) => {
   const [hasTriggered, setHasTriggered] = useState(false)
   const elementRef = useRef(null)
 
-  const handleIntersection = useCallback(([entry]) => {
+  const handleIntersection = useCallback(([entry], observer) => {
     if (entry.isIntersecting && entry.intersectionRatio >= threshold && !hasTriggered) {
       setIsVisible(true)
       setHasTriggered(true)
@@ -34,7 +34,7 @@ export const useAdvancedLazyLoading = (options = {}) => {
   }, [threshold, hasTriggered, onIntersect, delay, triggerOnce])
 
   useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection, {
+    const observer = new IntersectionObserver((entries) => handleIntersection(entries, observer), {
       threshold: threshold,
       rootMargin: rootMargin
     })

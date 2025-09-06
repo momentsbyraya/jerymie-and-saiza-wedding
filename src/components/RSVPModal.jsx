@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { gsap } from 'gsap'
 import { X } from 'lucide-react'
 
@@ -57,10 +58,11 @@ const RSVPModal = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null
 
-  return (
+  return createPortal(
     <div 
       ref={modalRef}
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
     >
       {/* Overlay */}
       <div
@@ -101,7 +103,8 @@ const RSVPModal = ({ isOpen, onClose }) => {
           </iframe>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
 

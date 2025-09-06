@@ -24,11 +24,6 @@ const Counter = ({ countdown }) => {
       }
     })
 
-    // Section title animation
-    tl.fromTo(".section-title", 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
-    )
 
     // Countdown container animation
     tl.fromTo(countdownRef.current, 
@@ -49,40 +44,6 @@ const Counter = ({ countdown }) => {
       },
       "-=0.5"
     )
-
-    // Wedding date/time animation
-    tl.fromTo(dateTimeRef.current, 
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
-      "-=0.3"
-    )
-
-    // Decorative elements animation
-    tl.fromTo(".decorative-dot", 
-      { opacity: 0, scale: 0, rotation: 0 },
-      { 
-        opacity: 1, 
-        scale: 1, 
-        rotation: 360, 
-        duration: 1, 
-        ease: "back.out(1.7)",
-        stagger: 0.2
-      },
-      "-=0.5"
-    )
-
-    // Continuous animations for countdown numbers
-    // Removed scale animation for cleaner look
-
-    // Floating animation for decorative dots
-    gsap.to(".decorative-dot", {
-      y: -10,
-      duration: 3,
-      ease: "power1.inOut",
-      yoyo: true,
-      repeat: -1,
-      stagger: 0.3
-    })
 
     // Cleanup function
     return () => {
