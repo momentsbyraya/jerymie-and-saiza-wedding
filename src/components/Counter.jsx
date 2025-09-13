@@ -63,7 +63,7 @@ const Counter = ({ countdown }) => {
           ref={countdownRef}
           className="mb-12 max-w-4xl mx-auto"
         >
-        <h3 className={`text-2xl font-serif ${themeConfig.text.primary} mb-8 px-12`}>Counting Down to Our Special Day</h3>
+        <h3 className={`text-2xl font-serif ${themeConfig.text.primary} mb-8 scale-75 sm:scale-90 md:scale-75 lg:scale-100 origin-center sm:origin-center md:origin-center lg:origin-center`}>Counting Down to Our Special Day</h3>
         
         {/* Decorative Line */}
         <div className="flex justify-center items-center mb-8">
@@ -72,7 +72,7 @@ const Counter = ({ countdown }) => {
           <div className={`w-56 h-px ${themeConfig.backgrounds.theme} origin-right`}></div>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-4 gap-6 scale-75 sm:scale-90 md:scale-75 lg:scale-100 origin-center sm:origin-center md:origin-center lg:origin-center">
           <div className="text-center">
             <div className={`text-4xl md:text-5xl font-serif ${themeConfig.text.theme} mb-2 countdown-number`}>
               {countdown.days}

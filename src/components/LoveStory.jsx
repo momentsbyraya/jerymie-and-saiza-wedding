@@ -94,12 +94,12 @@ const LoveStory = () => {
     >
       <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
         {/* Section Title */}
-        <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.theme} mb-16 text-center love-story-title opacity-0`} style={{ visibility: 'hidden' }}>
+        <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.theme} mb-0 [@media(min-width:421px)]:mb-16 text-center love-story-title opacity-0 scale-90 [@media(min-width:421px)]:scale-75 [@media(min-width:576px)]:scale-90 [@media(min-width:768px)]:scale-75 [@media(min-width:992px)]:scale-100 origin-center`} style={{ visibility: 'hidden' }}>
           Our Love Story
         </h2>
         
         {/* Timeline Container */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-6xl mx-auto scale-90 [@media(min-width:421px)]:scale-75 [@media(min-width:576px)]:scale-90 [@media(min-width:768px)]:scale-75 [@media(min-width:992px)]:scale-100 origin-center">
           {/* Central Timeline Line - Centered on desktop, left-aligned on mobile */}
           <div className={`absolute left-1/2 transform -translate-x-1/2 w-px h-full ${themeConfig.backgrounds.theme} timeline-line origin-top hidden sm:block opacity-0`} style={{ visibility: 'hidden' }}></div>
           {/* Mobile Timeline Line - Left-aligned with dots */}
