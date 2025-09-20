@@ -81,89 +81,99 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="relative h-screen w-full overflow-hidden"
-      style={{
-        maxHeight: maxHeight
-      }}
+      className={`relative min-h-screen w-full overflow-hidden flex items-center justify-center ${themeConfig.backgrounds.theme}`}
     >
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${images.hero})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      ></div>
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30"></div>
-
-      {/* Music Button - Bottom Center */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <button
-          onClick={toggleMusic}
-          className="group flex items-center space-x-3 text-white hover:text-white/90 transition-colors duration-300"
-        >
-          {/* Play/Pause Icon - No circle container */}
-          {isPlaying ? (
-            <div className={`w-10 h-10 ${themeConfig.backgrounds.theme} rounded-full flex items-center justify-center`}>
-              <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M6 4a1 1 0 00-1 1v10a1 1 0 001 1h2a1 1 0 001-1V5a1 1 0 00-1-1H6zm6 0a1 1 0 00-1 1v10a1 1 0 001 1h2a1 1 0 001-1V5a1 1 0 00-1-1h-2z" clipRule="evenodd" />
-              </svg>
+      {/* Main Content Container */}
+      <div ref={contentRef} className="relative z-10 flex flex-col items-center justify-center text-center px-4 py-8">
+        
+        {/* Stack of Polaroid Photos */}
+        <div className="relative mb-6 md:mb-8">
+          {/* Back Photo */}
+          <div className="absolute -top-1 -left-1 md:-top-2 md:-left-2 w-56 h-72 md:w-80 md:h-96 bg-white shadow-lg transform rotate-2 opacity-80">
+            <div className="w-full h-56 md:h-80 bg-cover bg-center border-8 border-white" style={{backgroundImage: `url(${images.hero})`}}></div>
+            <div className="p-3 md:p-4 text-center">
+              <div className="text-xs md:text-sm text-gray-600 font-handwriting">Memories</div>
             </div>
-          ) : (
-            <div className={`w-10 h-10 ${themeConfig.backgrounds.theme} rounded-full flex items-center justify-center`}>
-              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
-          )}
+          </div>
           
-          {/* Text */}
-          <span className="font-medium text-sm">
-            {isPlaying ? 'Playing...' : 'Play Music'}
-          </span>
-        </button>
-      </div>
-
-      {/* Content */}
-      <div ref={contentRef} className={`relative z-10 flex items-center justify-center h-full text-center ${themeConfig.text.primary}`}>
-        <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
-          <div className="max-w-4xl mx-auto">
-            {/* Wedding Announcement */}
-            <div className={`text-lg md:text-xl lg:text-2xl font-serif mb-6 ${themeConfig.text.primary}/60`}>
-              We're getting married!
+          {/* Middle Photo */}
+          <div className="absolute -top-0.5 -left-0.5 md:-top-1 md:-left-1 w-56 h-72 md:w-80 md:h-96 bg-white shadow-lg transform -rotate-1 opacity-90">
+            <div className="w-full h-56 md:h-80 bg-cover bg-center border-8 border-white" style={{backgroundImage: `url(${images.hero})`}}></div>
+            <div className="p-3 md:p-4 text-center">
+              <div className="text-xs md:text-sm text-gray-600 font-handwriting">Together</div>
             </div>
-            <h2 className={`text-5xl md:text-7xl lg:text-8xl font-script mb-6 ${themeConfig.text.primary}`}>
-              {couples.couple.names.together}
-            </h2>
-            {/* Decorative Line */}
-            <div className="flex justify-center items-center mb-6">
-              <div className="w-24 h-px bg-white/50 origin-left"></div>
-              <div className="w-2 h-2 bg-[#ad8369] rounded-full mx-4"></div>
-              <div className="w-24 h-px bg-white/50 origin-right"></div>
-            </div>
-            
-            {/* Wedding Date */}
-            <div className={`text-xl md:text-2xl lg:text-3xl font-serif ${themeConfig.text.primary}/60`}>
-              {new Date(couples.couple.wedding.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
+          </div>
+          
+          {/* Front Photo - Main */}
+          <div className="relative w-56 h-72 md:w-80 md:h-96 bg-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <div className="w-full h-56 md:h-80 bg-cover bg-center border-8 border-white" style={{backgroundImage: `url(${images.hero})`}}></div>
+            <div className="p-3 md:p-4 text-center">
+              <div className="text-sm md:text-lg font-handwriting text-gray-800 mb-1">We're getting married!</div>
+              <div className="text-xs md:text-sm font-handwriting text-gray-600">
+                {new Date(couples.couple.wedding.date).toLocaleDateString('en-US', {
+                  month: '2-digit',
+                  day: '2-digit',
+                  year: '2-digit'
+                })}
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Wedding Day Text */}
+        <div className="text-xs md:text-sm text-gray-500 mb-2 font-light tracking-wider">
+          wedding day
+        </div>
+
+        {/* Couple Names */}
+        <h1 className={`text-3xl md:text-4xl lg:text-5xl font-serif ${themeConfig.text.custom} mb-6 md:mb-8 font-bold`}>
+          {couples.couple.names.together}
+        </h1>
+
+        {/* Music Player Section */}
+        <div className="w-full max-w-xs">
+          {/* Horizontal Line */}
+          <div className="w-full h-px bg-white mb-3 md:mb-4"></div>
+          
+          {/* Music Controls */}
+          <div className="flex items-center justify-center space-x-6 md:space-x-8 mb-2 md:mb-3">
+            {/* Previous Button */}
+            <button className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-white hover:text-gray-200 transition-colors">
+              <svg className="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+              </svg>
+            </button>
+            
+            {/* Play/Pause Button */}
+            <button
+              onClick={toggleMusic}
+              className={`w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-lg ${isPlaying ? themeConfig.text.pause : 'text-gray-800'}`}
+            >
+              {isPlaying ? (
+                <svg className="w-7 h-7 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6 4a1 1 0 00-1 1v10a1 1 0 001 1h2a1 1 0 001-1V5a1 1 0 00-1-1H6zm6 0a1 1 0 00-1 1v10a1 1 0 001 1h2a1 1 0 001-1V5a1 1 0 00-1-1h-2z" clipRule="evenodd" />
+                </svg>
+              ) : (
+                <svg className="w-7 h-7 md:w-8 md:h-8 ml-0.5 md:ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              )}
+            </button>
+            
+            {/* Next Button */}
+            <button className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-white hover:text-gray-200 transition-colors">
+              <svg className="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+              </svg>
+            </button>
+          </div>
+          
+          {/* Music Text */}
+          <div className={`text-xs ${themeConfig.text.custom} text-center`}>
+            {isPlaying ? 'Playing...' : 'Play Music'}
+          </div>
+        </div>
       </div>
-
-      {/* Decorative Corner Elements */}
-      <div className={`absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 ${themeConfig.borders.primary.replace('border-', 'border-')}/50 rounded-tl-lg corner-element`}></div>
-      <div className={`absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 ${themeConfig.borders.primary.replace('border-', 'border-')}/50 rounded-tr-lg corner-element`}></div>
-      <div className={`absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 ${themeConfig.borders.primary.replace('border-', 'border-')}/50 rounded-bl-lg corner-element`}></div>
-      <div className={`absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 ${themeConfig.borders.primary.replace('border-', 'border-')}/50 rounded-bl-lg corner-element`}></div>
-
-      {/* Floating Elements */}
     </section>
   )
 }

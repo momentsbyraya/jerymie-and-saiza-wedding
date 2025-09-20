@@ -6,7 +6,7 @@ export const themeConfig = {
         secondary: 'bg-gray-800',      // Secondary dark background (modals, cards)
         accent: 'bg-wedding-600',      // Accent background (buttons, highlights)
         light: 'bg-white/50',          // Light overlay backgrounds
-        theme: 'bg-[#ad8369]',        // Custom theme color
+        theme: 'bg-[#dee5ed]',        // Custom theme color
     },
 
     // Text Colors
@@ -17,6 +17,8 @@ export const themeConfig = {
         muted: 'text-gray-400',        // Muted text color (icons, small text)
         dark: 'text-wedding-800',      // Dark text for light backgrounds
         theme: 'text-[#ad8369]',      // Custom theme text color
+        pause: 'text-[#dcdcdc]',      // Pause button text color
+        custom: 'text-[#5e6266]',     // Custom text color
     },
 
     // Border Colors
@@ -59,7 +61,7 @@ export const themeConfig = {
         '--accent-text': '#7c3aed',         // #7c3aed (wedding-600)
         '--muted-text': '#9ca3af',          // #9ca3af (gray-400)
         '--border-color': '#374151',        // #374151 (gray-700)
-        '--custom-theme': '#ad8369',        // #ad8369 (your custom theme)
+        '--custom-theme': '#dee5ed',        // #dee5ed (your custom theme)
     }
 }
 

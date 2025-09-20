@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@400;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,14 +11,14 @@ html {
 
 body {
   overflow-x: hidden; /* Prevent horizontal scrollbar */
-  font-family: 'Inter', sans-serif;
+  font-family: 'Elsie Swash Caps', cursive;
   line-height: 1.6;
   color: #ad8369;
 }
 
 @layer base {
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Elsie Swash Caps', cursive;
     line-height: 1.6;
     color: #ad8369;
   }
@@ -50,6 +52,16 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  /* Handwriting font for Polaroid text */
+  .font-handwriting {
+    font-family: 'Elsie Swash Caps', cursive;
+  }
+  
+  /* Main website font */
+  .font-main {
+    font-family: 'Elsie Swash Caps', cursive;
   }
   
   /* Prevent transform overflow issues */
