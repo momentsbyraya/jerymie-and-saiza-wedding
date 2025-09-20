@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,6 +13,7 @@ html {
 body {
   overflow-x: hidden; /* Prevent horizontal scrollbar */
   font-family: 'Elsie Swash Caps', cursive;
+  font-weight: 400;
   line-height: 1.6;
   color: #ad8369;
 }
@@ -19,6 +21,7 @@ body {
 @layer base {
   body {
     font-family: 'Elsie Swash Caps', cursive;
+    font-weight: 400;
     line-height: 1.6;
     color: #ad8369;
   }
@@ -61,7 +64,18 @@ body {
   
   /* Main website font */
   .font-main {
-    font-family: 'Elsie Swash Caps', cursive;
+    font-family: 'Elsie Swash Caps', cursive !important;
+  }
+  
+  /* Handwritten style font for photo text */
+  .font-handwritten {
+    font-family: 'Nothing You Could Do', cursive !important;
+  }
+  
+  /* Force font on all text elements */
+  * {
+    font-family: 'Elsie Swash Caps', cursive !important;
+    font-weight: 400 !important;
   }
   
   /* Prevent transform overflow issues */

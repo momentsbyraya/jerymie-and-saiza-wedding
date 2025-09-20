@@ -18,7 +18,7 @@ export const themeConfig = {
         dark: 'text-wedding-800',      // Dark text for light backgrounds
         theme: 'text-[#ad8369]',      // Custom theme text color
         pause: 'text-[#dcdcdc]',      // Pause button text color
-        custom: 'text-[#5e6266]',     // Custom text color
+        custom: 'text-[#44484d]',     // Custom text color
     },
 
     // Border Colors

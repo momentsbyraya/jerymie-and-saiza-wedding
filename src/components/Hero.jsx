@@ -89,32 +89,20 @@ const Hero = () => {
         {/* Stack of Polaroid Photos */}
         <div className="relative mb-6 md:mb-8">
           {/* Back Photo */}
-          <div className="absolute -top-1 -left-1 md:-top-2 md:-left-2 w-56 h-72 md:w-80 md:h-96 bg-white shadow-lg transform rotate-2 opacity-80">
-            <div className="w-full h-56 md:h-80 bg-cover bg-center border-8 border-white" style={{backgroundImage: `url(${images.hero})`}}></div>
+          <div className="absolute -top-1 -left-1 md:-top-2 md:-left-2 w-48 h-80 md:w-72 md:h-120 bg-white shadow-lg transform rotate-2 opacity-80">
+            <div className="w-full h-64 md:h-96 bg-cover bg-center border-l-8 border-r-8 border-t-8 border-white" style={{backgroundImage: `url(${images.hero})`}}></div>
             <div className="p-3 md:p-4 text-center">
               <div className="text-xs md:text-sm text-gray-600 font-handwriting">Memories</div>
             </div>
           </div>
           
-          {/* Middle Photo */}
-          <div className="absolute -top-0.5 -left-0.5 md:-top-1 md:-left-1 w-56 h-72 md:w-80 md:h-96 bg-white shadow-lg transform -rotate-1 opacity-90">
-            <div className="w-full h-56 md:h-80 bg-cover bg-center border-8 border-white" style={{backgroundImage: `url(${images.hero})`}}></div>
-            <div className="p-3 md:p-4 text-center">
-              <div className="text-xs md:text-sm text-gray-600 font-handwriting">Together</div>
-            </div>
-          </div>
-          
           {/* Front Photo - Main */}
-          <div className="relative w-56 h-72 md:w-80 md:h-96 bg-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
-            <div className="w-full h-56 md:h-80 bg-cover bg-center border-8 border-white" style={{backgroundImage: `url(${images.hero})`}}></div>
-            <div className="p-3 md:p-4 text-center">
-              <div className="text-sm md:text-lg font-handwriting text-gray-800 mb-1">We're getting married!</div>
-              <div className="text-xs md:text-sm font-handwriting text-gray-600">
-                {new Date(couples.couple.wedding.date).toLocaleDateString('en-US', {
-                  month: '2-digit',
-                  day: '2-digit',
-                  year: '2-digit'
-                })}
+          <div className="relative w-48 h-64 md:w-72 md:h-120 bg-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <div className="w-full h-52 md:h-96 bg-cover bg-center border-l-8 border-r-8 border-t-8 border-white" style={{backgroundImage: `url(${images.hero})`}}></div>
+            <div className="p-2 md:p-3 text-right">
+              <div className="text-sm md:text-lg font-handwritten text-gray-800 mb-1 leading-none">It's our wedding!</div>
+              <div className="text-xs md:text-sm font-handwritten text-gray-600 leading-none">
+                01/12/2026
               </div>
             </div>
           </div>
@@ -126,7 +114,7 @@ const Hero = () => {
         </div>
 
         {/* Couple Names */}
-        <h1 className={`text-3xl md:text-4xl lg:text-5xl font-serif ${themeConfig.text.custom} mb-6 md:mb-8 font-bold`}>
+        <h1 className={`text-3xl md:text-4xl lg:text-5xl ${themeConfig.text.custom} mb-6 md:mb-8 font-main`}>
           {couples.couple.names.together}
         </h1>
 
