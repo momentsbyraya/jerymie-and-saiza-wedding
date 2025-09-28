@@ -1,24 +1,24 @@
 {
   "ceremony": {
-    "name": "St. Mary's Cathedral",
-    "address": "123 Church Street",
-    "city": "San Francisco",
+    "name": "Sunset Beach Ceremony",
+    "address": "Malibu Beach",
+    "city": "Malibu",
     "state": "CA",
-    "zip": "94102",
-    "time": "2:00 PM",
-    "details": "Please arrive 30 minutes early. Parking available on-site.",
-    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=St.+Mary%27s+Cathedral+123+Church+Street+San+Francisco+CA+94102",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=St.+Mary%27s+Cathedral+123+Church+Street+San+Francisco+CA+94102&travelmode=driving"
+    "zip": "90265",
+    "time": "4:00 PM",
+    "details": "Beach ceremony at sunset. Please bring sandals and arrive 30 minutes early.",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Malibu+Beach+CA+90265",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Malibu+Beach+CA+90265&travelmode=driving"
   },
   "reception": {
-    "name": "The Grand Ballroom",
-    "address": "456 Reception Avenue",
-    "city": "San Francisco",
+    "name": "Oceanfront Reception",
+    "address": "Beachside Pavilion",
+    "city": "Malibu",
     "state": "CA",
-    "zip": "94103",
-    "time": "6:00 PM",
-    "details": "Cocktail attire. Valet parking available.",
-    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=The+Grand+Ballroom+456+Reception+Avenue+San+Francisco+CA+94103",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=The+Grand+Ballroom+456+Reception+Avenue+San+Francisco+CA+94103&travelmode=driving"
+    "zip": "90265",
+    "time": "6:30 PM",
+    "details": "Beachside reception with ocean views. Casual beach attire welcome.",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Malibu+Beach+Pavilion+CA+90265",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Malibu+Beach+Pavilion+CA+90265&travelmode=driving"
   }
 } 

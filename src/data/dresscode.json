@@ -6,19 +6,19 @@
   "colorPalette": [
     {
       "name": "color-1",
-      "hex": "#1f2937"
+      "hex": "#d2b48c"
     },
     {
       "name": "color-2",
-      "hex": "#ad8369"
+      "hex": "#dee5ed"
     },
     {
       "name": "color-3",
-      "hex": "#eaddd7"
+      "hex": "#6b6b6b"
     },
     {
       "name": "color-4",
-      "hex": "#a18072"
+      "hex": "#5d2f0a"
     }
   ]
 } 

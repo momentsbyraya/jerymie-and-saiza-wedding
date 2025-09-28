@@ -58,11 +58,11 @@ const FAQ = () => {
   return (
     <section
       ref={sectionRef}
-      className={`py-20 w-full ${themeConfig.backgrounds.primary}`}
+      className={`py-20 w-full ${themeConfig.calendar.background}`}
     >
               <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
         {/* Section Title */}
-        <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.accent} mb-16 text-center faq-title`}>
+        <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.custom} mb-16 text-center faq-title`}>
           Frequently Asked Questions
         </h2>
         
@@ -71,18 +71,18 @@ const FAQ = () => {
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className={`border ${themeConfig.borders.theme} rounded-2xl overflow-hidden transition-all duration-300 hover:${themeConfig.borders.theme}`}
+              className="border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-300"
             >
               {/* Question Header */}
               <button
                 onClick={() => toggleAccordion(index)}
-                className={`w-full px-6 py-4 text-left flex items-center justify-between hover:${themeConfig.backgrounds.theme}/5 transition-colors duration-200`}
+                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
               >
-                <h3 className={`text-lg md:text-xl font-serif ${themeConfig.text.theme} pr-4`}>
+                <h3 className={`text-lg md:text-xl font-serif ${themeConfig.text.custom} pr-4`}>
                   {faq.question}
                 </h3>
                 <ChevronDown 
-                  className={`w-5 h-5 ${themeConfig.text.theme} transition-transform duration-300`}
+                  className={`w-5 h-5 ${themeConfig.text.custom} transition-transform duration-300`}
                   style={{
                     transform: openIndex === index ? 'rotate(180deg)' : 'rotate(0deg)'
                   }}
@@ -96,7 +96,7 @@ const FAQ = () => {
                 }`}
               >
                 <div className="px-6 pb-4">
-                  <p className={`${themeConfig.text.secondary} font-serif leading-relaxed`}>
+                  <p className="text-gray-600 font-serif leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

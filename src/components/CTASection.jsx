@@ -58,47 +58,39 @@ const CTASection = () => {
     <>
       <section
         ref={sectionRef}
-        className="relative h-screen sm:py-20 2xl:h-auto 2xl:py-20 w-full overflow-hidden"
+        className={`relative py-20 w-full overflow-hidden ${themeConfig.calendar.background}`}
       >
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(/images/couple-7.jpg)`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        ></div>
-        
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        {/* Content */}
+        <div ref={contentRef} className="relative z-20 flex items-center justify-center py-12">
+          <div className="max-w-4xl w-full mx-auto px-4">
+            {/* Header Section */}
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-script text-gray-800 mb-6">
+                We Await Your Presence
+              </h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                Your presence would make our special day even more meaningful. 
+                Please let us know if you'll be joining us for our celebration.
+              </p>
+            </div>
 
-        {/* Main Content */}
-        <div ref={contentRef} className="relative z-10 flex items-center justify-center h-full sm:py-12 2xl:h-auto 2xl:py-12">
-          <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
-          <div className="text-center">
-              <h2 className={`text-5xl md:text-7xl lg:text-8xl font-script ${themeConfig.text.primary} mb-24 leading-tight`}>
-              We Await Your Presenve
-            </h2>
-           
-              {/* Buttons - Centered Below Content */}
-              <div ref={buttonRef} className="text-center mt-20 space-y-4 sm:space-y-0 sm:space-x-6">
-                <button
-                  onClick={openRSVPModal}
-                  className="inline-flex items-center justify-center space-x-3 px-12 py-4 bg-wedding-600 hover:bg-wedding-700 text-white rounded-lg transition-colors duration-200 text-lg font-medium w-full sm:w-auto max-w-md mx-auto"
-                >
-                  <Mail className="w-6 h-6" />
-                  <span>RSVP</span>
-                </button>
-                
-                <button
-                  onClick={openEntourageModal}
-                  className="inline-flex items-center justify-center space-x-3 px-12 py-4 bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white/50 rounded-lg transition-all duration-200 text-lg font-medium w-full sm:w-auto max-w-md mx-auto"
-                >
-                  <Users className="w-6 h-6" />
-                  <span>Entourage</span>
-                </button>
-              </div>
+            {/* RSVP Button */}
+            <div className="text-center">
+              <button
+                ref={buttonRef}
+                onClick={openRSVPModal}
+                className="w-full inline-flex items-center justify-center space-x-3 px-8 py-2 bg-white hover:bg-gray-100 text-gray-800 rounded-sm transition-colors duration-200 text-lg font-medium"
+              >
+                <span>RSVP</span>
+              </button>
+              
+              {/* Entourage Text */}
+              <button
+                onClick={openEntourageModal}
+                className="text-sm text-gray-600 mt-4 hover:text-gray-800 transition-colors duration-200 underline"
+              >
+                View our entourage
+              </button>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ import { venues, images } from '../data'
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
 
-const InvitationSection = () => {
+const Schedule = () => {
   const sectionRef = useRef(null)
   const imageRef = useRef(null)
   const contentRef = useRef(null)
@@ -141,4 +141,4 @@ const InvitationSection = () => {
   )
 }
 
-export default InvitationSection 
+export default Schedule 

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@400;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,6 +17,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: #ad8369;
+  background-color: #f6f1ee; /* Calendar background color */
 }
 
 @layer base {
@@ -23,17 +25,16 @@ body {
     font-family: 'Elsie Swash Caps', cursive;
     font-weight: 400;
     line-height: 1.6;
-    color: #ad8369;
   }
 }
 
 @layer components {
   .wedding-gradient {
-    background: #212639;
+    /* background: #212639; */
   }
   
   .wedding-text {
-    color: #ad8369;
+    /* color: #ad8369; */
   }
   
   .text-gradient {
@@ -70,6 +71,11 @@ body {
   /* Handwritten style font for photo text */
   .font-handwritten {
     font-family: 'Nothing You Could Do', cursive !important;
+  }
+  
+  /* Albert Sans font for countdown numbers */
+  .font-albert {
+    font-family: 'Albert Sans', sans-serif !important;
   }
   
   /* Force font on all text elements */

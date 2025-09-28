@@ -63,8 +63,8 @@ const Hero = () => {
     const frontPhoto = photosContainer?.querySelector('.relative.w-48.h-64')
     
     // Set initial positions
-    gsap.set(backPhoto, { x: -200, opacity: 0 })
-    gsap.set(frontPhoto, { x: 200, opacity: 0 })
+    gsap.set(backPhoto, { x: -200 })
+    gsap.set(frontPhoto, { x: 200 })
     
     // Create timeline for sequential animation
     const tl = gsap.timeline()
@@ -72,7 +72,6 @@ const Hero = () => {
     // First: slide back photo from left
     tl.to(backPhoto, {
       x: 0,
-      opacity: 1,
       duration: 1.5,
       ease: "linear",
       delay: 0.5
@@ -81,7 +80,6 @@ const Hero = () => {
     // Then: slide front photo from right
     tl.to(frontPhoto, {
       x: 0,
-      opacity: 1,
       duration: 1.5,
       ease: "linear"
     }, "-=0.3") // Start 0.3 seconds before back photo finishes
