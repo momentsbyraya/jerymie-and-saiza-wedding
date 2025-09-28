@@ -7,6 +7,7 @@ export const themeConfig = {
         accent: 'bg-wedding-600',      // Accent background (buttons, highlights)
         light: 'bg-white/50',          // Light overlay backgrounds
         theme: 'bg-[#dee5ed]',        // Custom theme color
+        crumpledPaper: 'bg-[url("/images/crumpled-paper.png")] bg-cover bg-center bg-no-repeat', // Crumpled paper background
     },
 
     // Text Colors
@@ -49,6 +50,17 @@ export const themeConfig = {
         maxWidth: 'max-w-[1300px]',
         padding: 'px-4 sm:px-6 lg:px-8',
         center: 'mx-auto',
+    },
+
+    // Calendar Configuration
+    calendar: {
+        weddingDate: '2026-01-12',          // Wedding date (YYYY-MM-DD format)
+        highlightColor: 'bg-blue-400',      // Color for wedding date highlight
+        heartColor: 'text-blue-400',        // Color for heart icon
+        textColor: 'text-gray-700',         // Calendar text color
+        headerColor: 'text-gray-800',       // Month header color
+        dayNamesColor: 'text-gray-600',     // Day names color
+        background: 'bg-[#f6f1ee]',         // Calendar background color
     },
 
     // Custom CSS Variables (for advanced customization)
