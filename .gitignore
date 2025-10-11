@@ -30,8 +30,8 @@ build/
 ehthumbs.db
 Thumbs.db
 
-# Public directory (if you're using assets instead)
-public/
+# Public directory (renamed to assets)
+# public/
 
 # Logs
 logs
