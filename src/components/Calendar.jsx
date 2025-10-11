@@ -91,34 +91,38 @@ const Calendar = () => {
   }, [])
   
   return (
-    <div className={`w-full max-w-md mx-auto px-4 py-12 ${themeConfig.calendar.background}`}>
+    <div className={`w-full max-w-md sm:max-w-xl lg:max-w-3xl xl:max-w-6xl mx-auto px-4 py-12 ${themeConfig.calendar.background}`}>
       {/* Invitation Text */}
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-serif font-light mb-4 text-gray-800">
+      <div className="text-center mb-8 sm:my-12">
+        <h1 className="text-3xl sm:text-5xl font-serif font-light mb-4 text-gray-800">
           The Day
         </h1>
-        <p className="text-base text-gray-700 leading-relaxed max-w-sm mx-auto">
+        <p className="text-base sm:text-xl text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto">
           One day this year will be special for us and we want to spend it with close ones and friends. 
           We invite you to celebrate the most important event in our lives - our wedding day!
         </p>
       </div>
 
-      <div className="p-8">
+      {/* XL Layout - Two Columns */}
+      <div className="xl:grid xl:grid-cols-5 xl:gap-8 xl:items-start">
+        {/* Calendar Column - 60% width (3/5) */}
+        <div className="xl:col-span-3 xl:scale-90 xl:origin-top-left">
+          <div className="p-8">
 {/* Month Header */}
 <div className={`text-center mb-4 ${themeConfig.calendar.headerColor}`}>
-        <h3 className="text-2xl font-serif font-light mt-2">
+        <h3 className="text-2xl sm:text-4xl font-serif font-light mt-2">
           {monthNames[displayMonth]} {displayYear}
         </h3>
       </div>
       
       {/* Day Names Header */}
-      <div className="grid grid-cols-7 gap-1 mb-2">
-        {dayNames.map((day) => (
-          <div key={day} className={`text-center text-sm font-medium ${themeConfig.calendar.dayNamesColor}`}>
-            {day}
+          <div className="grid grid-cols-7 gap-1 mb-2  lg:mt-8">
+            {dayNames.map((day) => (
+              <div key={day} className={`text-center text-sm sm:text-lg lg:text-2xl font-medium ${themeConfig.calendar.dayNamesColor}`}>
+                {day}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
       
       {/* Calendar Grid */}
       <div className="grid grid-cols-7 gap-1">
@@ -129,7 +133,7 @@ const Calendar = () => {
             <div
               key={index}
               className={`
-                aspect-square flex items-center justify-center text-sm font-medium
+                aspect-square flex items-center justify-center text-sm sm:text-lg lg:text-2xl font-medium
                 ${day ? themeConfig.calendar.textColor : 'text-transparent'}
                 ${isWeddingDay ? 'relative' : ''}
               `}
@@ -148,33 +152,37 @@ const Calendar = () => {
           )
         })}
       </div>
-      </div>
-      
-      
-      {/* Polaroid Photos Section */}
-      <div ref={photosRef} className="relative mt-12 mb-8 h-48 flex justify-center items-center">
+          </div>
+        </div>
+        
+        {/* Images Column - 40% width (2/5) */}
+        <div className="xl:col-span-2 xl:mt-40">
+          {/* Polaroid Photos Section */}
+          <div ref={photosRef} className="relative mt-12 mb-8 lg:mb-32 xl:mt-0 xl:mb-0 h-80 sm:h-120 lg:h-144 xl:h-auto flex justify-center items-center xl:justify-center">
         {/* Back Photo - More tilted left */}
-        <div ref={backPhotoRef} className="absolute -top-4 -left-6 w-36 h-44 bg-white shadow-lg transform -rotate-12 opacity-90">
-          <div className="w-full h-36 bg-cover bg-center border-l-4 border-r-4 border-t-4 border-white" style={{backgroundImage: `url(${images.couple.couple2})`}}></div>
-          <div className="p-2 text-center">
-            <div className="text-xs text-gray-600 font-handwritten">Memories</div>
+        <div ref={backPhotoRef} className="absolute -top-6 -left-8 lg:left-4 xl:left-0 w-40 h-48 sm:w-60 sm:h-72 lg:w-72 lg:h-88 xl:w-48 xl:h-60 bg-white shadow-lg transform -rotate-12 xl:rotate-0 opacity-90">
+          <div className="w-full h-40 sm:h-60 lg:h-72 xl:h-48 bg-cover bg-center border-l-4 border-r-4 border-t-4 border-white" style={{backgroundImage: `url(${images.couple.couple2})`}}></div>
+          <div className="p-2 text-center lg:bg-white lg:mb-4 lg:rounded">
+            <div className="text-sm sm:text-lg xl:text-sm text-gray-600 font-handwritten">Memories</div>
           </div>
         </div>
         
         {/* Front Photo - Slightly tilted right */}
-        <div ref={frontPhotoRef} className="relative w-36 h-44 bg-white shadow-xl transform rotate-3 hover:scale-105 transition-transform duration-300">
-          <div className="w-full h-36 bg-cover bg-center border-l-4 border-r-4 border-t-4 border-white" style={{backgroundImage: `url(${images.couple.couple1})`}}></div>
-          <div className="p-2 text-center">
-            <div className="text-xs text-gray-600 font-handwritten">Together</div>
+        <div ref={frontPhotoRef} className="relative w-40 h-48 sm:w-60 sm:h-72 lg:w-72 lg:h-88 xl:w-48 xl:h-60 xl:mx-0 bg-white shadow-xl transform rotate-3 xl:rotate-0 hover:scale-105 transition-transform duration-300">
+          <div className="w-full h-40 sm:h-60 lg:h-72 xl:h-48 bg-cover bg-center border-l-4 border-r-4 border-t-4 border-white" style={{backgroundImage: `url(${images.couple.couple1})`}}></div>
+          <div className="p-2 text-center lg:bg-white lg:mb-4 lg:rounded">
+            <div className="text-sm sm:text-lg xl:text-sm text-gray-600 font-handwritten">Together</div>
           </div>
         </div>
         
         {/* Right Photo - Tilted right */}
-        <div ref={rightPhotoRef} className="absolute -top-2 -right-6 w-32 h-40 bg-white shadow-lg transform rotate-6 ">
-          <div className="w-full h-32 bg-cover bg-center border-l-4 border-r-4 border-t-4 border-white" style={{backgroundImage: `url(${images.couple.couple3})`}}></div>
-          <div className="p-2 text-center">
-            <div className="text-xs text-gray-600 font-handwritten">Love</div>
+        <div ref={rightPhotoRef} className="absolute -top-4 -right-8 lg:right-4 xl:right-0 w-40 h-48 sm:w-60 sm:h-72 lg:w-72 lg:h-88 xl:w-48 xl:h-60 bg-white shadow-lg transform rotate-6 xl:rotate-0">
+          <div className="w-full h-40 sm:h-60 lg:h-72 xl:h-48 bg-cover bg-center border-l-4 border-r-4 border-t-4 border-white" style={{backgroundImage: `url(${images.couple.couple3})`}}></div>
+          <div className="p-2 text-center lg:bg-white lg:mb-4 lg:rounded">
+            <div className="text-sm sm:text-lg xl:text-sm text-gray-600 font-handwritten">Love</div>
           </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>

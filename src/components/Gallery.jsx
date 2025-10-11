@@ -16,10 +16,10 @@ const Gallery = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const images = [
-    "/images/couple-1.jpg",
-    "/images/couple-2.jpg", 
-    "/images/couple-3.jpg",
-    "/images/couple-4.jpg"
+    "/assets/images/couple-1.jpg",
+    "/assets/images/couple-2.jpg", 
+    "/assets/images/couple-3.jpg",
+    "/assets/images/couple-4.jpg"
   ]
 
   useEffect(() => {

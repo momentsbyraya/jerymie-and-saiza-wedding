@@ -96,4 +96,30 @@ body {
     width: 100%;
     max-width: 100%;
   }
+  
+  /* Hero polaroid container sizing */
+  .hero-polaroid-container {
+    width: 25vw;
+    max-width: 300px;
+    min-width: 200px;
+  }
+  
+  @media (min-width: 640px) {
+    .hero-polaroid-container {
+      width: 45vw;
+      max-width: 500px;
+      min-width: 400px;
+    }
+  }
+  
+  /* Counter polaroid sizing */
+  .counter-polaroid {
+    transform: rotate(1deg) scale(1);
+  }
+  
+  @media (min-width: 640px) {
+    .counter-polaroid {
+      transform: rotate(1deg) scale(1.2);
+    }
+  }
 } 

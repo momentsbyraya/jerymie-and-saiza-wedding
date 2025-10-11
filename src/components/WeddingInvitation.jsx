@@ -10,7 +10,7 @@ import LoveStory from './LoveStory'
 import DressCode from './DressCode'
 import Gallery from './Gallery'
 import FAQ from './FAQ'
-import MapDirections from './MapDirections'
+import MapDirections from './Venue'
 import GiftRegistry from './GiftRegistry'
 import CTASection from './CTASection'
 import EnhancedLazySection from './EnhancedLazySection'
@@ -35,9 +35,9 @@ const WeddingInvitation = () => {
 
   return (
     <div className="min-h-screen w-full overflow-hidden">
-      <main className="main-container section-container">
+      <main className="main-container h-full section-container">
         {/* Hero Section - Always visible */}
-        <section><Hero /></section>
+        <section className='h-full'><Hero /></section>
         
         {/* Calendar Section */}
         <EnhancedLazySection animationClass="fade-slide-up" sectionName="calendar">

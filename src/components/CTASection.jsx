@@ -33,13 +33,6 @@ const CTASection = () => {
       { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
     )
 
-    // RSVP button animation
-    tl.fromTo(buttonRef.current, 
-      { opacity: 0, scale: 0.8 },
-      { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" },
-      "-=0.5"
-    )
-
     // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
@@ -61,8 +54,8 @@ const CTASection = () => {
         className={`relative py-20 w-full overflow-hidden ${themeConfig.calendar.background}`}
       >
         {/* Content */}
-        <div ref={contentRef} className="relative z-20 flex items-center justify-center py-12">
-          <div className="max-w-4xl w-full mx-auto px-4">
+        <div className="relative z-20 flex items-center justify-center">
+          <div className="max-w-md sm:max-w-xl lg:max-w-3xl w-full mx-auto px-4">
             {/* Header Section */}
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-script text-gray-800 mb-6">
@@ -79,7 +72,7 @@ const CTASection = () => {
               <button
                 ref={buttonRef}
                 onClick={openRSVPModal}
-                className="w-full inline-flex items-center justify-center space-x-3 px-8 py-2 bg-white hover:bg-gray-100 text-gray-800 rounded-sm transition-colors duration-200 text-lg font-medium"
+                className="w-full inline-flex items-center justify-center space-x-3 px-8 py-3 sm:py-5 lg:py-2 bg-white hover:bg-gray-100 text-gray-800 rounded-sm transition-colors duration-200 text-sm sm:text-2xl lg:text-base font-medium"
               >
                 <span>RSVP</span>
               </button>

@@ -7,7 +7,7 @@ export const themeConfig = {
         accent: 'bg-wedding-600',      // Accent background (buttons, highlights)
         light: 'bg-white/50',          // Light overlay backgrounds
         theme: 'bg-[#dee5ed]',        // Custom theme color
-        crumpledPaper: 'bg-[url("/images/crumpled-paper.png")] bg-cover bg-center bg-no-repeat', // Crumpled paper background
+        crumpledPaper: 'bg-[url("/assets/images/crumpled-paper.png")] bg-cover bg-center bg-no-repeat', // Crumpled paper background
     },
 
     // Text Colors

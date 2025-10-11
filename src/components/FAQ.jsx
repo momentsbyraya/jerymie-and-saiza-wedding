@@ -62,12 +62,12 @@ const FAQ = () => {
     >
               <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding}`}>
         {/* Section Title */}
-        <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.custom} mb-16 text-center faq-title`}>
+        <h2 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-script ${themeConfig.text.custom} mb-16 text-center faq-title`}>
           Frequently Asked Questions
         </h2>
         
         {/* FAQ Accordion */}
-        <div ref={accordionRef} className="max-w-4xl mx-auto space-y-4">
+        <div ref={accordionRef} className="max-w-md sm:max-w-xl lg:max-w-3xl mx-auto space-y-4">
           {faqData.map((faq, index) => (
             <div
               key={index}
@@ -78,7 +78,7 @@ const FAQ = () => {
                 onClick={() => toggleAccordion(index)}
                 className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
               >
-                <h3 className={`text-lg md:text-xl font-serif ${themeConfig.text.custom} pr-4`}>
+                <h3 className={`text-lg sm:text-xl md:text-2xl font-serif ${themeConfig.text.custom} pr-4`}>
                   {faq.question}
                 </h3>
                 <ChevronDown 
@@ -96,7 +96,7 @@ const FAQ = () => {
                 }`}
               >
                 <div className="px-6 pb-4">
-                  <p className="text-gray-600 font-serif leading-relaxed">
+                  <p className="text-gray-600 font-serif leading-relaxed text-base sm:text-lg">
                     {faq.answer}
                   </p>
                 </div>

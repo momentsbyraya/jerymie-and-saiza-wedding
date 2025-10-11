@@ -70,14 +70,14 @@ const Schedule = () => {
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center">
         <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center}`}>
-          <div className="max-w-5xl w-full  ">
+          <div className="max-w-md sm:max-w-xl lg:max-w-3xl w-full mx-auto">
             {/* Section Title */}
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-script text-gray-800 mb-8 text-center">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-script text-gray-800 mb-8 text-center">
               Schedule
             </h2>
 
             {/* Vertical Timeline */}
-            <div ref={timelineRef} className="relative max-w-5xl w-full scale-75 -my-16">
+            <div ref={timelineRef} className="relative max-w-md sm:max-w-xl lg:max-w-3xl w-full scale-75 sm:scale-100 -my-16 sm:my-16">
               {/* Central Vertical Line */}
               <div ref={lineRef} className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-600/30 transform -translate-x-1/2"></div>
 
@@ -85,11 +85,11 @@ const Schedule = () => {
               <div className="space-y-20">
                 {/* Event 1 - Right side */}
                 <div ref={event1Ref} className="flex items-start">
-                  <div className="w-1/2 pr-16 text-right">
-                    <div className="text-4xl font-serif text-gray-800 font-semibold mb-2">
-                      4:00<span className="text-2xl">PM</span>
+                  <div className="w-1/2 pr-16 sm:mr-24 text-right">
+                    <div className="text-3xl sm:text-5xl font-serif text-gray-800 font-semibold mb-2">
+                      4:00<span className="text-xl sm:text-3xl">PM</span>
                     </div>
-                    <div className="text-lg font-serif text-gray-700">
+                    <div className="text-base sm:text-xl font-serif text-gray-700">
                       Guest Gathering
                     </div>
                   </div>
@@ -102,10 +102,10 @@ const Schedule = () => {
                   <div className="w-1/2 pr-24"></div>
                   <div className="w-4 h-4 bg-gray-600 rounded-full border-2 border-white shadow-lg absolute left-1/2 transform -translate-x-1/2 z-10 mt-6"></div>
                   <div className="w-1/2 pl-8">
-                    <div className="text-4xl font-serif text-gray-800 font-semibold mb-2">
-                      4:30<span className="text-2xl">PM</span>
+                    <div className="text-3xl sm:text-5xl font-serif text-gray-800 font-semibold mb-2">
+                      4:30<span className="text-xl sm:text-3xl">PM</span>
                     </div>
-                    <div className="text-lg font-serif text-gray-700">
+                    <div className="text-base sm:text-xl font-serif text-gray-700">
                       Wedding Ceremony
                     </div>
                   </div>
@@ -114,10 +114,10 @@ const Schedule = () => {
                 {/* Event 3 - Right side */}
                 <div ref={event3Ref} className="flex items-start">
                   <div className="w-1/2 pr-24 text-right">
-                    <div className="text-4xl font-serif text-gray-800 font-semibold mb-2">
-                      5:00<span className="text-2xl">PM</span>
+                    <div className="text-3xl sm:text-5xl font-serif text-gray-800 font-semibold mb-2">
+                      5:00<span className="text-xl sm:text-3xl">PM</span>
                     </div>
-                    <div className="text-lg font-serif text-gray-700">
+                    <div className="text-base sm:text-xl font-serif text-gray-700">
                       Reception Dinner
                     </div>
                   </div>
@@ -130,10 +130,10 @@ const Schedule = () => {
                   <div className="w-1/2 pr-8"></div>
                   <div className="w-4 h-4 bg-gray-600 rounded-full border-2 border-white shadow-lg absolute left-1/2 transform -translate-x-1/2 z-10 mt-8"></div>
                   <div className="w-1/2 pl-8">
-                    <div className="text-4xl font-serif text-gray-800 font-semibold mb-2">
-                      11:00<span className="text-2xl">PM</span>
+                    <div className="text-3xl sm:text-5xl font-serif text-gray-800 font-semibold mb-2">
+                      11:00<span className="text-xl sm:text-3xl">PM</span>
                     </div>
-                    <div className="text-lg font-serif text-gray-700">
+                    <div className="text-base sm:text-xl font-serif text-gray-700">
                       Evening Ends
                     </div>
                   </div>

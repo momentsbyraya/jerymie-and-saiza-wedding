@@ -46,61 +46,13 @@ const Entourage = () => {
     }
   }, [])
 
-  const entourageList = [
-    {
-      category: "Principal Sponsors (Godparents)",
-      names: [
-        "Lorna Alvarado", 
-        "Margarita Perez", 
-        "Pedro Fernandez", 
-        "Richard Sanchez", 
-        "Teddy Yu", 
-        "Jamie Chastain", 
-        "Dani Martinez", 
-        "Isabel Mercado"
-      ]
-    },
-    {
-      category: "Secondary Sponsors",
-      names: [
-        "Hannah Morales", 
-        "Yael Amari", 
-        "Francisco Andrade", 
-        "Sebastian Bennett", 
-        "Noah Schumacher", 
-        "Chiaki Sato"
-      ]
-    },
-    {
-      category: "Groomsmen",
-      names: [
-        "Morgan Maxwell", 
-        "Jonathan Patterson", 
-        "Howard Ong", 
-        "James Thompson", 
-        "David Wilson", 
-        "Robert Lee"
-      ]
-    },
-    {
-      category: "Bridesmaids",
-      names: [
-        "Kimberly Nguyen", 
-        "Chiaki Sato", 
-        "Juliana Silva", 
-        "Lars Peeters", 
-        "Harper Russo", 
-        "Helene Paquet"
-      ]
-    },
-    {
-      category: "Ring Bearer",
-      names: ["Taylor Alonso"]
-    },
-    {
-      category: "Flower Girl",
-      names: ["Henrietta Mitchell"]
-    }
+  const entourageImages = [
+    "/assets/images/entourage/1.png",
+    "/assets/images/entourage/2.png", 
+    "/assets/images/entourage/3.png",
+    "/assets/images/entourage/4.png",
+    "/assets/images/entourage/5.png",
+    "/assets/images/entourage/6.png"
   ]
 
   return (
@@ -108,33 +60,27 @@ const Entourage = () => {
       ref={sectionRef}
       className={`py-20 ${themeConfig.backgrounds.primary}`}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md sm:max-w-xl lg:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div ref={contentRef} className="text-center mb-20">
-          <h2 className={`text-4xl md:text-5xl lg:text-6xl font-script ${themeConfig.text.theme} mb-6 entourage-title`}>
+          <h2 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-script ${themeConfig.text.theme} mb-6 entourage-title`}>
             Entourage
           </h2>
-          <p className={`text-xl ${themeConfig.text.secondary} max-w-3xl mx-auto`}>
+          <p className={`text-xl sm:text-2xl ${themeConfig.text.secondary} max-w-3xl mx-auto`}>
             Honoring those who will stand with us on our special day
           </p>
         </div>
 
-        {/* Entourage List - Clean Text Layout */}
-        <div className="space-y-12">
-          {entourageList.map((item, index) => (
-            <div key={index} className="text-center">
-              {/* Category Title */}
-              <h3 className={`text-2xl font-script ${themeConfig.text.theme} mb-6`}>
-                {item.category}
-              </h3>
-              
-              {/* Names List */}
-              <div className={`grid ${item.names.length > 1 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'} gap-x-2 gap-y-3`}>
-                {item.names.map((name, nameIndex) => (
-                  <p key={nameIndex} className={`text-lg font-serif ${themeConfig.text.primary}`}>
-                    {name}
-                  </p>
-                ))}
+        {/* Entourage Images Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+          {entourageImages.map((image, index) => (
+            <div key={index} className="relative group">
+              <div className="aspect-[3/4] overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img 
+                  src={image} 
+                  alt={`Entourage member ${index + 1}`}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
           ))}

@@ -57,15 +57,29 @@ const DressCode = () => {
       ref={sectionRef}
       className={`relative py-20 w-full overflow-hidden ${themeConfig.calendar.background}`}
     >
+      {/* Theme Background */}
+      <div className={`absolute inset-0 `}></div>
+      
+      {/* Crumpled Paper Background on top */}
+      <div 
+        className="absolute inset-0 opacity-30 z-10"
+        style={{
+          backgroundImage: 'url(/assets/images/crumpled-paper.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      ></div>
+      
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center py-12">
-        <div className="max-w-5xl w-full mx-auto px-4">
+      <div className="relative z-20 flex items-center justify-center py-12">
+        <div className="max-w-md sm:max-w-xl lg:max-w-3xl xl:max-w-6xl w-full mx-auto px-4">
             {/* Header Section */}
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-script text-gray-800 mb-6">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-script text-gray-800 mb-6">
                 Dress Code
               </h2>
-              <p className="text-lg text-gray-700 leading-tight max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-gray-700 leading-tight max-w-2xl mx-auto">
                 We would be grateful if you support the style and color scheme of our wedding in your outfits
               </p>
             </div>
@@ -83,44 +97,44 @@ const DressCode = () => {
             </div>
 
             {/* Outfit Examples Section */}
-            <div className="flex items-start">
+            <div className="flex items-start justify-end xl:justify-end">
               {/* Vertical Label */}
               <div className="w-8 flex-shrink-0 flex items-center">
-                <div className="w-8 text-gray-700 text-sm font-medium transform -rotate-90 origin-center whitespace-nowrap mt-20">
+                <div className="w-8 text-gray-700 text-sm sm:text-base font-medium transform -rotate-90 origin-center whitespace-nowrap mt-20">
                   Outfit Examples
                 </div>
               </div>
               
               {/* Image Grid */}
-              <div className="flex-1 grid grid-cols-2 gap-1">
-                <div className="aspect-[3/4] overflow-hidden">
+              <div className="flex-1 grid grid-cols-2 xl:grid-cols-4 gap-1 max-w-md lg:max-w-xl xl:max-w-4xl">
+                <div className="aspect-[3/4] overflow-hidden max-h-96">
                   <img 
                     ref={image1Ref}
-                    src="/images/dresscode/dresscode-1.jpg" 
+                    src="/assets/images/dresscode/dresscode-1.jpg" 
                     alt="Dress code example 1" 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="aspect-[3/4] overflow-hidden">
+                <div className="aspect-[3/4] overflow-hidden max-h-96">
                   <img 
                     ref={image2Ref}
-                    src="/images/dresscode/dresscode-2.jpg" 
+                    src="/assets/images/dresscode/dresscode-2.jpg" 
                     alt="Dress code example 2" 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="aspect-[3/4] overflow-hidden">
+                <div className="aspect-[3/4] overflow-hidden max-h-96">
                   <img 
                     ref={image3Ref}
-                    src="/images/dresscode/dresscode-3.jpg" 
+                    src="/assets/images/dresscode/dresscode-3.jpg" 
                     alt="Dress code example 3" 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="aspect-[3/4] overflow-hidden">
+                <div className="aspect-[3/4] overflow-hidden max-h-96">
                   <img 
                     ref={image4Ref}
-                    src="/images/dresscode/dresscode-4.jpg" 
+                    src="/assets/images/dresscode/dresscode-4.jpg" 
                     alt="Dress code example 4" 
                     className="w-full h-full object-cover"
                   />
