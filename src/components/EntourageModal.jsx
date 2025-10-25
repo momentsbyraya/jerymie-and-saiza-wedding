@@ -89,7 +89,7 @@ const EntourageModal = ({ isOpen, onClose }) => {
             {/* Previous Button */}
             <button
               onClick={prevImage}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors duration-200"
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-gray-800 p-2 rounded-full transition-colors duration-200"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -104,7 +104,7 @@ const EntourageModal = ({ isOpen, onClose }) => {
             {/* Next Button */}
             <button
               onClick={nextImage}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors duration-200"
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-gray-800 p-2 rounded-full transition-colors duration-200"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
