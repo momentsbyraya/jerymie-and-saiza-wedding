@@ -1,6 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@400;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carattere:wght@400&display=swap');
+
+/* Custom Font - LovelyHome */
+@font-face {
+  font-family: 'LovelyHome';
+  src: url('/assets/fonts/LovelyHome-9aBZ.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom Font - Alamark */
+@font-face {
+  font-family: 'Alamark';
+  src: url('/assets/fonts/Alamarklitefree-4oWx.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom Font - Ants Valley */
+@font-face {
+  font-family: 'Ants Valley';
+  src: url('/assets/fonts/AntsValleyPersonalUse-z8drl.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -78,10 +107,79 @@ body {
     font-family: 'Albert Sans', sans-serif !important;
   }
   
+  /* Poppins font */
+  .font-poppins {
+    font-family: 'Poppins', sans-serif !important;
+  }
+  
   /* Force font on all text elements */
   * {
     font-family: 'Elsie Swash Caps', cursive !important;
     font-weight: 400 !important;
+  }
+  
+  /* Cookie font - must come after global rule */
+  .font-cookie,
+  h1.font-cookie,
+  h1.font-cookie span,
+  .font-cookie * {
+    font-family: 'Cookie', cursive !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    text-shadow: 0.5px 0.5px 0px rgba(0, 0, 0, 0.1), 
+                 0px 0.5px 0px rgba(0, 0, 0, 0.1),
+                 0.5px 0px 0px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.02em;
+  }
+  
+  /* LovelyHome font - must come after global rule */
+  .font-lovelyhome,
+  h1.font-lovelyhome,
+  h1.font-lovelyhome span,
+  .font-lovelyhome * {
+    font-family: 'LovelyHome', cursive !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    text-shadow: 0.5px 0.5px 0px rgba(0, 0, 0, 0.1), 
+                 0px 0.5px 0px rgba(0, 0, 0, 0.1),
+                 0.5px 0px 0px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.02em;
+  }
+  
+  /* Alamark font - must come after global rule */
+  .font-alamark,
+  h1.font-alamark,
+  h1.font-alamark span,
+  .font-alamark * {
+    font-family: 'Alamark', cursive !important;
+    font-weight: 300 !important;
+    font-style: normal !important;
+    letter-spacing: 0.02em;
+  }
+  
+  /* Ants Valley font - must come after global rule */
+  .font-antsvalley,
+  h1.font-antsvalley,
+  h1.font-antsvalley span,
+  .font-antsvalley * {
+    font-family: 'Ants Valley', cursive !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    letter-spacing: 0.02em;
+  }
+  
+  /* Carattere font - must come after global rule */
+  .font-carattere,
+  h1.font-carattere,
+  h1.font-carattere span,
+  .font-carattere * {
+    font-family: 'Carattere', cursive !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    text-shadow: 0.5px 0.5px 0px rgba(0, 0, 0, 0.1), 
+                 0px 0.5px 0px rgba(0, 0, 0, 0.1),
+                 0.5px 0px 0px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.02em;
   }
   
   /* Prevent transform overflow issues */
@@ -121,5 +219,21 @@ body {
     .counter-polaroid {
       transform: rotate(1deg) scale(1.2);
     }
+  }
+  
+  /* Corner pulsing animation */
+  @keyframes subtlePulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.85;
+      transform: scale(1.02);
+    }
+  }
+  
+  .corner-pulse {
+    animation: subtlePulse 3s ease-in-out infinite;
   }
 } 

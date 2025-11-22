@@ -1,24 +1,24 @@
 {
   "ceremony": {
-    "name": "Sunset Beach Ceremony",
-    "address": "Malibu Beach",
-    "city": "Malibu",
-    "state": "CA",
-    "zip": "90265",
+    "name": "Churinga Eco-Resort",
+    "address": "",
+    "city": "",
+    "state": "",
+    "zip": "",
     "time": "4:00 PM",
-    "details": "Beach ceremony at sunset. Please bring sandals and arrive 30 minutes early.",
-    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Malibu+Beach+CA+90265",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Malibu+Beach+CA+90265&travelmode=driving"
+    "details": "Please arrive 30 minutes early.",
+    "googleMapsUrl": "",
+    "directionsUrl": ""
   },
   "reception": {
-    "name": "Oceanfront Reception",
-    "address": "Beachside Pavilion",
-    "city": "Malibu",
-    "state": "CA",
-    "zip": "90265",
-    "time": "6:30 PM",
-    "details": "Beachside reception with ocean views. Casual beach attire welcome.",
-    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Malibu+Beach+Pavilion+CA+90265",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Malibu+Beach+Pavilion+CA+90265&travelmode=driving"
+    "name": "Churinga Eco-Resort",
+    "address": "",
+    "city": "",
+    "state": "",
+    "zip": "",
+    "time": "6:00 PM",
+    "details": "Casual/Semi-formal attire requested.",
+    "googleMapsUrl": "",
+    "directionsUrl": ""
   }
 } 

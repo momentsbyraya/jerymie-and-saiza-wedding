@@ -8,47 +8,47 @@ export const weddingConfig = {
   // Basic Wedding Information
   couple: {
     bride: {
-      firstName: "Sarah",
-      lastName: "Johnson",
-      fullName: "Sarah Johnson"
+      firstName: "Marialy",
+      lastName: "Gacer",
+      fullName: "Marialy Gacer"
     },
     groom: {
-      firstName: "Michael",
-      lastName: "Williams",
-      fullName: "Michael Williams"
+      firstName: "James Henry",
+      lastName: "Ricarte",
+      fullName: "James Henry Ricarte"
     },
-    together: "Sarah & Michael"
+    together: "Marialy & James"
   },
 
   // Wedding Details
   wedding: {
-    date: "2026-06-15", // YYYY-MM-DD format
+    date: "2026-06-20", // YYYY-MM-DD format
     time: "4:00 PM",
     dayOfWeek: "Saturday",
     month: "June",
-    day: "15",
-    year: "2024"
+    day: "20",
+    year: "2026"
   },
 
   // Venue Information
   venue: {
     ceremony: {
-      name: "San Agustin Church",
-      address: "General Luna Street",
-      city: "Manila",
-      state: "Metro Manila",
-      zip: "1002",
+      name: "Churinga Eco-Resort",
+      address: "Zone 2, National Highway",
+      city: "San Antonio",
+      state: "Tigaon",
+      zip: "Camarines Sur",
       time: "4:00 PM",
       details: "Please arrive 30 minutes early"
     },
     reception: {
-      name: "The Manila Hotel",
-      address: "1 Rizal Park",
-      city: "Manila",
-      state: "Metro Manila",
-      zip: "1000",
+      name: "Churinga Eco-Resort",
+      address: "",
+      city: "",
+      state: "",
+      zip: "",
       time: "6:00 PM",
-      details: "Cocktail attire requested"
+      details: "Casual/Semi-formal attire requested"
     }
   },
 
