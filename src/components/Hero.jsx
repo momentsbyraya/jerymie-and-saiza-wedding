@@ -115,11 +115,14 @@ const Hero = () => {
       ref={heroRef}
       className="relative min-h-screen w-full overflow-hidden flex items-center justify-center m-0 p-0"
     >
-      {/* Hero Background */}
+      {/* Theme Background */}
+      <div className={`absolute inset-0 z-0 ${themeConfig.backgrounds.theme}`}></div>
+      
+      {/* Crumpled Paper Background on top */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 opacity-30 z-10"
         style={{
-          backgroundImage: 'url(/assets/images/graphics/hero-bg.png)',
+          backgroundImage: 'url(/assets/images/crumpled-paper.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -163,15 +166,15 @@ const Hero = () => {
       {/* Content */}
       <div ref={contentRef} className="relative z-20 text-center px-4 py-8 sm:py-12 md:py-16" style={{ transform: 'scale(1.02)' }}>
         {/* Join Us Text */}
-        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider text-gray-900 mb-4 sm:mb-6 md:mb-8 font-poppins">
+        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins" style={{ color: '#1e3a5f' }}>
           JOIN US TO CELEBRATE<br />OUR WEDDING
         </div>
 
         {/* Couple Names - Script Font */}
         <div className="mb-6 sm:mb-8 md:mb-10">
           <h1 
-            className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] text-gray-900 font-antsvalley leading-tight my-8 sm:my-12 md:my-16"
-            style={{ transform: 'rotate(-10deg)' }}
+            className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-antsvalley leading-tight my-8 sm:my-12 md:my-16"
+            style={{ transform: 'rotate(-10deg)', color: '#1e3a5f' }}
           >
             <span className="block">{couples.couple.names.first} &</span>
             <span className="block">{couples.couple.names.second}</span>
@@ -179,31 +182,31 @@ const Hero = () => {
         </div>
 
         {/* Date */}
-        <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider text-gray-900 mb-1 sm:mb-1 md:mb-1 font-poppins">
+        <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider mb-1 sm:mb-1 md:mb-1 font-poppins" style={{ color: '#1e3a5f' }}>
           {formatWeddingDate()}
         </div>
 
         {/* Time */}
-        <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider text-gray-900 mb-4 sm:mb-6 md:mb-8 font-poppins">
+        <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins" style={{ color: '#1e3a5f' }}>
           FROM {weddingConfig.wedding.time.toUpperCase()}
         </div>
 
         {/* Location */}
-        <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider text-gray-900 mb-1 sm:mb-1 md:mb-1 font-poppins">
+        <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider mb-1 sm:mb-1 md:mb-1 font-poppins" style={{ color: '#1e3a5f' }}>
           {weddingConfig.venue.ceremony.name.toUpperCase()}
         </div>
-        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider text-gray-900 mb-4 sm:mb-6 md:mb-8 font-poppins">
+        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins" style={{ color: '#1e3a5f' }}>
           SAN ANTONIO, TIGAON<br />
           CAMARINES SUR
         </div>
 
         {/* Reception to Follow */}
-        <div className="text-lg sm:text-xl md:text-2xl text-gray-900 mb-4 sm:mb-6 md:mb-8 font-antsvalley italic">
+        <div className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6 md:mb-8 font-script" style={{ color: '#1e3a5f' }}>
           Reception to follow
         </div>
 
         {/* RSVP */}
-        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider text-gray-900 font-poppins">
+        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider font-poppins" style={{ color: '#1e3a5f' }}>
           RSVP BELOW
         </div>
       </div>

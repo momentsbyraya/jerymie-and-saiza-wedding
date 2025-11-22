@@ -16,12 +16,13 @@
     },
     {
       "name": "color-3",
-      "hex": "#f5f5dc",
+      "hex": "#e8dcc6",
       "label": "Cream"
     },
     {
       "name": "color-4",
-      "hex": "#6b6b6b"
+      "hex": "#7ba7cc",
+      "label": "Sky Blue"
     }
   ]
 } 

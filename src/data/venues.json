@@ -1,23 +1,19 @@
 {
-  "ceremony": {
+  "venue": {
     "name": "Churinga Eco-Resort",
-    "address": "",
-    "city": "",
-    "state": "",
-    "zip": "",
-    "time": "4:00 PM",
-    "details": "Please arrive 30 minutes early.",
-    "googleMapsUrl": "",
-    "directionsUrl": ""
-  },
-  "reception": {
-    "name": "Churinga Eco-Resort",
-    "address": "",
-    "city": "",
-    "state": "",
-    "zip": "",
-    "time": "6:00 PM",
-    "details": "Casual/Semi-formal attire requested.",
+    "address": "Zone 2, National Highway",
+    "city": "San Antonio",
+    "state": "Tigaon",
+    "zip": "Camarines Sur",
+    "ceremony": {
+      "time": "4:00 PM",
+      "details": "Please arrive 30 minutes early."
+    },
+    "reception": {
+      "time": "6:00 PM",
+      "details": "Casual/Semi-formal attire requested."
+    },
+    "image": "/assets/images/venue/venue.webp",
     "googleMapsUrl": "",
     "directionsUrl": ""
   }

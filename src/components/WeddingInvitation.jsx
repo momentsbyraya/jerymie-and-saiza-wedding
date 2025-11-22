@@ -60,14 +60,14 @@ const WeddingInvitation = () => {
         </EnhancedLazySection>
 
         {/* Gift Registry Section */}
-        <EnhancedLazySection animationClass="fade-slide-right" sectionName="gift-registry">
+        {/* <EnhancedLazySection animationClass="fade-slide-right" sectionName="gift-registry">
           <GiftRegistry />
-        </EnhancedLazySection>
+        </EnhancedLazySection> */}
 
         {/* Love Story Section */}
-        <EnhancedLazySection animationClass="fade-slide-left" sectionName="love-story">
+        {/* <EnhancedLazySection animationClass="fade-slide-left" sectionName="love-story">
           <LoveStory />
-        </EnhancedLazySection>
+        </EnhancedLazySection> */}
 
         {/* CTA Section - Full Width */}
         <EnhancedLazySection animationClass="fade-scale" sectionName="cta">

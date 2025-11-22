@@ -71,72 +71,90 @@ const Counter = ({ countdown }) => {
         }}
       ></div>
       
+      {/* Corner Design - Top Left */}
+      <img 
+        src="/assets/images/graphics/corner-tl.png" 
+        alt="Corner design top left" 
+        className="absolute z-50 corner-pulse"
+        style={{ 
+          top: 0, 
+          left: 0, 
+          width: '65vw', 
+          height: '65vh', 
+          maxWidth: '300px', 
+          maxHeight: '300px',
+          objectFit: 'contain',
+          objectPosition: 'top left'
+        }}
+      />
+      
+      {/* Corner Design - Bottom Right */}
+      <img 
+        src="/assets/images/graphics/corner-br.png" 
+        alt="Corner design bottom right" 
+        className="absolute z-50 corner-pulse"
+        style={{ 
+          bottom: 0, 
+          right: 0, 
+          width: '65vw', 
+          height: '65vh', 
+          maxWidth: '300px', 
+          maxHeight: '300px',
+          objectFit: 'contain',
+          objectPosition: 'bottom right'
+        }}
+      />
+      
       {/* Main Content Container */}
       <div className={`relative z-20 ${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding} w-full`}>
-        {/* Two Column Layout for Large Screens */}
+        {/* Countdown Timer */}
         <div
           ref={countdownRef}
-          className="mb-12 max-w-md sm:max-w-xl lg:max-w-3xl mx-auto px-8 sm:px-12 "
+          className="mb-12 max-w-sm sm:max-w-lg lg:max-w-2xl mx-auto px-8 sm:px-12 "
         >
-          <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
-            {/* Left Column - Countdown Timer */}
-            <div className="lg:order-1">
-              <h3 className={`text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-serif ${themeConfig.text.custom} mb-4 scale-75 sm:scale-90 md:scale-75 lg:scale-100 origin-center sm:origin-center md:origin-center lg:origin-center`}>Save the Date</h3>
-              
-              <div className="flex justify-center lg:justify-start items-center space-x-3 mb-6 px-4">
-                <div className="text-center">
-                  <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin ${themeConfig.text.custom} mb-1 countdown-number`}>
-                    {countdown.days}
-                  </div>
-                  <div className={`text-xs sm:text-sm text-gray-500 font-medium`}>Days</div>
-                </div>
-                
-                <div className={`text-2xl sm:text-3xl md:text-4xl font-albert font-thin ${themeConfig.text.custom}`}>:</div>
-                
-                <div className="text-center">
-                  <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin ${themeConfig.text.custom} mb-1 countdown-number`}>
-                    {countdown.hours}
-                  </div>
-                  <div className={`text-xs sm:text-sm text-gray-500 font-medium`}>Hours</div>
-                </div>
-                
-                <div className={`text-2xl sm:text-3xl md:text-4xl font-albert font-thin ${themeConfig.text.custom}`}>:</div>
-                
-                <div className="text-center">
-                  <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin ${themeConfig.text.custom} mb-1 countdown-number`}>
-                    {countdown.minutes}
-                  </div>
-                  <div className={`text-xs sm:text-sm text-gray-500 font-medium`}>Minutes</div>
-                </div>
-                
-                <div className={`text-2xl sm:text-3xl md:text-4xl font-albert font-thin ${themeConfig.text.custom}`}>:</div>
-                
-                <div className="text-center">
-                  <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin ${themeConfig.text.custom} mb-1 countdown-number`}>
-                    {countdown.seconds}
-                  </div>
-                  <div className={`text-xs sm:text-sm text-gray-500 font-medium`}>Seconds</div>
-                </div>
+          <div className="flex justify-center mb-4">
+            <h3 className={`flex flex-col scale-75 sm:scale-90 md:scale-75 lg:scale-100 origin-center sm:origin-center md:origin-center lg:origin-center`}>
+              <div className={`text-7xl sm:text-8xl md:text-9xl lg:text-8xl font-antsvalley ${themeConfig.text.custom} text-left`} style={{ marginLeft: '-5vw' }}>Save</div>
+              <div className={`flex items-center justify-center gap-2 text-center`} style={{ marginRight: '-3vw' }}>
+                <span className={`text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-antsvalley ${themeConfig.text.custom} self-start pt-2 sm:pt-3 md:pt-4 lg:pt-3`}>the</span>
+                <span className={`text-7xl sm:text-8xl md:text-9xl lg:text-8xl font-antsvalley ${themeConfig.text.custom}`}>Date</span>
               </div>
+            </h3>
+          </div>
+          
+          <div className="flex justify-center items-center space-x-2 mb-6 px-4 max-w-md mx-auto">
+            <div className="text-center">
+              <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin ${themeConfig.text.custom} mb-1 countdown-number`}>
+                {countdown.days}
+              </div>
+              <div className="text-xs sm:text-sm font-medium" style={{ color: '#1e3a5f' }}>Days</div>
             </div>
             
-            {/* Right Column - Polaroid Photo */}
-            <div className="lg:order-2">
-              <div className="flex justify-center lg:justify-end px-8 sm:px-12 lg:px-0 mt-12 sm:mt-24 lg:mt-0">
-                <div className="relative bg-white p-3 pb-10 shadow-xl transform rotate-1 counter-polaroid">
-                  {/* Photo */}
-                  <div className="w-56 h-72 sm:w-72 sm:h-96 lg:w-64 lg:h-80 sm:mb-4 bg-cover bg-center bg-no-repeat rounded-sm"
-                       style={{ backgroundImage: `url(/assets/images/couple-1.jpg)` }}>
-                  </div>
-                  
-                  {/* Polaroid Frame Text */}
-                  <div className="absolute bottom-3 left-0 right-0 text-center">
-                    <p className="text-right pe-4 text-sm sm:text-lg md:text-xl font-handwritten text-gray-800 mb-1 leading-none">
-                      We await your presence
-                    </p>
-                  </div>
-                </div>
+            <div className={`text-2xl sm:text-3xl md:text-4xl font-albert font-thin ${themeConfig.text.custom}`}>:</div>
+            
+            <div className="text-center">
+              <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin ${themeConfig.text.custom} mb-1 countdown-number`}>
+                {countdown.hours}
               </div>
+              <div className="text-xs sm:text-sm font-medium" style={{ color: '#1e3a5f' }}>Hours</div>
+            </div>
+            
+            <div className={`text-2xl sm:text-3xl md:text-4xl font-albert font-thin ${themeConfig.text.custom}`}>:</div>
+            
+            <div className="text-center">
+              <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin ${themeConfig.text.custom} mb-1 countdown-number`}>
+                {countdown.minutes}
+              </div>
+              <div className="text-xs sm:text-sm font-medium" style={{ color: '#1e3a5f' }}>Minutes</div>
+            </div>
+            
+            <div className={`text-2xl sm:text-3xl md:text-4xl font-albert font-thin ${themeConfig.text.custom}`}>:</div>
+            
+            <div className="text-center">
+              <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin ${themeConfig.text.custom} mb-1 countdown-number`}>
+                {countdown.seconds}
+              </div>
+              <div className="text-xs sm:text-sm font-medium" style={{ color: '#1e3a5f' }}>Seconds</div>
             </div>
           </div>
         </div>

@@ -10,9 +10,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 const MapDirections = () => {
   const sectionRef = useRef(null)
-  const ceremonyDetailsRef = useRef(null)
-  const ceremonyPhotoRef = useRef(null)
-  const ceremonyButtonRef = useRef(null)
   const receptionDetailsRef = useRef(null)
   const receptionPhotoRef = useRef(null)
   const receptionButtonRef = useRef(null)
@@ -28,23 +25,7 @@ const MapDirections = () => {
       }
     })
 
-    // Ceremony section animations
-    tl.fromTo(ceremonyDetailsRef.current, 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
-    )
-    .fromTo(ceremonyPhotoRef.current, 
-      { opacity: 0, scale: 0.9 },
-      { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" },
-      "-=0.4"
-    )
-    .fromTo(ceremonyButtonRef.current, 
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-      "-=0.4"
-    )
-
-    // Reception section animations
+    // Venue section animations
     tl.fromTo(receptionDetailsRef.current, 
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
@@ -68,15 +49,18 @@ const MapDirections = () => {
   }, [])
 
   // URLs are now provided in the venues data
+  const venueData = venuesData.venue || venuesData.ceremony || venuesData.reception
 
   const venues = {
     ceremony: {
-      ...venuesData.ceremony,
+      ...venueData,
+      ...venueData.ceremony,
       type: 'Ceremony',
       icon: '⛪'
     },
     reception: {
-      ...venuesData.reception,
+      ...venueData,
+      ...venueData.reception,
       type: 'Reception',
       icon: '🎉'
     }
@@ -111,45 +95,9 @@ const MapDirections = () => {
 
         {/* Main Content Container */}
         <div className="max-w-md sm:max-w-xl lg:max-w-3xl mx-auto -mt-4">
-          {/* Two Column Layout for Large Screens */}
-          <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
-            {/* Left Column - Ceremony Venue */}
-            <div>
-              {/* Ceremony Venue */}
-              <div ref={ceremonyDetailsRef} className="text-center mb-6">
-                <h3 className={`text-xl sm:text-3xl font-serif ${themeConfig.text.custom}`}>
-                  {venues.ceremony.name}
-                </h3>
-                <p className={`text-sm sm:text-lg ${themeConfig.text.custom}`}>
-                  {venues.ceremony.address}, {venues.ceremony.city}, {venues.ceremony.state} {venues.ceremony.zip}
-                </p>
-              </div>
-              
-              {/* Polaroid Photo */}
-              <div ref={ceremonyPhotoRef} className="relative mb-4 flex justify-center">
-                <div className="w-full h-50 sm:h-fit bg-white shadow-2xl hover:scale-105 transition-transform duration-300">
-                  <div className="w-full h-40 sm:h-64 bg-cover bg-center border-l-8 border-r-8 border-t-8 border-white" style={{backgroundImage: `url(${images.venues.church})`}}></div>
-                  <div className="p-3 text-center">
-                    <div className="text-right text-sm sm:text-base text-gray-600 font-handwritten">{venues.ceremony.name}</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Open Map Button */}
-              <div ref={ceremonyButtonRef} className="flex justify-center mt-8">
-                <a
-                  href={venues.ceremony.googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-full inline-flex items-center justify-center px-8 py-3 sm:py-5 lg:py-2 bg-white ${themeConfig.text.custom} rounded-sm text-sm sm:text-2xl lg:text-base font-medium transition-colors duration-200 hover:opacity-90`}
-                >
-                  Check for directions
-                </a>
-              </div>
-            </div>
-            
-            {/* Right Column - Reception Venue */}
-            <div className="mt-12 lg:mt-0">
+          {/* Single Venue Display */}
+          <div className="flex justify-center">
+            <div className="w-full max-w-md">
               <div ref={receptionDetailsRef} className="text-center mb-6">
                 <h3 className={`text-xl sm:text-3xl font-serif ${themeConfig.text.custom}`}>
                   {venues.reception.name}
@@ -161,14 +109,14 @@ const MapDirections = () => {
               
               <div ref={receptionPhotoRef} className="relative mb-4 flex justify-center">
                 <div className="w-full h-50 sm:h-fit bg-white shadow-2xl hover:scale-105 transition-transform duration-300">
-                  <div className="w-full h-40 sm:h-64 bg-cover bg-center border-l-8 border-r-8 border-t-8 border-white" style={{backgroundImage: `url(${images.venues.reception})`}}></div>
+                  <div className="w-full h-40 sm:h-64 bg-cover bg-center border-l-8 border-r-8 border-t-8 border-white" style={{backgroundImage: `url(${venues.reception.image || venues.ceremony.image || images.venues.reception})`}}></div>
                   <div className="p-3 text-center">
                     <div className="text-right text-sm sm:text-base text-gray-600 font-handwritten">{venues.reception.name}</div>
                   </div>
                 </div>
               </div>
               
-              {/* Reception Map Button */}
+              {/* Map Button */}
               <div ref={receptionButtonRef} className="flex justify-center mt-8">
                 <a
                   href={venues.reception.googleMapsUrl}

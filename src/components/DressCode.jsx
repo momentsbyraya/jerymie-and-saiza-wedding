@@ -76,10 +76,10 @@ const DressCode = () => {
         <div className="max-w-md sm:max-w-xl lg:max-w-3xl xl:max-w-6xl w-full mx-auto px-4">
             {/* Header Section */}
             <div className="text-center mb-12">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-script text-gray-800 mb-6">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-script mb-6" style={{ color: '#1e3a5f' }}>
                 Dress Code
               </h2>
-              <p className="text-lg sm:text-xl text-gray-700 leading-tight max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl leading-tight max-w-2xl mx-auto" style={{ color: '#1e3a5f' }}>
                 We would be grateful if you support the style and color scheme of our wedding in your outfits
               </p>
             </div>

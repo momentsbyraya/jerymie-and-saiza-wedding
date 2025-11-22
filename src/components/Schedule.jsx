@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { themeConfig } from '../config/themeConfig'
-import { venues, images } from '../data'
+import { venues, images, schedule } from '../data'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -83,61 +83,46 @@ const Schedule = () => {
 
               {/* Timeline Events */}
               <div className="space-y-20">
-                {/* Event 1 - Right side */}
-                <div ref={event1Ref} className="flex items-start">
-                  <div className="w-1/2 pr-16 sm:mr-24 text-right">
-                    <div className="text-3xl sm:text-5xl font-serif text-gray-800 font-semibold mb-2">
-                      4:00<span className="text-xl sm:text-3xl">PM</span>
+                {schedule.events.map((event, index) => {
+                  const isEven = index % 2 === 0
+                  // Parse time like "3:30 PM" into "3:30" and "PM"
+                  const timeMatch = event.time.match(/^(.+?)\s*(AM|PM)$/i)
+                  const timeNumber = timeMatch ? timeMatch[1] : event.time.split(' ')[0]
+                  const timePeriod = timeMatch ? timeMatch[2] : (event.time.includes('AM') ? 'AM' : event.time.includes('PM') ? 'PM' : '')
+                  const eventRefs = [event1Ref, event2Ref, event3Ref, event4Ref]
+                  
+                  return (
+                    <div key={event.id} ref={eventRefs[index]} className="flex items-start">
+                      {isEven ? (
+                        <>
+                          <div className="w-1/2 pr-16 sm:mr-24 text-right">
+                            <div className="text-3xl sm:text-5xl font-serif text-gray-800 font-semibold mb-2">
+                              {timeNumber}<span className="text-xl sm:text-3xl">{timePeriod}</span>
+                            </div>
+                            <div className="text-base sm:text-xl font-serif text-gray-700">
+                              {event.title}
+                            </div>
+                          </div>
+                          <div className="w-4 h-4 bg-gray-600 rounded-full border-2 border-white shadow-lg absolute left-1/2 transform -translate-x-1/2 z-10 mt-6"></div>
+                          <div className="w-1/2 pl-8"></div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="w-1/2 pr-24"></div>
+                          <div className="w-4 h-4 bg-gray-600 rounded-full border-2 border-white shadow-lg absolute left-1/2 transform -translate-x-1/2 z-10 mt-6"></div>
+                          <div className="w-1/2 pl-8">
+                            <div className="text-3xl sm:text-5xl font-serif text-gray-800 font-semibold mb-2">
+                              {timeNumber}<span className="text-xl sm:text-3xl">{timePeriod}</span>
+                            </div>
+                            <div className="text-base sm:text-xl font-serif text-gray-700">
+                              {event.title}
+                            </div>
+                          </div>
+                        </>
+                      )}
                     </div>
-                    <div className="text-base sm:text-xl font-serif text-gray-700">
-                      Guest Gathering
-                    </div>
-                  </div>
-                  <div className="w-4 h-4 bg-gray-600 rounded-full border-2 border-white shadow-lg absolute left-1/2 transform -translate-x-1/2 z-10 mt-6"></div>
-                  <div className="w-1/2 pl-8"></div>
-                </div>
-
-                {/* Event 2 - Left side */}
-                <div ref={event2Ref} className="flex items-start">
-                  <div className="w-1/2 pr-24"></div>
-                  <div className="w-4 h-4 bg-gray-600 rounded-full border-2 border-white shadow-lg absolute left-1/2 transform -translate-x-1/2 z-10 mt-6"></div>
-                  <div className="w-1/2 pl-8">
-                    <div className="text-3xl sm:text-5xl font-serif text-gray-800 font-semibold mb-2">
-                      4:30<span className="text-xl sm:text-3xl">PM</span>
-                    </div>
-                    <div className="text-base sm:text-xl font-serif text-gray-700">
-                      Wedding Ceremony
-                    </div>
-                  </div>
-                </div>
-
-                {/* Event 3 - Right side */}
-                <div ref={event3Ref} className="flex items-start">
-                  <div className="w-1/2 pr-24 text-right">
-                    <div className="text-3xl sm:text-5xl font-serif text-gray-800 font-semibold mb-2">
-                      5:00<span className="text-xl sm:text-3xl">PM</span>
-                    </div>
-                    <div className="text-base sm:text-xl font-serif text-gray-700">
-                      Reception Dinner
-                    </div>
-                  </div>
-                  <div className="w-4 h-4 bg-gray-600 rounded-full border-2 border-white shadow-lg absolute left-1/2 transform -translate-x-1/2 z-10 mt-6"></div>
-                  <div className="w-1/2 pl-8"></div>
-                </div>
-
-                {/* Event 4 - Left side */}
-                <div ref={event4Ref} className="flex items-start">
-                  <div className="w-1/2 pr-8"></div>
-                  <div className="w-4 h-4 bg-gray-600 rounded-full border-2 border-white shadow-lg absolute left-1/2 transform -translate-x-1/2 z-10 mt-8"></div>
-                  <div className="w-1/2 pl-8">
-                    <div className="text-3xl sm:text-5xl font-serif text-gray-800 font-semibold mb-2">
-                      11:00<span className="text-xl sm:text-3xl">PM</span>
-                    </div>
-                    <div className="text-base sm:text-xl font-serif text-gray-700">
-                      Evening Ends
-                    </div>
-                  </div>
-                </div>
+                  )
+                })}
               </div>
             </div>
           </div>

@@ -2,7 +2,24 @@ import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { themeConfig } from '../config/themeConfig'
-import { venues, images } from '../data'
+import { venues as venuesData, images, schedule } from '../data'
+
+// Handle both old and new venue structure
+const venueData = venuesData.venue || venuesData.ceremony || venuesData.reception
+const venues = {
+  ceremony: {
+    ...venueData,
+    ...(venueData.ceremony || {}),
+    name: venueData.name,
+    time: venueData.ceremony?.time || venueData.time
+  },
+  reception: {
+    ...venueData,
+    ...(venueData.reception || {}),
+    name: venueData.name,
+    time: venueData.reception?.time || venueData.time
+  }
+}
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -52,86 +69,23 @@ const Schedule = () => {
             <div className={`absolute top-8 left-0 right-0 h-px ${themeConfig.text.primary}/40`}></div>
             
             {/* Timeline Events */}
-            <div className="grid grid-cols-3 gap-6 sm:flex sm:justify-between sm:items-center relative">
-              {/* Event 1 */}
-              <div className="flex flex-col items-center text-center">
-                <div className={`w-16 h-16 ${themeConfig.backgrounds.theme} rounded-full flex items-center justify-center mb-4`}>
-                  <span className={`${themeConfig.text.primary} font-bold text-lg`}>1</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:flex sm:justify-between sm:items-center relative">
+              {schedule.events.map((event) => (
+                <div key={event.id} className="flex flex-col items-center text-center">
+                  <div className={`w-16 h-16 ${themeConfig.backgrounds.theme} rounded-full flex items-center justify-center mb-4`}>
+                    <span className={`${themeConfig.text.primary} font-bold text-lg`}>{event.id}</span>
+                  </div>
+                  <div className={`text-xl md:text-2xl font-script ${themeConfig.text.primary} mb-2`}>
+                    {event.title}
+                  </div>
+                  <div className={`text-sm font-serif ${themeConfig.text.primary}/90 mb-1`}>
+                    {event.description}
+                  </div>
+                  <div className={`text-lg font-serif ${themeConfig.text.primary} font-semibold`}>
+                    {event.time}
+                  </div>
                 </div>
-                <div className={`text-xl md:text-2xl font-script ${themeConfig.text.primary} mb-2`}>
-                  Photo Session
-                </div>
-                <div className={`text-sm font-serif ${themeConfig.text.primary}/90 mb-1`}>
-                  Getting ready
-                </div>
-                <div className={`text-lg font-serif ${themeConfig.text.primary} font-semibold`}>
-                  1:00 PM
-                </div>
-              </div>
-
-              {/* Event 2 */}
-              <div className="flex flex-col items-center text-center">
-                <div className={`w-16 h-16 ${themeConfig.backgrounds.theme} rounded-full flex items-center justify-center mb-4`}>
-                  <span className={`${themeConfig.text.primary} font-bold text-lg`}>2</span>
-                </div>
-                <div className={`text-xl md:text-2xl font-script ${themeConfig.text.primary} mb-2`}>
-                  Wedding Ceremony
-                </div>
-                <div className={`text-sm font-serif ${themeConfig.text.primary}/90 mb-1`}>
-                  {venues.ceremony.name}
-                </div>
-                <div className={`text-lg font-serif ${themeConfig.text.primary} font-semibold`}>
-                  {venues.ceremony.time}
-                </div>
-              </div>
-
-              {/* Event 3 */}
-              <div className="flex flex-col items-center text-center">
-                <div className={`w-16 h-16 ${themeConfig.backgrounds.theme} rounded-full flex items-center justify-center mb-4`}>
-                  <span className={`${themeConfig.text.primary} font-bold text-lg`}>3</span>
-                </div>
-                <div className={`text-xl md:text-2xl font-script ${themeConfig.text.primary} mb-2`}>
-                  Cocktail Hour
-                </div>
-                <div className={`text-sm font-serif ${themeConfig.text.primary}/90 mb-1`}>
-                  {venues.reception.name}
-                </div>
-                <div className={`text-lg font-serif ${themeConfig.text.primary} font-semibold`}>
-                  4:30 PM
-                </div>
-              </div>
-
-              {/* Event 4 */}
-              <div className="flex flex-col items-center text-center">
-                <div className={`w-16 h-16 ${themeConfig.backgrounds.theme} rounded-full flex items-center justify-center mb-4`}>
-                  <span className={`${themeConfig.text.primary} font-bold text-lg`}>4</span>
-                </div>
-                <div className={`text-xl md:text-2xl font-script ${themeConfig.text.primary} mb-2`}>
-                  Dinner Reception
-                </div>
-                <div className={`text-sm font-serif ${themeConfig.text.primary}/90 mb-1`}>
-                  {venues.reception.name}
-                </div>
-                <div className={`text-lg font-serif ${themeConfig.text.primary} font-semibold`}>
-                  {venues.reception.time}
-                </div>
-              </div>
-
-              {/* Event 5 */}
-              <div className="flex flex-col items-center text-center">
-                <div className={`w-16 h-16 ${themeConfig.backgrounds.theme} rounded-full flex items-center justify-center mb-4`}>
-                  <span className={`${themeConfig.text.primary} font-bold text-lg`}>5</span>
-                </div>
-                <div className={`text-xl md:text-2xl font-script ${themeConfig.text.primary} mb-2`}>
-                  Party Starts
-                </div>
-                <div className={`text-sm font-serif ${themeConfig.text.primary}/90 mb-1`}>
-                  Dancing & celebration
-                </div>
-                <div className={`text-lg font-serif ${themeConfig.text.primary} font-semibold`}>
-                  9:00 PM
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
