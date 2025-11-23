@@ -37,25 +37,23 @@ function OpeningScreen({ onEnvelopeOpen }) {
       <div 
         className="absolute inset-0 opening-bg-pulse"
         style={{
-          width: '100vw',
-          height: '100vh',
           backgroundImage: 'url(/assets/images/graphics/openine-bg-6.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
       />
-      <section className="cssletter flex flex-col items-center relative z-10">
+      <section className="cssletter flex flex-col items-center relative z-10 w-full py-8" style={{ minHeight: 'auto', height: 'auto' }}>
         {/* Click me text */}
-        <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 text-center">
+        <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 text-center click-me-container">
           <h1 
             className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-antsvalley leading-tight"
-            style={{ color: '#1e3a5f' }}
+            style={{ color: '#1e3a5f', fontSize: 'clamp(3rem, 8vw, 96px)', marginLeft: '-1rem' }}
           >
             Click me!
           </h1>
         </div>
-        <div className="envelope" ref={envelopeRef} style={{ transform: 'rotate(-5deg)' }}>
+        <div className="envelope" ref={envelopeRef}>
           <button 
             className="heart stamp-button" 
             id="openEnvelope" 
@@ -85,16 +83,16 @@ function OpeningScreen({ onEnvelopeOpen }) {
           </div>
         </div>
         {/* Couple name and date below envelope */}
-        <div className="mt-12 sm:mt-16 md:mt-20 text-center">
+        <div className="mt-12 sm:mt-16 md:mt-20 text-center couple-name-container">
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-script leading-tight"
-            style={{ color: '#1e3a5f' }}
+            style={{ color: '#1e3a5f', fontSize: 'clamp(1.5rem, 4vw, 48px)' }}
           >
             {couples.couple.names.together}
           </h2>
           <p 
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-script mt-1"
-            style={{ color: '#1e3a5f' }}
+            style={{ color: '#1e3a5f', fontSize: 'clamp(1rem, 2.5vw, 30px)' }}
           >
             {new Date(weddingConfig.wedding.date).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '.')}
           </p>

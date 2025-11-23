@@ -93,15 +93,14 @@ const Calendar = () => {
   }, [])
   
   return (
-    <div ref={sectionRef} className={`relative w-full max-w-md sm:max-w-xl lg:max-w-3xl xl:max-w-6xl mx-auto px-4 pt-12 pb-48 sm:pb-64 lg:pb-80 xl:pb-48 ${themeConfig.calendar.background}`}>
+    <div ref={sectionRef} className={`relative w-full max-w-md sm:max-w-xl lg:max-w-3xl xl:max-w-6xl mx-auto px-4 ${themeConfig.calendar.background}`} style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
       {/* Invitation Text */}
       <div className="text-center mb-8 sm:my-12">
         <h1 ref={headerRef} className="text-3xl sm:text-5xl font-serif font-light mb-4 text-gray-800" style={{ opacity: 0 }}>
           The Day
         </h1>
         <p ref={descriptionRef} className="text-base sm:text-xl text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto" style={{ opacity: 0 }}>
-          One day this year will be special for us and we want to spend it with close ones and friends. 
-          We invite you to celebrate the most important event in our lives - our wedding day!
+          One day this year will be special for us and we want to spend it with close ones and friends.
         </p>
       </div>
 
@@ -154,31 +153,6 @@ const Calendar = () => {
             })}
           </div>
         </div>
-      </div>
-      
-      {/* Bottom Design - Positioned absolutely at the very bottom */}
-      <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-4 -mx-4">
-        {/* Left side design - hidden on mobile, visible on 580px+ */}
-        <img 
-          src="/assets/images/graphics/bottom-design.png" 
-          alt="Bottom design left" 
-          className="hidden sm:block h-auto object-contain corner-pulse max-w-[660px]"
-          style={{ width: '120%' }}
-        />
-        {/* Center design */}
-        <img 
-          src="/assets/images/graphics/bottom-design.png" 
-          alt="Bottom design center" 
-          className="h-auto object-contain block corner-pulse max-w-[660px]"
-          style={{ width: '120%' }}
-        />
-        {/* Right side design - hidden on mobile, visible on 580px+ */}
-        <img 
-          src="/assets/images/graphics/bottom-design.png" 
-          alt="Bottom design right" 
-          className="hidden sm:block h-auto object-contain corner-pulse max-w-[660px]"
-          style={{ width: '120%' }}
-        />
       </div>
     </div>
   )

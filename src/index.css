@@ -120,6 +120,41 @@ body {
     font-family: 'Poppins', sans-serif !important;
   }
   
+  /* Footer link active/focus states */
+  footer a {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+  }
+  
+  footer:hover,
+  footer:has(a:hover),
+  footer:has(a:active),
+  footer:has(a:focus) {
+    background-color: #013718 !important;
+  }
+  
+  footer a:hover,
+  footer a:active,
+  footer a:focus {
+    background-color: transparent !important;
+    color: white !important;
+    outline: none;
+  }
+  
+  footer:hover .footer-heart,
+  footer:has(a:hover) .footer-heart,
+  footer:has(a:active) .footer-heart,
+  footer:has(a:focus) .footer-heart {
+    color: white !important;
+  }
+  
+  footer:hover span,
+  footer:has(a:hover) span,
+  footer:has(a:active) span,
+  footer:has(a:focus) span {
+    color: white !important;
+  }
+  
   /* Force font on all text elements */
   * {
     font-family: 'Elsie Swash Caps', cursive !important;
@@ -269,18 +304,20 @@ body {
     --letter-x: 500px;
     --letter-y: calc(400px - 1rem - 10px);
   }
+  
+  .envelope {
+    transform: rotate(-5deg) scale(0.85) !important;
+  }
 }
 
 .cssletter {
   position: relative;
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
   -webkit-user-select: none;
-  margin: 24dvh 0;
 }
 
 .envelope {
@@ -291,6 +328,7 @@ body {
   box-shadow: inset 0 0 30px -5px var(--envelope-shadow), 0 0 50vw 0 rgba(212, 197, 176, 0.3);
   transform-style: preserve-3d;
   perspective: 1000px;
+  transform: rotate(-5deg);
 }
 
 .envelope-flap {
@@ -460,9 +498,30 @@ body {
   text-align: center;
 }
 
+@media (min-width: 640px) {
+  .envelope-letter {
+    min-height: calc(var(--envelope-y) * 0.5);
+    padding: 1rem 1rem 1rem;
+  }
+}
+
 @media (min-width: 650px) {
   .envelope-letter {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    min-height: calc(var(--envelope-y) * 0.87);
+    padding: 2rem 1rem 1rem;
+    transform: translateX(-50%) scale(1.1);
+    overflow: hidden;
+  }
+  
+  .envelope-letter p {
+    font-size: 2.5rem !important;
+    transform: scale(1.2);
+  }
+  
+  .envelope-letter img {
+    transform: scale(1) !important;
+    width: 35% !important;
   }
 }
 
@@ -555,5 +614,47 @@ body {
     font-size: 1.5rem;
     letter-spacing: 0.1em;
   }
+}
+
+/* Reduce gap between Click me and envelope on large screens */
+@media (min-width: 992px) {
+  .click-me-container {
+    margin-bottom: 1rem !important;
+  }
+  
+  .couple-name-container {
+    margin-top: 1rem !important;
+  }
+}
+
+/* Scale down opening section content on very large screens */
+@media (min-width: 1200px) {
+  .cssletter {
+    transform: scale(0.7);
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #152a42;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e3a5f #f1f1f1;
 }
 

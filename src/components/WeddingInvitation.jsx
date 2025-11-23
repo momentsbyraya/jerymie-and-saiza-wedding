@@ -106,11 +106,11 @@ const WeddingInvitation = () => {
             href="https://www.facebook.com/profile.php?id=61571540978411"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer hover:opacity-80 transition-opacity duration-200 font-poppins"
+            className="flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer hover:opacity-80 transition-all duration-200 font-poppins footer-link"
             style={{ color: '#1e3a5f' }}
           >
             <span>Made with</span>
-            <IoHeart className="w-4 h-4 sm:w-5 sm:h-5" style={{ color: '#1e3a5f' }} />
+            <IoHeart className="w-4 h-4 sm:w-5 sm:h-5 footer-heart" style={{ color: '#1e3a5f' }} />
             <span>|</span>
             <span>Moments by Raya</span>
           </a>
