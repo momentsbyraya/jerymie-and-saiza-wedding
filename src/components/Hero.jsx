@@ -184,7 +184,7 @@ const Hero = () => {
         <div className="mb-6 sm:mb-8 md:mb-10">
           <h1 
             className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-antsvalley leading-tight my-8 sm:my-12 md:my-16"
-            style={{ transform: 'rotate(-10deg)', color: '#1e3a5f' }}
+            style={{ transform: 'rotate(-10deg)', color: '#1e3a5f', fontSize: 'clamp(3rem, 8vw, 8rem)' }}
           >
             <span className="block">{couples.couple.names.first} &</span>
             <span className="block">{couples.couple.names.second}</span>

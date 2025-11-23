@@ -80,7 +80,7 @@ const DressCode = () => {
                 Dress Code
               </h2>
               <p className="text-lg sm:text-xl leading-tight max-w-2xl mx-auto" style={{ color: '#1e3a5f' }}>
-                We would be grateful if you support the style and color scheme of our wedding in your outfits. We recommend wearing Casual/semi formal attire.
+                We would be grateful if you support the style and color scheme of our wedding in your outfits. We recommend wearing casual/semi formal attire.
               </p>
             </div>
 
