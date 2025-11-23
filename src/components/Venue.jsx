@@ -66,6 +66,13 @@ const MapDirections = () => {
     }
   }
 
+  // Generate Google Maps directions URL
+  const getDirectionsUrl = () => {
+    const address = `${venues.reception.address}, ${venues.reception.city}, ${venues.reception.state} ${venues.reception.zip}`
+    const encodedAddress = encodeURIComponent(address)
+    return `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`
+  }
+
   return (
     <section
       id="map"
@@ -119,7 +126,7 @@ const MapDirections = () => {
               {/* Map Button */}
               <div ref={receptionButtonRef} className="flex justify-center mt-8">
                 <a
-                  href={venues.reception.googleMapsUrl}
+                  href="https://maps.app.goo.gl/gqfdSb4x853Jse4C9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full inline-flex items-center justify-center px-8 py-3 sm:py-5 lg:py-2 bg-white ${themeConfig.text.custom} rounded-sm text-sm sm:text-2xl lg:text-base font-medium transition-colors duration-200 hover:opacity-90`}
