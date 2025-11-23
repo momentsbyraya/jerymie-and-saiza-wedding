@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { Link, useNavigate } from 'react-router-dom'
 import { ArrowLeft, Mail, Phone, Calendar, Users, CheckCircle } from 'lucide-react'
 import { weddingConfig } from '../config/weddingConfig'
+import { themeConfig } from '../config/themeConfig'
 
 const RSVPForm = () => {
   const navigate = useNavigate()
@@ -23,29 +24,29 @@ const RSVPForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   useEffect(() => {
-    // Initial entrance animations
+    // Initial entrance animations - slide in from bottom
     gsap.fromTo(headerRef.current, 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+      { opacity: 0, y: 60 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
     )
 
     gsap.fromTo(formRef.current, 
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out", delay: 0.3 }
+      { opacity: 0, y: 80 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", delay: 0.2 }
     )
 
     gsap.fromTo(contactRef.current, 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out", delay: 0.6 }
+      { opacity: 0, y: 60 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", delay: 0.4 }
     )
   }, [])
 
-  // Animate conditional sections when they appear
+  // Animate conditional sections when they appear - slide in from bottom
   useEffect(() => {
     if (formData.attending === 'Yes, I will attend') {
       gsap.fromTo(".guest-section, .dietary-section", 
-        { opacity: 0, height: 0 },
-        { opacity: 1, height: 'auto', duration: 0.5, ease: "power2.out", stagger: 0.2 }
+        { opacity: 0, y: 40, height: 0 },
+        { opacity: 1, y: 0, height: 'auto', duration: 0.6, ease: "power2.out", stagger: 0.15 }
       )
     }
   }, [formData.attending])
@@ -100,6 +101,7 @@ const RSVPForm = () => {
         <div
           ref={headerRef}
           className="text-center mb-8"
+          style={{ opacity: 0 }}
         >
           <Link
             to="/"
@@ -113,7 +115,7 @@ const RSVPForm = () => {
             RSVP
           </h1>
           <p className="text-xl text-wedding-600 max-w-2xl mx-auto">
-            Please let us know if you can attend our special day. We can't wait to celebrate with you!
+            We await your presence. Please let us know if you can attend our special day. We can't wait to celebrate with you!
           </p>
         </div>
 
@@ -121,6 +123,7 @@ const RSVPForm = () => {
         <div
           ref={formRef}
           className="max-w-2xl mx-auto"
+          style={{ opacity: 0 }}
         >
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 card-shadow elegant-border">
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -286,6 +289,7 @@ const RSVPForm = () => {
         <div
           ref={contactRef}
           className="mt-8 text-center"
+          style={{ opacity: 0 }}
         >
             <p className="text-wedding-600 mb-4">
               Need help? Contact us directly:

@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { themeConfig } from '../config/themeConfig'
 import { weddingConfig } from '../config/weddingConfig'
 
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger)
+
 const Calendar = () => {
+  const sectionRef = useRef(null)
+  const headerRef = useRef(null)
+  const descriptionRef = useRef(null)
+  const calendarGridRef = useRef(null)
 
   // Parse wedding date from config
   const weddingDate = new Date(weddingConfig.wedding.date)
@@ -41,15 +50,56 @@ const Calendar = () => {
   for (let day = 1; day <= daysInMonth; day++) {
     calendarDays.push(day)
   }
+
+  useEffect(() => {
+    // Scroll-triggered animations
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 50%",
+        end: "bottom 20%",
+        toggleActions: "play none none reverse"
+      }
+    })
+
+    // Animate header sliding in
+    tl.fromTo(headerRef.current,
+      { opacity: 0, y: -30 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+    )
+    // Animate description sliding in
+    .fromTo(descriptionRef.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
+      "-=0.4"
+    )
+    // Animate calendar dates one by one
+    .fromTo(calendarGridRef.current?.children || [],
+      { opacity: 0, scale: 0.8 },
+      { 
+        opacity: 1, 
+        scale: 1, 
+        duration: 0.4, 
+        ease: "back.out(1.2)",
+        stagger: 0.03
+      },
+      "-=0.2"
+    )
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+    }
+  }, [])
   
   return (
-    <div className={`relative w-full max-w-md sm:max-w-xl lg:max-w-3xl xl:max-w-6xl mx-auto px-4 pt-12 pb-48 sm:pb-64 lg:pb-80 xl:pb-48 ${themeConfig.calendar.background}`}>
+    <div ref={sectionRef} className={`relative w-full max-w-md sm:max-w-xl lg:max-w-3xl xl:max-w-6xl mx-auto px-4 pt-12 pb-48 sm:pb-64 lg:pb-80 xl:pb-48 ${themeConfig.calendar.background}`}>
       {/* Invitation Text */}
       <div className="text-center mb-8 sm:my-12">
-        <h1 className="text-3xl sm:text-5xl font-serif font-light mb-4 text-gray-800">
+        <h1 ref={headerRef} className="text-3xl sm:text-5xl font-serif font-light mb-4 text-gray-800" style={{ opacity: 0 }}>
           The Day
         </h1>
-        <p className="text-base sm:text-xl text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto">
+        <p ref={descriptionRef} className="text-base sm:text-xl text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto" style={{ opacity: 0 }}>
           One day this year will be special for us and we want to spend it with close ones and friends. 
           We invite you to celebrate the most important event in our lives - our wedding day!
         </p>
@@ -75,7 +125,7 @@ const Calendar = () => {
           </div>
           
           {/* Calendar Grid */}
-          <div className="grid grid-cols-7 gap-1">
+          <div ref={calendarGridRef} className="grid grid-cols-7 gap-1">
             {calendarDays.map((day, index) => {
               const isWeddingDay = day === weddingDay
               
@@ -87,6 +137,7 @@ const Calendar = () => {
                     ${day ? themeConfig.calendar.textColor : 'text-transparent'}
                     ${isWeddingDay ? 'relative' : ''}
                   `}
+                  style={{ opacity: 0 }}
                 >
                   {day && (
                     <>

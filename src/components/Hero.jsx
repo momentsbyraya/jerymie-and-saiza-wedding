@@ -41,19 +41,29 @@ const Hero = () => {
   }, [])
 
   useEffect(() => {
-    // Animate content on load
-    if (contentRef.current && contentRef.current.children) {
-      gsap.fromTo(contentRef.current.children, 
-        { opacity: 0, y: 50 },
-        { 
-          opacity: 1, 
-          y: 0, 
-          duration: 1.5, 
-          ease: "linear", 
-          stagger: 0.3,
-          delay: 0.3
-        }
-      )
+    // Animate content on load - hide initially, then slide in
+    if (contentRef.current) {
+      // First show the container
+      gsap.to(contentRef.current, {
+        opacity: 1,
+        duration: 0.3,
+        delay: 0.3
+      })
+      
+      // Then animate children sliding up
+      if (contentRef.current.children) {
+        gsap.fromTo(contentRef.current.children, 
+          { opacity: 0, y: 50 },
+          { 
+            opacity: 1, 
+            y: 0, 
+            duration: 1.5, 
+            ease: "linear", 
+            stagger: 0.3,
+            delay: 0.6 // Start after container fades in
+          }
+        )
+      }
     }
   }, [])
 
@@ -164,7 +174,7 @@ const Hero = () => {
       />
       
       {/* Content */}
-      <div ref={contentRef} className="relative z-20 text-center px-4 py-8 sm:py-12 md:py-16" style={{ transform: 'scale(1.02)' }}>
+      <div ref={contentRef} className="relative z-20 text-center px-4 py-8 sm:py-12 md:py-16" style={{ transform: 'scale(1.02)', opacity: 0 }}>
         {/* Join Us Text */}
         <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins" style={{ color: '#1e3a5f' }}>
           JOIN US TO CELEBRATE<br />OUR WEDDING

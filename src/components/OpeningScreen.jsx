@@ -1,35 +1,58 @@
 import React, { useRef } from 'react'
 import { couples } from '../data'
+import { weddingConfig } from '../config/weddingConfig'
 
 function OpeningScreen({ onEnvelopeOpen }) {
   const envelopeRef = useRef(null)
+  const openingSectionRef = useRef(null)
 
   const handleEnvelopeClick = () => {
     const envelope = envelopeRef.current
+    const openingSection = openingSectionRef.current
+    
     if (envelope) {
       envelope.classList.add('active')
+      // Letter translation: 0.3s delay + 0.8s duration = 1.1s total
+      // Wait 1 second after letter finishes translating
+      setTimeout(() => {
+        if (openingSection) {
+          openingSection.classList.add('zooming-out')
+          // After zoom and fadeout animation completes, reveal invitation
+          setTimeout(() => {
+            if (onEnvelopeOpen) {
+              onEnvelopeOpen()
+            }
+          }, 1500) // Animation duration
+        }
+      }, 2100) // 1.1s (letter animation) + 1000ms (1 second wait)
     }
   }
 
   return (
     <div 
-      className="fixed inset-0 z-[9999] flex items-center justify-center"
-      style={{
-        backgroundImage: 'url(/assets/images/graphics/openine-bg-3.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      ref={openingSectionRef}
+      className="fixed inset-0 z-[9999] flex items-center justify-center opening-section"
     >
-      <section className="cssletter flex flex-col items-center">
-        {/* Couple Names */}
+      {/* Background image with pulsing animation */}
+      <div 
+        className="absolute inset-0 opening-bg-pulse"
+        style={{
+          width: '100vw',
+          height: '100vh',
+          backgroundImage: 'url(/assets/images/graphics/openine-bg-6.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
+      <section className="cssletter flex flex-col items-center relative z-10">
+        {/* Click me text */}
         <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 text-center">
           <h1 
             className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-antsvalley leading-tight"
             style={{ color: '#1e3a5f' }}
           >
-            <span className="block">{couples.couple.names.first} &</span>
-            <span className="block">{couples.couple.names.second}</span>
+            Click me!
           </h1>
         </div>
         <div className="envelope" ref={envelopeRef} style={{ transform: 'rotate(-5deg)' }}>
@@ -57,9 +80,24 @@ function OpeningScreen({ onEnvelopeOpen }) {
             <img 
               src="/assets/images/graphics/cutlery-sketch.png" 
               alt="Cutlery sketch" 
-              className="mt-4 w-32 sm:w-40 md:w-48 h-auto mx-auto"
+              className="mt-4 w-20 sm:w-24 md:w-28 h-auto mx-auto"
             />
           </div>
+        </div>
+        {/* Couple name and date below envelope */}
+        <div className="mt-12 sm:mt-16 md:mt-20 text-center">
+          <h2 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-script leading-tight"
+            style={{ color: '#1e3a5f' }}
+          >
+            {couples.couple.names.together}
+          </h2>
+          <p 
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-script mt-1"
+            style={{ color: '#1e3a5f' }}
+          >
+            {new Date(weddingConfig.wedding.date).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '.')}
+          </p>
         </div>
       </section>
     </div>

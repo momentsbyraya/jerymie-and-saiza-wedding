@@ -19,7 +19,7 @@ const DressCode = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 80%",
+        start: "top 50%",
         end: "bottom 20%",
         toggleActions: "play none none reverse"
       }
@@ -80,7 +80,7 @@ const DressCode = () => {
                 Dress Code
               </h2>
               <p className="text-lg sm:text-xl leading-tight max-w-2xl mx-auto" style={{ color: '#1e3a5f' }}>
-                We would be grateful if you support the style and color scheme of our wedding in your outfits
+                We would be grateful if you support the style and color scheme of our wedding in your outfits. We recommend wearing Casual/semi formal attire.
               </p>
             </div>
 
