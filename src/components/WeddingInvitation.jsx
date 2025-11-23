@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { gsap } from 'gsap'
+import { IoHeart } from 'react-icons/io5'
 import { getTimeUntilWedding } from '../utils/countdown'
 import Hero from './Hero'
 import Calendar from './Calendar'
@@ -99,6 +100,21 @@ const WeddingInvitation = () => {
           <FAQ />
         </EnhancedLazySection> */}
         
+        {/* Footer */}
+        <footer className="py-4 text-center">
+          <a 
+            href="https://www.facebook.com/profile.php?id=61571540978411"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer hover:opacity-80 transition-opacity duration-200 font-poppins"
+            style={{ color: '#1e3a5f' }}
+          >
+            <span>Made with</span>
+            <IoHeart className="w-4 h-4 sm:w-5 sm:h-5" style={{ color: '#1e3a5f' }} />
+            <span>|</span>
+            <span>Moments by Raya</span>
+          </a>
+        </footer>
         
       </main>
     </div>
