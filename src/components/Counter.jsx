@@ -73,12 +73,12 @@ const Counter = ({ countdown }) => {
       
       {/* Corner Design - Top Left */}
       <img 
-        src="/assets/images/graphics/corner-tl.png" 
+        src="/assets/images/graphics/flower-2.png" 
         alt="Corner design top left" 
-        className="absolute z-50 corner-pulse"
+        className="absolute z-50 corner-pulse-top-left"
         style={{ 
-          top: 0, 
-          left: 0, 
+          top: '-100px', 
+          left: '-30px', 
           width: '65vw', 
           height: '65vh', 
           maxWidth: '300px', 
@@ -90,12 +90,12 @@ const Counter = ({ countdown }) => {
       
       {/* Corner Design - Bottom Right */}
       <img 
-        src="/assets/images/graphics/corner-br.png" 
+        src="/assets/images/graphics/flower-2.png" 
         alt="Corner design bottom right" 
-        className="absolute z-50 corner-pulse"
+        className="absolute z-50 corner-pulse-bottom-right"
         style={{ 
-          bottom: 0, 
-          right: 0, 
+          bottom: '-100px', 
+          right: '-30px', 
           width: '65vw', 
           height: '65vh', 
           maxWidth: '300px', 

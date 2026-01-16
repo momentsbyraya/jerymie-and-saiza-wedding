@@ -1,58 +1,137 @@
 {
+  "couple": {
+    "groom": {
+      "name": "James Henry B. Ricarte"
+    },
+    "bride": {
+      "name": "Marialy L. Gacer"
+    }
+  },
+  "officiatingMinister": {
+    "name": "APOSTLE JOEL B. DELA VEGA"
+  },
+  "parents": {
+    "groom": {
+      "father": "MR. HENRY RICARTE",
+      "mother": "MRS. MARISSA B. RICARTE"
+    },
+    "bride": {
+      "father": "MR. ELY T. GACER",
+      "mother": "MS. MARIA D. GACER"
+    }
+  },
   "entourageList": [
     {
-      "category": "Principal Sponsors (Godparents)",
-      "names": [
-        "Lorna Alvarada",
-        "Margarita Perez",
-        "Pedro Fernandez",
-        "Richard Sanchez",
-        "Teddy Yu",
-        "Jamie Chastain",
-        "Dani Martinez",
-        "Isabel Mercado"
+      "category": "Principal Sponsors",
+      "ninong": [
+        "APOSTLE JOEL B. DELA VEGA",
+        "ENGR. JOSE CHITO MILANTE",
+        "PTR. JOSEPH LANDONG",
+        "RUEL BONGULTO",
+        "HASAN DURANTE",
+        "BENHUR MOSO",
+        "JOB ABUNDABAR",
+        "CHITO APOSTOL",
+        "EDUARDO ALUZAN",
+        "ENGR. LYNDON RICARTE",
+        "JOSE GACER",
+        "ENGR. MARTIN SENEN I. LIRAG"
+      ],
+      "ninang": [
+        "MARGIE A. DELA VEGA",
+        "PTR. PRECIOSA D. DELA VEGA",
+        "RAQUEL C. LANDONG",
+        "DORCAS L. BONGULTO",
+        "DELCY ALARCON",
+        "GINA MOSO",
+        "RUBY ABUNDABAR",
+        "MA. ANDREA A. APOSTOL",
+        "BERNADITH ALUZAN",
+        "ANGELIE L. FEDERICO",
+        "MARIE ANN S. GACER",
+        "LYN D. LIRAG"
       ]
     },
     {
       "category": "Secondary Sponsors",
+      "groomsmen": [
+        "JAMES A LACBAYO",
+        "ALVIN BAMBILLA",
+        "ADRIAN MARK TADURAN"
+      ],
+      "bridesmaid": [
+        "LERIELYN JOY S. GACER",
+        "ARVIE BAMBILLA",
+        "SHARMIE ANN C. LIRAG"
+      ],
+      "candle": {
+        "subtitle": "to light our path in righteousness",
+        "names": [
+          "NEIL JOSEPH L. GARCHITORENA",
+          "JULIE B. GARCHITORENA"
+        ]
+      },
+      "veil": {
+        "subtitle": "to clothe us in love as one",
+        "names": [
+          "BERNIE A. BAMBILLA",
+          "ROSITA C. LIRAG"
+        ]
+      },
+      "cord": {
+        "subtitle": "to knot the cord to life's joy and sorrow",
+        "names": [
+          "MARVIN B. OLIVA",
+          "IRISH LORRAINE G. DE OCAMPO"
+        ]
+      },
+      "ribbon": {
+        "subtitle": "to unite the couple by the presence of Christ",
+        "names": [
+          "RAMON B. OLIVA Jr.",
+          "MARJORIE L. SADIA"
+        ]
+      }
+    },
+    {
+      "category": "Bestman",
       "names": [
-        "Hannah Morales",
-        "Yael Amari",
-        "Francisco Andrade",
-        "Sebastian Bennett",
-        "Noah Schumacher",
-        "Chiaki Sato"
+        "ROEL RAMBILLA"
       ]
     },
     {
-      "category": "Groomsmen",
+      "category": "Maid of Honor",
       "names": [
-        "Morgan Maxwell",
-        "Jonathan Patterson",
-        "Howard Ong",
-        "James Thompson",
-        "David Wilson",
-        "Robert Lee"
+        "MARY KATES EMMANUEL LIRAG"
       ]
     },
     {
-      "category": "Bridesmaids",
+      "category": "Bible Bearer",
       "names": [
-        "Kimberly Nguyen",
-        "Chiaki Sato",
-        "Juliana Silva",
-        "Lars Peeters",
-        "Harper Russo",
-        "Helene Paquet"
+        "MARK JUSTIN B. LIRAG"
       ]
     },
     {
       "category": "Ring Bearer",
-      "names": ["Taylor Alonso"]
+      "names": [
+        "SHAWN DELOS TRINO"
+      ]
     },
     {
-      "category": "Flower Girl",
-      "names": ["Henrietta Mitchell"]
+      "category": "Coin Bearer",
+      "names": [
+        "ERVIN JAE SINOGBA"
+      ]
+    },
+    {
+      "category": "Flower Girls",
+      "names": [
+        "SOFIA HOPE I. RICARTE",
+        "ADRIANA MEIZZIE M. LIRAG",
+        "MARIANNA L. PACAMARRA",
+        "MARTHINA LEONA M. FIRME",
+        "ABIGAIL L. ZALDUA"
+      ]
     }
   ]
-} 
+}

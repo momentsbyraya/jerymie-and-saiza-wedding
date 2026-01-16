@@ -23,7 +23,7 @@ export const weddingConfig = {
   // Wedding Details
   wedding: {
     date: "2026-06-20", // YYYY-MM-DD format
-    time: "4:00 PM",
+    time: "3:00 PM",
     dayOfWeek: "Saturday",
     month: "June",
     day: "20",
@@ -38,7 +38,7 @@ export const weddingConfig = {
       city: "San Antonio",
       state: "Tigaon",
       zip: "Camarines Sur",
-      time: "4:00 PM",
+      time: "3:00 PM",
       details: "Please arrive 30 minutes early"
     },
     reception: {
@@ -84,7 +84,7 @@ export const weddingConfig = {
 
   // Additional Information
   details: {
-    hashtag: "#JohnsonWilliams2024",
+    hashtag: "#LifetimeAdJAMEStureWithYHALY",
     website: "https://johnsonwilliams.com",
     registry: "https://registry.example.com",
     message: "We're excited to celebrate our special day with you!",

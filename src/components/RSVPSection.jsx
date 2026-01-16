@@ -8,7 +8,7 @@ import { themeConfig } from '../config/themeConfig'
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
 
-const CTASection = () => {
+const RSVPSection = () => {
   const sectionRef = useRef(null)
   const contentRef = useRef(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -56,10 +56,10 @@ const CTASection = () => {
           <div ref={contentRef} className="max-w-md sm:max-w-xl lg:max-w-3xl w-full mx-auto px-4">
             {/* Header Section */}
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-script text-gray-800 mb-6">
-                We Await Your Presence
+              <h2 className="text-4xl md:text-5xl font-script text-gray-800 mb-6" style={{ color: '#1e3a5f' }}>
+                RSVP
               </h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto" style={{ color: '#666666' }}>
                 Your presence would make our special day even more meaningful. 
                 Please let us know if you'll be joining us for our celebration.
               </p>
@@ -89,4 +89,4 @@ const CTASection = () => {
   )
 }
 
-export default CTASection 
+export default RSVPSection

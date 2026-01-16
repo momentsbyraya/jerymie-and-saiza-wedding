@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Carattere:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
 
 /* Custom Font - LovelyHome */
 @font-face {
@@ -225,6 +226,22 @@ body {
     letter-spacing: 0.02em;
   }
   
+  /* Imperial Script font - must come after global rule */
+  .imperial-script-regular,
+  .imperial-script-regular * {
+    font-family: 'Imperial Script', cursive !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+  }
+  
+  /* Caribbean font - must come after global rule */
+  .font-caribbean,
+  .font-caribbean * {
+    font-family: 'Carattere', cursive !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+  }
+  
   /* Prevent transform overflow issues */
   .transform-safe {
     transform: translateZ(0);
@@ -268,16 +285,46 @@ body {
   @keyframes subtlePulse {
     0%, 100% {
       opacity: 1;
-      transform: scale(1);
+      transform: rotate(15deg) scale(1);
     }
     50% {
       opacity: 0.85;
-      transform: scale(1.02);
+      transform: rotate(15deg) scale(1.02);
+    }
+  }
+  
+  @keyframes subtlePulseTopLeft {
+    0%, 100% {
+      opacity: 1;
+      transform: rotate(70deg) scale(1);
+    }
+    50% {
+      opacity: 0.85;
+      transform: rotate(70deg) scale(1.02);
+    }
+  }
+  
+  @keyframes subtlePulseBottomRight {
+    0%, 100% {
+      opacity: 1;
+      transform: rotate(20deg) scaleX(-1) scale(1);
+    }
+    50% {
+      opacity: 0.85;
+      transform: rotate(20deg) scaleX(-1) scale(1.02);
     }
   }
   
   .corner-pulse {
     animation: subtlePulse 3s ease-in-out infinite;
+  }
+  
+  .corner-pulse-top-left {
+    animation: subtlePulseTopLeft 3s ease-in-out infinite;
+  }
+  
+  .corner-pulse-bottom-right {
+    animation: subtlePulseBottomRight 3s ease-in-out infinite;
   }
 }
 

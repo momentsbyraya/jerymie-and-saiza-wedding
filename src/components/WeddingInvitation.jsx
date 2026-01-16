@@ -7,6 +7,7 @@ import Calendar from './Calendar'
 import Counter from './Counter'
 import PhotoSection from './PhotoSection'
 import Schedule from './Schedule'
+import Entourage from './Entourage'
 import LoveStory from './LoveStory'
 import DressCode from './DressCode'
 import Gallery from './Gallery'
@@ -53,6 +54,11 @@ const WeddingInvitation = () => {
          {/* Invitation Section - Full Width */}
          <EnhancedLazySection animationClass="fade-scale" sectionName="invitation">
           <Schedule />
+        </EnhancedLazySection>
+
+        {/* Entourage Section */}
+        <EnhancedLazySection animationClass="fade-scale" sectionName="entourage">
+          <Entourage />
         </EnhancedLazySection>
 
         {/* Dress Code Section */}

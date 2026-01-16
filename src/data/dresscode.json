@@ -1,28 +1,48 @@
 {
-  "mainDressCode": {
-    "title": "Dress Code",
-    "description": "We kindly request our guests to dress in dusty blue, navy blue and cream colors. Casual/Semi-formal attire."
-  },
-  "colorPalette": [
+  "sections": [
     {
-      "name": "color-1",
-      "hex": "#a8b5c0",
-      "label": "Dusty Blue"
+      "title": "PRINCIPAL SPONSORS",
+      "description": "GENTLEMAN: Traditional Barong with black slacks<br/>LADIES: Floor-length gown in the shade beige, nude, champagne",
+      "type": "image",
+      "image": "/assets/images/dresscode/sponsors.png",
+      "colors": [
+        {
+          "name": "Beige",
+          "hex": "#E8DCC6"
+        },
+        {
+          "name": "Nude",
+          "hex": "#D4B896"
+        },
+        {
+          "name": "Champagne",
+          "hex": "#C4A882"
+        }
+      ]
     },
     {
-      "name": "color-2",
-      "hex": "#1e3a5f",
-      "label": "Navy Blue"
-    },
-    {
-      "name": "color-3",
-      "hex": "#e8dcc6",
-      "label": "Cream"
-    },
-    {
-      "name": "color-4",
-      "hex": "#7ba7cc",
-      "label": "Sky Blue"
+      "title": "GUESTS",
+      "description": "CASUAL / SEMI-FORMAL<br/>We'd like to see you in these shades",
+      "type": "image",
+      "image": "/assets/images/dresscode/guests.png",
+      "colors": [
+        {
+          "name": "Dark Navy Blue",
+          "hex": "#1e3a5f"
+        },
+        {
+          "name": "Medium Dark Blue",
+          "hex": "#4a6fa5"
+        },
+        {
+          "name": "Muted Blue",
+          "hex": "#7ba7cc"
+        },
+        {
+          "name": "Pale Blue",
+          "hex": "#a8b5c0"
+        }
+      ]
     }
   ]
-} 
+}

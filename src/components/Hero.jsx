@@ -141,12 +141,12 @@ const Hero = () => {
       
       {/* Corner Design - Top Left */}
       <img 
-        src="/assets/images/graphics/corner-tl.png" 
+        src="/assets/images/graphics/flower-2.png" 
         alt="Corner design top left" 
-        className="absolute z-50 corner-pulse"
+        className="absolute z-50 corner-pulse-top-left"
         style={{ 
-          top: 0, 
-          left: 0, 
+          top: '-100px', 
+          left: '-30px', 
           width: '65vw', 
           height: '65vh', 
           maxWidth: '300px', 
@@ -158,12 +158,12 @@ const Hero = () => {
       
       {/* Corner Design - Bottom Right */}
       <img 
-        src="/assets/images/graphics/corner-br.png" 
+        src="/assets/images/graphics/flower-2.png" 
         alt="Corner design bottom right" 
-        className="absolute z-50 corner-pulse"
+        className="absolute z-50 corner-pulse-bottom-right"
         style={{ 
-          bottom: 0, 
-          right: 0, 
+          bottom: '-100px', 
+          right: '-30px', 
           width: '65vw', 
           height: '65vh', 
           maxWidth: '300px', 
@@ -176,7 +176,7 @@ const Hero = () => {
       {/* Content */}
       <div ref={contentRef} className="relative z-20 text-center px-4 py-8 sm:py-12 md:py-16" style={{ transform: 'scale(1.02)', opacity: 0 }}>
         {/* Join Us Text */}
-        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins" style={{ color: '#1e3a5f' }}>
+        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins" style={{ color: '#666666' }}>
           JOIN US TO CELEBRATE<br />OUR WEDDING
         </div>
 
@@ -205,18 +205,18 @@ const Hero = () => {
         <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider mb-1 sm:mb-1 md:mb-1 font-poppins" style={{ color: '#1e3a5f' }}>
           {weddingConfig.venue.ceremony.name.toUpperCase()}
         </div>
-        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins" style={{ color: '#1e3a5f' }}>
+        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins" style={{ color: '#666666' }}>
           SAN ANTONIO, TIGAON<br />
           CAMARINES SUR
         </div>
 
         {/* Reception to Follow */}
-        <div className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6 md:mb-8 font-script" style={{ color: '#1e3a5f' }}>
+        <div className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6 md:mb-8 font-script" style={{ color: '#666666' }}>
           Reception to follow
         </div>
 
         {/* RSVP */}
-        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider font-poppins" style={{ color: '#1e3a5f' }}>
+        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider font-poppins" style={{ color: '#666666' }}>
           RSVP BELOW
         </div>
       </div>
