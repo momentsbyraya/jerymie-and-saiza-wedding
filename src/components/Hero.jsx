@@ -210,15 +210,114 @@ const Hero = () => {
           CAMARINES SUR
         </div>
 
-        {/* Reception to Follow */}
-        <div className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6 md:mb-8 font-script" style={{ color: '#666666' }}>
-          Reception to follow
-        </div>
-
         {/* RSVP */}
-        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider font-poppins" style={{ color: '#666666' }}>
+        <button
+          type="button"
+          className="text-sm sm:text-base md:text-lg uppercase tracking-wider font-poppins cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none relative mt-8 sm:mt-12 md:mt-16" 
+          style={{ color: '#666666', zIndex: 100, position: 'relative' }}
+          onClick={(e) => {
+            e.preventDefault()
+            e.stopPropagation()
+            
+            const scrollToRSVP = () => {
+              // Direct approach: Find the RSVP section by unique data attribute first
+              let targetSection = document.querySelector('section[data-rsvp="true"]')
+              
+              // If not found, try by ID
+              if (!targetSection) {
+                targetSection = document.getElementById('rsvp-section-wrapper')
+              }
+              
+              // If still not found, try the inner RSVP section
+              if (!targetSection) {
+                targetSection = document.getElementById('rsvp-section')
+              }
+              
+              // If still not found, find by data attribute - specifically look for "cta"
+              if (!targetSection) {
+                const sections = document.querySelectorAll('section[data-section-name="cta"]')
+                if (sections.length > 0) {
+                  // Verify it's the RSVP section by checking for the data-rsvp attribute inside
+                  for (let section of sections) {
+                    const innerRSVP = section.querySelector('[data-rsvp="true"]')
+                    if (innerRSVP) {
+                      targetSection = innerRSVP
+                      break
+                    }
+                    // Or check by text content
+                    const text = section.textContent || ''
+                    if (text.includes('We Await Your Presence')) {
+                      targetSection = section
+                      break
+                    }
+                  }
+                }
+              }
+              
+              // Last resort: Find by text content "We Await Your Presence"
+              if (!targetSection) {
+                const allSections = document.querySelectorAll('section')
+                for (let section of allSections) {
+                  const text = section.textContent || ''
+                  if (text.includes('We Await Your Presence') && text.includes('RSVP')) {
+                    targetSection = section
+                    break
+                  }
+                }
+              }
+              
+              if (targetSection) {
+                // Check if mobile device
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768
+                
+                if (isMobile) {
+                  // For mobile, use scrollIntoView which is more reliable
+                  // Wait a bit to ensure section is rendered
+                  setTimeout(() => {
+                    targetSection.scrollIntoView({ 
+                      behavior: 'smooth', 
+                      block: 'start',
+                      inline: 'nearest'
+                    })
+                    
+                    // Adjust offset after scroll
+                    setTimeout(() => {
+                      window.scrollBy({
+                        top: -20,
+                        behavior: 'smooth'
+                      })
+                    }, 300)
+                  }, 100)
+                } else {
+                  // Desktop: calculate position and scroll
+                  const rect = targetSection.getBoundingClientRect()
+                  const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+                  const targetY = rect.top + scrollTop - 20
+                  
+                  window.scrollTo({
+                    top: targetY,
+                    behavior: 'smooth'
+                  })
+                }
+                return true
+              }
+              return false
+            }
+            
+            // Try immediately
+            if (!scrollToRSVP()) {
+              // Retry with increasing delays if section not found (for lazy loading)
+              const retries = [300, 600, 1000, 1500]
+              retries.forEach((delay) => {
+                setTimeout(() => {
+                  scrollToRSVP()
+                }, delay)
+              })
+            }
+          }}
+        >
           RSVP BELOW
-        </div>
+        </button>
       </div>
     </section>
   )

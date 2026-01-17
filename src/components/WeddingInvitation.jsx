@@ -72,7 +72,7 @@ const WeddingInvitation = () => {
         </EnhancedLazySection> */}
 
         {/* CTA Section - Full Width */}
-        <EnhancedLazySection animationClass="fade-scale" sectionName="cta">
+        <EnhancedLazySection id="rsvp-section-wrapper" animationClass="fade-scale" sectionName="cta">
           <CTASection />
         </EnhancedLazySection>
 

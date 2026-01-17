@@ -48,6 +48,8 @@ const CTASection = () => {
   return (
     <>
       <section
+        id="rsvp-section"
+        data-rsvp="true"
         ref={sectionRef}
         className={`relative py-20 w-full overflow-hidden ${themeConfig.calendar.background}`}
       >
