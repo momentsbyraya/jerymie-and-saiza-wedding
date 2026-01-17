@@ -53,13 +53,13 @@ const CTASection = () => {
       >
         {/* Content */}
         <div className="relative z-20 flex items-center justify-center">
-          <div ref={contentRef} className="max-w-md sm:max-w-xl lg:max-w-3xl w-full mx-auto px-4">
+          <div ref={contentRef} className="max-w-md sm:max-w-xl lg:max-w-3xl w-full mx-auto px-8">
             {/* Header Section */}
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-script text-gray-800 mb-6">
                 We Await Your Presence
               </h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto font-poppins">
                 Your presence would make our special day even more meaningful. 
                 Please let us know if you'll be joining us for our celebration.
               </p>

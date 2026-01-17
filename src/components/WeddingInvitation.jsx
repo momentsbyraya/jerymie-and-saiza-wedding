@@ -5,18 +5,13 @@ import { getTimeUntilWedding } from '../utils/countdown'
 import Hero from './Hero'
 import Calendar from './Calendar'
 import Counter from './Counter'
-import PhotoSection from './PhotoSection'
 import Schedule from './Schedule'
 import Entourage from './Entourage'
-import LoveStory from './LoveStory'
 import DressCode from './DressCode'
-import Gallery from './Gallery'
-import FAQ from './FAQ'
 import MapDirections from './Venue'
-import GiftRegistry from './GiftRegistry'
 import CTASection from './CTASection'
+import GiftGuideAndSnapShare from './GiftGuideAndSnapShare'
 import EnhancedLazySection from './EnhancedLazySection'
-import { images } from '../data'
 
 const WeddingInvitation = () => {
   const [countdown, setCountdown] = useState(getTimeUntilWedding())
@@ -79,6 +74,11 @@ const WeddingInvitation = () => {
         {/* CTA Section - Full Width */}
         <EnhancedLazySection animationClass="fade-scale" sectionName="cta">
           <CTASection />
+        </EnhancedLazySection>
+
+        {/* Gift Guide & Snap & Share Section */}
+        <EnhancedLazySection animationClass="fade-scale" sectionName="gift-guide-snap-share">
+          <GiftGuideAndSnapShare />
         </EnhancedLazySection>   
         
         {/* Wedding Details */}

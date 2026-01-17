@@ -99,7 +99,7 @@ const Calendar = () => {
         <h1 ref={headerRef} className="text-3xl sm:text-5xl font-serif font-light mb-4 text-gray-800" style={{ opacity: 0 }}>
           The Day
         </h1>
-        <p ref={descriptionRef} className="text-base sm:text-xl text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto" style={{ opacity: 0 }}>
+        <p ref={descriptionRef} className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto font-poppins" style={{ opacity: 0 }}>
           One day this year will be special for us and we want to spend it with close ones and friends.
         </p>
       </div>

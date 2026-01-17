@@ -625,9 +625,10 @@ body {
   animation: zoomInAndFade 1.5s ease-in-out forwards;
 }
 
-/* Watermark for client approval */
+/* Watermark for client approval - Hidden for now */
 .watermark-approval {
-  position: fixed;
+  display: none !important;
+  /* position: fixed;
   font-size: 3rem;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.1);
@@ -638,7 +639,7 @@ body {
   font-family: 'Poppins', sans-serif !important;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg); */
 }
 
 .watermark-1 {

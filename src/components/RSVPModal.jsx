@@ -88,10 +88,13 @@ const RSVPModal = ({ isOpen, onClose }) => {
         </div>
         
         {/* RSVP Content */}
-        <div className="p-12 text-center">
-          <p className="text-xl text-gray-600">
-            To be added
-          </p>
+        <div className="p-6">
+          <iframe
+            src="https://forms.gle/Z6zQWBfthKiPVVbu7"
+            className="w-full h-[70vh] border-0 rounded-lg"
+            title="RSVP Form"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>,

@@ -128,19 +128,19 @@ const DressCode = () => {
       {/* Content */}
       <div className="relative z-20 flex items-center justify-center py-12">
         <div className="max-w-md sm:max-w-xl lg:max-w-3xl w-full mx-auto px-8 sm:px-12 lg:px-16">
-          {/* Header Section */}
+            {/* Header Section */}
           <div ref={headerRef} className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-script text-gray-800 mb-6" style={{ color: '#1e3a5f' }}>
-              Dress Code
-            </h2>
+                Dress Code
+              </h2>
           </div>
 
           {/* Text Section */}
           <div ref={textRef} className="text-center mb-12">
             <p className="text-base sm:text-lg font-albert font-thin text-[#333333] max-w-3xl mx-auto leading-relaxed">
               We would be grateful if, when choosing outfits, you adhere to the color scheme of our celebration.
-            </p>
-          </div>
+              </p>
+            </div>
 
           {/* Dress Code Sections */}
           <div ref={paletteRef} className="space-y-8 mb-8">
@@ -160,7 +160,7 @@ const DressCode = () => {
                 
                 {/* Section Content */}
                 {section.type === "image" && section.image ? (
-                  <div 
+                <div 
                     ref={el => sectionContentRefs.current[sectionIndex] = el}
                     className="flex flex-row items-center gap-4 w-full"
                   >
@@ -178,13 +178,13 @@ const DressCode = () => {
                           <div 
                             key={colorIndex}
                             className="w-8 h-8 rounded-full"
-                            style={{ backgroundColor: color.hex }}
-                            title={color.name}
-                          ></div>
-                        ))}
-                      </div>
+                  style={{ backgroundColor: color.hex }}
+                  title={color.name}
+                ></div>
+              ))}
+            </div>
                     )}
-                  </div>
+                </div>
                 ) : section.type === "colors" && section.colors ? (
                   <div 
                     ref={el => sectionContentRefs.current[sectionIndex] = el}
@@ -198,15 +198,15 @@ const DressCode = () => {
                         title={color.name}
                       ></div>
                     ))}
-                  </div>
+              </div>
                 ) : null}
               </div>
             ))}
-          </div>
+            </div>
         </div>
       </div>
     </section>
   )
 }
 
-export default DressCode
+export default DressCode 

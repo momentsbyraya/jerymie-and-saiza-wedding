@@ -42,8 +42,8 @@ function App() {
 
   return (
     <div className="App min-h-screen wedding-gradient relative">
-      {/* Watermarks */}
-      <div className="watermark-approval watermark-1">
+      {/* Watermarks - Hidden for now */}
+      {/* <div className="watermark-approval watermark-1">
         THIS IS FOR CLIENT APPROVAL ONLY.
       </div>
       <div className="watermark-approval watermark-2">
@@ -51,7 +51,7 @@ function App() {
       </div>
       <div className="watermark-approval watermark-3">
         THIS IS FOR CLIENT APPROVAL ONLY.
-      </div>
+      </div> */}
       
       {showOpeningScreen ? (
         <OpeningScreen onEnvelopeOpen={handleEnvelopeOpen} />

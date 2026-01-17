@@ -236,8 +236,8 @@ const Entourage = () => {
       ref={sectionRef}
       className="relative py-20 w-full overflow-hidden"
       style={{ 
-        paddingLeft: '2rem',
-        paddingRight: '2rem',
+        paddingLeft: '1rem',
+        paddingRight: '1rem',
         paddingTop: '4rem',
         paddingBottom: '4rem'
       }}
@@ -255,7 +255,7 @@ const Entourage = () => {
       />
       {/* Content */}
       <div className="relative z-20 flex items-center justify-center py-12" style={{ backgroundColor: '#D0DCE8' }}>
-        <div className="max-w-xs sm:max-w-md lg:max-w-4xl w-full mx-auto px-4 sm:px-6 md:px-6 lg:px-8 relative z-20">
+        <div className="max-w-xs sm:max-w-md lg:max-w-4xl w-full mx-auto px-2 sm:px-3 md:px-3 lg:px-4 relative z-20">
           {/* Header Section */}
           <div className="text-center mb-12">
             <h2 ref={headerRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8">
@@ -269,17 +269,17 @@ const Entourage = () => {
             <p className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase text-[#333333]">{entourageData.officiatingMinister.name}</p>
           </div>
 
-          {/* Groom and Bride Names - Side by Side */}
+          {/* Couple Names Section */}
           <div ref={groomRef} className="mb-6 flex flex-row gap-4 sm:gap-6 justify-center items-center">
             {/* Groom Name */}
             <div className="flex-1">
-              <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-right" style={{ color: '#1e3a5f' }}>Name Of Groom</p>
+              <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-right" style={{ color: '#1e3a5f' }}>Groom</p>
               <p className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase whitespace-nowrap overflow-hidden text-ellipsis text-right text-[#333333]">{removeMiddleInitial(entourageData.couple.groom.name)}</p>
             </div>
 
             {/* Bride Name */}
             <div className="flex-1">
-              <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-left" style={{ color: '#1e3a5f' }}>Name Of Bride</p>
+              <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-left" style={{ color: '#1e3a5f' }}>Bride</p>
               <p className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase whitespace-nowrap overflow-hidden text-ellipsis text-left text-[#333333]">{removeMiddleInitial(entourageData.couple.bride.name)}</p>
             </div>
           </div>
