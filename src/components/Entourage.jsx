@@ -21,6 +21,7 @@ const Entourage = () => {
   const groomRef = useRef(null)
   const brideRef = useRef(null)
   const parentsRef = useRef(null)
+  const escortingTheGroomRef = useRef(null)
   const principalSponsorsRef = useRef(null)
   const secondarySponsorsRef = useRef(null)
   const bestmanRef = useRef(null)
@@ -93,6 +94,19 @@ const Entourage = () => {
           toggleActions: "play none none reverse"
         })
       }
+    }
+
+    // Escorting the Groom animation
+    if (escortingTheGroomRef.current) {
+      ScrollTrigger.create({
+        trigger: escortingTheGroomRef.current,
+        start: "top 80%",
+        animation: gsap.fromTo(escortingTheGroomRef.current,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+        ),
+        toggleActions: "play none none reverse"
+      })
     }
 
     // Principal Sponsors animation - animate each name one after the other
@@ -274,13 +288,13 @@ const Entourage = () => {
             {/* Groom Name */}
             <div className="flex-1">
               <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-right" style={{ color: '#1e3a5f' }}>Groom</p>
-              <p className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase whitespace-nowrap overflow-hidden text-ellipsis text-right text-[#333333]">{removeMiddleInitial(entourageData.couple.groom.name)}</p>
+              <p className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase whitespace-nowrap overflow-hidden text-ellipsis text-right text-[#333333]">{entourageData.couple.groom.name}</p>
             </div>
 
             {/* Bride Name */}
             <div className="flex-1">
               <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-left" style={{ color: '#1e3a5f' }}>Bride</p>
-              <p className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase whitespace-nowrap overflow-hidden text-ellipsis text-left text-[#333333]">{removeMiddleInitial(entourageData.couple.bride.name)}</p>
+              <p className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase whitespace-nowrap overflow-hidden text-ellipsis text-left text-[#333333]">{entourageData.couple.bride.name}</p>
             </div>
           </div>
 
@@ -300,6 +314,14 @@ const Entourage = () => {
               <p className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase whitespace-nowrap overflow-hidden text-ellipsis text-left text-[#333333]">{entourageData.parents.bride.mother}</p>
             </div>
           </div>
+
+          {/* Escorting the Groom */}
+          {entourageData.escortingTheGroom && (
+            <div ref={escortingTheGroomRef} className="mb-6">
+              <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-center" style={{ color: '#1e3a5f' }}>Escorting the Groom</p>
+              <p className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase text-center text-[#333333]">{entourageData.escortingTheGroom.name}</p>
+            </div>
+          )}
 
           {/* Principal Sponsors */}
           {principalSponsors && (

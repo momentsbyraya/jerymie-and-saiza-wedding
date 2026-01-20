@@ -173,6 +173,23 @@ const Hero = () => {
         }}
       />
       
+      {/* Couple Graphic Photo - Bottom Left */}
+      <img 
+        src="/assets/images/graphics/couple.png" 
+        alt="Couple graphic" 
+        className="absolute z-10"
+        style={{ 
+          bottom: '0px', 
+          left: '-50px', 
+          width: '80vw', 
+          maxWidth: '450px',
+          height: 'auto',
+          objectFit: 'contain',
+          objectPosition: 'bottom left',
+          opacity: 0.75
+        }}
+      />
+      
       {/* Content */}
       <div ref={contentRef} className="relative z-20 text-center px-4 py-8 sm:py-12 md:py-16" style={{ transform: 'scale(1.02)', opacity: 0 }}>
         {/* Join Us Text */}
@@ -192,17 +209,17 @@ const Hero = () => {
         </div>
 
         {/* Date */}
-        <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider mb-1 sm:mb-1 md:mb-1 font-poppins" style={{ color: '#1e3a5f' }}>
+        <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider mb-1 sm:mb-1 md:mb-1 font-poppins font-bold" style={{ color: '#1e3a5f' }}>
           {formatWeddingDate()}
         </div>
 
         {/* Time */}
         <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins" style={{ color: '#1e3a5f' }}>
-          FROM {weddingConfig.wedding.time.toUpperCase()}
+          AT {weddingConfig.wedding.time.toUpperCase()}
         </div>
 
         {/* Location */}
-        <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider mb-1 sm:mb-1 md:mb-1 font-poppins" style={{ color: '#1e3a5f' }}>
+        <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider mb-1 sm:mb-1 md:mb-1 font-poppins font-bold" style={{ color: '#1e3a5f', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
           {weddingConfig.venue.ceremony.name.toUpperCase()}
         </div>
         <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins" style={{ color: '#666666' }}>
@@ -316,7 +333,7 @@ const Hero = () => {
             }
           }}
         >
-          RSVP BELOW
+          Ricarte & Gacer
         </button>
       </div>
     </section>

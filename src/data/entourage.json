@@ -4,7 +4,7 @@
       "name": "James Henry B. Ricarte"
     },
     "bride": {
-      "name": "Marialy L. Lirag"
+      "name": "Marialy L. Gacer"
     }
   },
   "officiatingMinister": {
@@ -12,13 +12,16 @@
   },
   "parents": {
     "groom": {
-      "father": "MR. HENRY RICARTE",
+      "father": "MR. HENRY RICARTE+",
       "mother": "MRS. MARISSA B. RICARTE"
     },
     "bride": {
       "father": "MR. ELY T. GACER",
       "mother": "MS. MARIA D. GACER"
     }
+  },
+  "escortingTheGroom": {
+    "name": "PHOEBE B. RICARTE (SISTER)"
   },
   "entourageList": [
     {
@@ -48,7 +51,7 @@
         "MA. ANDREA A. APOSTOL",
         "BERNADITH ALUZAN",
         "ANGELIE L. FEDERICO",
-        "MARIE ANN S. GACER",
+        "MARIE ANN GACER",
         "LYN D. LIRAG"
       ]
     },
