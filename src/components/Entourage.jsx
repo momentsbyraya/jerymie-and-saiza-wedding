@@ -113,7 +113,7 @@ const Entourage = () => {
     if (principalSponsorsRef.current) {
       const ninongElements = principalSponsorsRef.current?.querySelectorAll('.ninong-item')
       const ninangElements = principalSponsorsRef.current?.querySelectorAll('.ninang-item')
-      
+
       // Combine all items and animate sequentially
       const allItems = []
       if (ninongElements) allItems.push(...Array.from(ninongElements))
@@ -217,10 +217,10 @@ const Entourage = () => {
             start: "top 80%",
             onEnter: () => {
               gsap.to(allNames, {
-                opacity: 1,
-                y: 0,
+        opacity: 1, 
+        y: 0, 
                 duration: 0.6,
-                ease: "power2.out",
+        ease: "power2.out",
                 stagger: 0.1
               })
             },
@@ -274,7 +274,7 @@ const Entourage = () => {
           <div className="text-center mb-12">
             <h2 ref={headerRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8">
               <span className="imperial-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl inline-block leading-none" style={{ lineHeight: '0.8', color: '#1e3a5f' }}>Entourage</span>
-            </h2>
+          </h2>
           </div>
 
           {/* Officiating Minister */}
@@ -407,7 +407,7 @@ const Entourage = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+        </div>
 
               {/* Candle, Veil, Cord, Ribbon - Two Column Layout */}
               {(secondarySponsors.candle || secondarySponsors.veil || secondarySponsors.cord || secondarySponsors.ribbon) && (
@@ -453,8 +453,8 @@ const Entourage = () => {
                               {name}
                             </p>
                           ))}
-                        </div>
-                      </div>
+              </div>
+            </div>
                     )}
                     {/* CORD */}
                     {secondarySponsors.cord && (
@@ -535,4 +535,4 @@ const Entourage = () => {
   )
 }
 
-export default Entourage
+export default Entourage 

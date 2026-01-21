@@ -8,16 +8,16 @@ export const weddingConfig = {
   // Basic Wedding Information
   couple: {
     bride: {
-      firstName: "Marialy",
+      firstName: "Yhaly",
       lastName: "Gacer",
-      fullName: "Marialy Gacer"
+      fullName: "Yhaly Gacer"
     },
     groom: {
       firstName: "James Henry",
       lastName: "Ricarte",
       fullName: "James Henry Ricarte"
     },
-    together: "Marialy & James"
+    together: "James & Yhaly"
   },
 
   // Wedding Details

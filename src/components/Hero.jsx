@@ -109,15 +109,9 @@ const Hero = () => {
     const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase()
     const day = date.getDate()
     const month = date.toLocaleDateString('en-US', { month: 'long' }).toUpperCase()
+    const year = date.getFullYear()
     
-    // Add ordinal suffix
-    const getOrdinal = (n) => {
-      const s = ["TH", "ST", "ND", "RD"]
-      const v = n % 100
-      return `${n}${s[(v - 20) % 10] || s[v] || s[0]}`
-    }
-    
-    return `${dayOfWeek} ${getOrdinal(day)} ${month}`
+    return `${dayOfWeek}, ${month} ${day}, ${year}`
   }
 
   return (
@@ -179,33 +173,33 @@ const Hero = () => {
         alt="Couple graphic" 
         className="absolute z-10"
         style={{ 
-          bottom: '0px', 
+          bottom: '-30px', 
           left: '-50px', 
           width: '80vw', 
           maxWidth: '450px',
           height: 'auto',
           objectFit: 'contain',
           objectPosition: 'bottom left',
-          opacity: 0.75
+          opacity: 0.5
         }}
       />
       
       {/* Content */}
       <div ref={contentRef} className="relative z-20 text-center px-4 py-8 sm:py-12 md:py-16" style={{ transform: 'scale(1.02)', opacity: 0 }}>
-        {/* Join Us Text */}
-        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins" style={{ color: '#666666' }}>
-          JOIN US TO CELEBRATE<br />OUR WEDDING
-        </div>
-
         {/* Couple Names - Script Font */}
         <div className="mb-6 sm:mb-8 md:mb-10">
           <h1 
-            className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-antsvalley leading-tight my-8 sm:my-12 md:my-16"
-            style={{ transform: 'rotate(-10deg)', color: '#1e3a5f', fontSize: 'clamp(3rem, 8vw, 8rem)' }}
+            className="text-7xl sm:text-9xl md:text-[10rem] lg:text-[12rem] xl:text-[14rem] font-antsvalley leading-tight my-8 sm:my-12 md:my-16"
+            style={{ transform: 'rotate(-10deg)', color: '#1e3a5f', fontSize: 'clamp(4rem, 10vw, 10rem)' }}
           >
             <span className="block">{couples.couple.names.first} &</span>
             <span className="block">{couples.couple.names.second}</span>
           </h1>
+        </div>
+
+        {/* Join Us Text */}
+        <div className="text-xs sm:text-sm md:text-base tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins mx-auto" style={{ color: '#666666', width: '60%' }}>
+          together with our families invite you to join us on our wedding
         </div>
 
         {/* Date */}
@@ -214,8 +208,8 @@ const Hero = () => {
         </div>
 
         {/* Time */}
-        <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins" style={{ color: '#1e3a5f' }}>
-          AT {weddingConfig.wedding.time.toUpperCase()}
+        <div className="text-base sm:text-lg md:text-xl tracking-wider mb-4 sm:mb-6 md:mb-8 font-antsvalley" style={{ color: '#1e3a5f' }}>
+          at three o'clock in the afternoon
         </div>
 
         {/* Location */}
@@ -230,7 +224,7 @@ const Hero = () => {
         {/* RSVP */}
         <button
           type="button"
-          className="text-sm sm:text-base md:text-lg uppercase tracking-wider font-poppins cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none relative mt-8 sm:mt-12 md:mt-16" 
+          className="text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-wider font-antsvalley cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none relative mt-8 sm:mt-12 md:mt-16" 
           style={{ color: '#666666', zIndex: 100, position: 'relative' }}
           onClick={(e) => {
             e.preventDefault()
