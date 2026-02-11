@@ -199,7 +199,7 @@ const Hero = () => {
 
         {/* Join Us Text */}
         <div className="text-xs sm:text-sm md:text-base tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins mx-auto" style={{ color: '#666666', width: '60%' }}>
-          together with our families invite you to join us on our wedding
+          together with our families, we invite you to join us on our wedding
         </div>
 
         {/* Date */}

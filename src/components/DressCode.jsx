@@ -138,7 +138,7 @@ const DressCode = () => {
           {/* Text Section */}
           <div ref={textRef} className="text-center mb-12">
             <p className="text-base sm:text-lg font-albert font-thin text-[#333333] max-w-3xl mx-auto leading-relaxed">
-              We would be grateful if, when choosing outfits, you adhere to the color scheme of our celebration.
+              We'd be grateful if your outfit could match the color theme of our celebration
               </p>
             </div>
 

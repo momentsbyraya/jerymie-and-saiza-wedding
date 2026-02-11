@@ -62,7 +62,7 @@ const CTASection = () => {
                 We Await Your Presence
               </h2>
               <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto font-poppins">
-                Your presence would make our special day even more meaningful. 
+                Your presence would make our special day even more meaningful.<br />
                 Please let us know if you'll be joining us for our celebration.
               </p>
             </div>

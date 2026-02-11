@@ -409,31 +409,31 @@ const Entourage = () => {
                 </div>
         </div>
 
-              {/* Candle, Veil, Cord, Ribbon - Two Column Layout */}
+              {/* Candle, Veil, Cord, Ribbon - Grouped Side by Side */}
               {(secondarySponsors.candle || secondarySponsors.veil || secondarySponsors.cord || secondarySponsors.ribbon) && (
-                <div className="flex flex-row gap-4 sm:gap-6 justify-center items-start mt-8">
-                  {/* Left Column - CANDLE and VEIL */}
-                  <div className="flex-1">
+                <div className="flex flex-col gap-6 justify-center items-center mt-8">
+                  {/* Row 1: Candle and Ribbon */}
+                  <div className="flex flex-row gap-4 sm:gap-6 justify-center items-start w-full">
                     {/* CANDLE */}
                     {secondarySponsors.candle && (
-                      <div className="mb-6">
-                        <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-right" style={{ color: '#1e3a5f' }}>Candle</p>
+                      <div className="flex-1 mb-6">
+                        <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-center" style={{ color: '#1e3a5f' }}>Candle</p>
                         <div className="space-y-2">
                           {secondarySponsors.candle.names && secondarySponsors.candle.names.map((name, index) => (
-                            <p key={index} className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase text-[#333333] text-right whitespace-nowrap overflow-hidden text-ellipsis">
+                            <p key={index} className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase text-[#333333] text-center whitespace-nowrap overflow-hidden text-ellipsis">
                               {name}
                             </p>
                           ))}
                         </div>
                       </div>
                     )}
-                    {/* VEIL */}
-                    {secondarySponsors.veil && (
-                      <div>
-                        <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-right" style={{ color: '#1e3a5f' }}>Veil</p>
+                    {/* RIBBON */}
+                    {secondarySponsors.ribbon && (
+                      <div className="flex-1 mb-6">
+                        <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-center" style={{ color: '#1e3a5f' }}>Ribbon</p>
                         <div className="space-y-2">
-                          {secondarySponsors.veil.names && secondarySponsors.veil.names.map((name, index) => (
-                            <p key={index} className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase text-[#333333] text-right whitespace-nowrap overflow-hidden text-ellipsis">
+                          {secondarySponsors.ribbon.names && secondarySponsors.ribbon.names.map((name, index) => (
+                            <p key={index} className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase text-[#333333] text-center whitespace-nowrap overflow-hidden text-ellipsis">
                               {name}
                             </p>
                           ))}
@@ -441,28 +441,28 @@ const Entourage = () => {
                       </div>
                     )}
                   </div>
-                  {/* Right Column - RIBBON and CORD */}
-                  <div className="flex-1">
-                    {/* RIBBON */}
-                    {secondarySponsors.ribbon && (
-                      <div className="mb-6">
-                        <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-left" style={{ color: '#1e3a5f' }}>Ribbon</p>
+                  {/* Row 2: Veil and Cord */}
+                  <div className="flex flex-row gap-4 sm:gap-6 justify-center items-start w-full">
+                    {/* VEIL */}
+                    {secondarySponsors.veil && (
+                      <div className="flex-1 mb-6">
+                        <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-center" style={{ color: '#1e3a5f' }}>Veil</p>
                         <div className="space-y-2">
-                          {secondarySponsors.ribbon.names && secondarySponsors.ribbon.names.map((name, index) => (
-                            <p key={index} className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase text-[#333333] text-left whitespace-nowrap overflow-hidden text-ellipsis">
+                          {secondarySponsors.veil.names && secondarySponsors.veil.names.map((name, index) => (
+                            <p key={index} className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase text-[#333333] text-center whitespace-nowrap overflow-hidden text-ellipsis">
                               {name}
                             </p>
                           ))}
-              </div>
-            </div>
+                        </div>
+                      </div>
                     )}
                     {/* CORD */}
                     {secondarySponsors.cord && (
-                      <div>
-                        <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-left" style={{ color: '#1e3a5f' }}>Cord</p>
+                      <div className="flex-1 mb-6">
+                        <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-center" style={{ color: '#1e3a5f' }}>Cord</p>
                         <div className="space-y-2">
                           {secondarySponsors.cord.names && secondarySponsors.cord.names.map((name, index) => (
-                            <p key={index} className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase text-[#333333] text-left whitespace-nowrap overflow-hidden text-ellipsis">
+                            <p key={index} className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase text-[#333333] text-center whitespace-nowrap overflow-hidden text-ellipsis">
                               {name}
                             </p>
                           ))}

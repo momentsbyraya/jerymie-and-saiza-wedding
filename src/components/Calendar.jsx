@@ -100,7 +100,7 @@ const Calendar = () => {
           The Day
         </h1>
         <p ref={descriptionRef} className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto font-poppins" style={{ opacity: 0 }}>
-          One day this year will be special for us and we want to spend it with close ones and friends.
+          A memorable day awaits us this year, and we want to celebrate it surrounded by loved ones and friends.
         </p>
       </div>
 

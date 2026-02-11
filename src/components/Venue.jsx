@@ -96,7 +96,7 @@ const MapDirections = () => {
         {/* Section Header */}
         <div className="text-center mb-8">
           <h2 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-script ${themeConfig.text.custom} mb-6`}>
-            Venues
+            Venue
           </h2>
         </div>
 
