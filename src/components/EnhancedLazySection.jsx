@@ -29,7 +29,7 @@ const EnhancedLazySection = ({
       case 'fade-slide-right':
         return isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'
       case 'fade-scale':
-        return isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-99'
+        return isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
       case 'fade-rotate':
         return isVisible ? 'opacity-100 rotate-0' : 'opacity-0 rotate-0.5'
       default:

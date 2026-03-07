@@ -48,7 +48,7 @@ function OpeningScreen({ onEnvelopeOpen }) {
         <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 text-center click-me-container">
           <h1 
             className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-antsvalley leading-tight"
-            style={{ color: '#1e3a5f', fontSize: 'clamp(3rem, 8vw, 96px)', marginLeft: '-1rem' }}
+            style={{ color: '#C46A3A', fontSize: 'clamp(3rem, 8vw, 96px)', marginLeft: '-1rem' }}
           >
             Click me!
           </h1>
@@ -86,13 +86,13 @@ function OpeningScreen({ onEnvelopeOpen }) {
         <div className="mt-12 sm:mt-16 md:mt-20 text-center couple-name-container">
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-script leading-tight"
-            style={{ color: '#1e3a5f', fontSize: 'clamp(1.5rem, 4vw, 48px)' }}
+            style={{ color: '#C46A3A', fontSize: 'clamp(1.5rem, 4vw, 48px)' }}
           >
             {couples.couple.names.together}
           </h2>
           <p 
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-script mt-1"
-            style={{ color: '#1e3a5f', fontSize: 'clamp(1rem, 2.5vw, 30px)' }}
+            style={{ color: '#C46A3A', fontSize: 'clamp(1rem, 2.5vw, 30px)' }}
           >
             {new Date(weddingConfig.wedding.date).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '.')}
           </p>

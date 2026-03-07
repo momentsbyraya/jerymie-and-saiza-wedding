@@ -2,45 +2,33 @@
   "sections": [
     {
       "title": "PRINCIPAL SPONSORS",
-      "description": "GENTLEMAN: Traditional Barong with black slacks<br/>LADIES: Floor-length gown in the shade beige, nude, champagne",
+      "description": "We invite our principal sponsors to dress in <strong>terracotta</strong> and <strong>peach sand</strong> tones—gentleman in traditional or semi-formal attire, ladies in floor-length or formal wear in these shades.",
       "type": "image",
       "image": "/assets/images/dresscode/sponsors.png",
       "colors": [
         {
-          "name": "Beige",
-          "hex": "#E8DCC6"
+          "name": "Terracotta",
+          "hex": "#C46A3A"
         },
         {
-          "name": "Nude",
-          "hex": "#D4B896"
-        },
-        {
-          "name": "Champagne",
-          "hex": "#C4A882"
+          "name": "Peach Sand",
+          "hex": "#E9C2A8"
         }
       ]
     },
     {
       "title": "GUESTS",
-      "description": "CASUAL / SEMI-FORMAL<br/>We'd like to see you in these shades",
+      "description": "CASUAL / SEMI-FORMAL<br/>We'd love to see you in <strong>terracotta</strong> and <strong>peach sand</strong> shades to match our celebration.",
       "type": "image",
-      "image": "/assets/images/dresscode/guests.png",
+      "image": "/assets/images/graphics/guest (2).png",
       "colors": [
         {
-          "name": "Dark Navy Blue",
-          "hex": "#1e3a5f"
+          "name": "Terracotta",
+          "hex": "#C46A3A"
         },
         {
-          "name": "Medium Dark Blue",
-          "hex": "#4a6fa5"
-        },
-        {
-          "name": "Muted Blue",
-          "hex": "#7ba7cc"
-        },
-        {
-          "name": "Pale Blue",
-          "hex": "#a8b5c0"
+          "name": "Peach Sand",
+          "hex": "#E9C2A8"
         }
       ]
     }

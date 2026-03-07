@@ -58,10 +58,10 @@ const CTASection = () => {
           <div ref={contentRef} className="max-w-md sm:max-w-xl lg:max-w-3xl w-full mx-auto px-8">
             {/* Header Section */}
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-script text-gray-800 mb-6">
+              <h2 className="text-4xl md:text-5xl font-script mb-6" style={{ color: '#C46A3A' }}>
                 We Await Your Presence
               </h2>
-              <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto font-poppins">
+              <p className="text-base md:text-lg max-w-3xl mx-auto font-poppins" style={{ color: '#5a524a' }}>
                 Your presence would make our special day even more meaningful.<br />
                 Please let us know if you'll be joining us for our celebration.
               </p>
@@ -72,7 +72,7 @@ const CTASection = () => {
               <button
                 onClick={openRSVPModal}
                 className="w-full inline-flex items-center justify-center space-x-3 px-8 py-3 sm:py-5 lg:py-2 text-white rounded-sm transition-colors duration-200 text-sm sm:text-2xl lg:text-base font-medium hover:opacity-90"
-                style={{ backgroundColor: '#1e3a5f' }}
+                style={{ backgroundColor: '#C46A3A' }}
               >
                 <span>RSVP</span>
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6" />

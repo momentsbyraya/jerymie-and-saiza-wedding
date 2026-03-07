@@ -11,6 +11,7 @@ import DressCode from './DressCode'
 import MapDirections from './Venue'
 import CTASection from './CTASection'
 import GiftGuideAndSnapShare from './GiftGuideAndSnapShare'
+import PhotoUpload from './PhotoUpload'
 import EnhancedLazySection from './EnhancedLazySection'
 
 const WeddingInvitation = () => {
@@ -42,12 +43,12 @@ const WeddingInvitation = () => {
         </EnhancedLazySection>
 
         {/* Map & Directions Section */}
-        <EnhancedLazySection animationClass="fade-slide-up" sectionName="map-directions">
+        <EnhancedLazySection animationClass="fade-slide-up" sectionName="map-directions" threshold={0.1} rootMargin="0px 0px 50px 0px">
           <MapDirections />
         </EnhancedLazySection>
 
-         {/* Invitation Section - Full Width */}
-         <EnhancedLazySection animationClass="fade-scale" sectionName="invitation">
+        {/* Schedule Section */}
+        <EnhancedLazySection animationClass="fade-scale" sectionName="invitation" threshold={0.1} rootMargin="0px 0px 50px 0px">
           <Schedule />
         </EnhancedLazySection>
 
@@ -80,6 +81,11 @@ const WeddingInvitation = () => {
         <EnhancedLazySection animationClass="fade-scale" sectionName="gift-guide-snap-share">
           <GiftGuideAndSnapShare />
         </EnhancedLazySection>   
+
+        {/* Oh Snap (Photo Upload) Section */}
+        <EnhancedLazySection animationClass="fade-scale" sectionName="photo-upload">
+          <PhotoUpload />
+        </EnhancedLazySection>
         
         {/* Wedding Details */}
         <EnhancedLazySection animationClass="fade-slide-up" sectionName="counter">
@@ -113,10 +119,10 @@ const WeddingInvitation = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer hover:opacity-80 transition-all duration-200 font-poppins footer-link"
-            style={{ color: '#1e3a5f' }}
+            style={{ color: '#7E95A6' }}
           >
             <span>Made with</span>
-            <IoHeart className="w-4 h-4 sm:w-5 sm:h-5 footer-heart" style={{ color: '#1e3a5f' }} />
+            <IoHeart className="w-4 h-4 sm:w-5 sm:h-5 footer-heart" style={{ color: '#7E95A6' }} />
             <span>|</span>
             <span>Moments by Raya</span>
           </a>

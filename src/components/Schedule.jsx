@@ -1,135 +1,143 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { themeConfig } from '../config/themeConfig'
-import { venues, images, schedule } from '../data'
+import { schedule as scheduleData } from '../data'
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
 
 const Schedule = () => {
-  const sectionRef = useRef(null)
+  const scheduleTitleRef = useRef(null)
   const timelineRef = useRef(null)
   const lineRef = useRef(null)
-  const event1Ref = useRef(null)
-  const event2Ref = useRef(null)
-  const event3Ref = useRef(null)
-  const event4Ref = useRef(null)
+  const eventsRef = useRef(null)
 
   useEffect(() => {
-    // Scroll-triggered animations
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 50%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse"
+    if (scheduleTitleRef.current) {
+      ScrollTrigger.create({
+        trigger: scheduleTitleRef.current,
+        start: 'top 80%',
+        animation: gsap.fromTo(scheduleTitleRef.current,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }
+        ),
+        toggleActions: 'play none none reverse'
+      })
+    }
+
+    if (lineRef.current && timelineRef.current) {
+      ScrollTrigger.create({
+        trigger: timelineRef.current,
+        start: 'top 70%',
+        animation: gsap.fromTo(lineRef.current,
+          { scaleY: 0, transformOrigin: 'top' },
+          { scaleY: 1, duration: 1.5, ease: 'power2.out' }
+        ),
+        toggleActions: 'play none none reverse'
+      })
+    }
+
+    if (eventsRef.current) {
+      const eventItems = eventsRef.current.querySelectorAll('.schedule-event-row')
+      if (eventItems.length > 0) {
+        gsap.set(eventItems, { opacity: 0, y: 30 })
+        ScrollTrigger.create({
+          trigger: eventsRef.current,
+          start: 'top 70%',
+          onEnter: () => {
+            gsap.to(eventItems, {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              ease: 'power2.out',
+              stagger: 0.2
+            })
+          }
+        })
       }
-    })
+    }
 
-    // Timeline line expansion from top to bottom
-    tl.fromTo(lineRef.current, 
-      { scaleY: 0, transformOrigin: "top" },
-      { scaleY: 1, duration: 1.5, ease: "power2.out" }
-    )
-
-    // Events animate in from top to bottom with stagger
-    tl.fromTo(event1Ref.current, 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-      "-=1.2"
-    )
-    .fromTo(event2Ref.current, 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-      "-=0.6"
-    )
-    .fromTo(event3Ref.current, 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-      "-=0.6"
-    )
-    .fromTo(event4Ref.current, 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-      "-=0.6"
-    )
-
-    // Cleanup function
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+      ScrollTrigger.getAll().forEach(trigger => {
+        const vars = trigger.vars
+        if (vars && vars.trigger && (
+          vars.trigger === scheduleTitleRef.current ||
+          vars.trigger === timelineRef.current ||
+          vars.trigger === eventsRef.current
+        )) {
+          trigger.kill()
+        }
+      })
     }
   }, [])
 
   return (
-    <section
-      ref={sectionRef}
-      className={`relative py-20 w-full overflow-hidden ${themeConfig.calendar.background}`}
-    >
+    <section className={`relative py-12 sm:py-20 w-full overflow-visible ${themeConfig.calendar.background}`}>
+      {/* Program Title */}
+      <div ref={scheduleTitleRef} className={`${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding} relative z-10 mb-12 sm:mb-16`}>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-script text-center" style={{ color: '#C46A3A' }}>
+          Schedule
+        </h2>
+        <p className="text-sm sm:text-base md:text-lg font-poppins text-center mt-4 mx-auto px-4 max-w-lg" style={{ color: '#5a524a' }}>
+          Join us as we celebrate this special day together
+        </p>
+      </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex items-center justify-center">
-        <div className={`${themeConfig.container.maxWidth} ${themeConfig.container.center}`}>
-          <div className="max-w-md sm:max-w-xl lg:max-w-3xl w-full mx-auto">
-            {/* Section Title */}
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-script text-gray-800 mb-8 text-center">
-              Schedule
-            </h2>
+      {/* Vertical Timeline */}
+      <div ref={timelineRef} className={`relative max-w-md sm:max-w-xl lg:max-w-2xl w-full mx-auto z-10 ${themeConfig.container.padding}`}>
+        <div ref={lineRef} className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 opacity-50 z-0" style={{ backgroundColor: 'rgba(143, 166, 191, 0.5)' }} />
 
-            {/* Vertical Timeline */}
-            <div ref={timelineRef} className="relative max-w-md sm:max-w-xl lg:max-w-3xl w-full scale-75 sm:scale-100 -my-16 sm:my-16">
-              {/* Central Vertical Line */}
-              <div ref={lineRef} className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-600/30 transform -translate-x-1/2"></div>
-
-              {/* Timeline Events */}
-              <div className="space-y-20">
-                {schedule.events.map((event, index) => {
-                  const isEven = index % 2 === 0
-                  // Parse time like "3:30 PM" into "3:30" and "PM"
-                  const timeMatch = event.time.match(/^(.+?)\s*(AM|PM)$/i)
-                  const timeNumber = timeMatch ? timeMatch[1] : event.time.split(' ')[0]
-                  const timePeriod = timeMatch ? timeMatch[2] : (event.time.includes('AM') ? 'AM' : event.time.includes('PM') ? 'PM' : '')
-                  const eventRefs = [event1Ref, event2Ref, event3Ref, event4Ref]
-                  
-                  return (
-                    <div key={event.id} ref={eventRefs[index]} className="flex items-start">
-                      {isEven ? (
-                        <>
-                          <div className="w-1/2 pr-16 sm:mr-24 text-right">
-                            <div className="text-3xl sm:text-5xl font-serif text-gray-800 font-semibold mb-2">
-                              {timeNumber}<span className="text-xl sm:text-3xl">{timePeriod}</span>
-                            </div>
-                            <div className="text-base sm:text-xl font-serif text-gray-700">
-                              {event.title}
-                            </div>
-                          </div>
-                          <div className="w-4 h-4 bg-gray-600 rounded-full border-2 border-white shadow-lg absolute left-1/2 transform -translate-x-1/2 z-10 mt-6"></div>
-                          <div className="w-1/2 pl-8"></div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="w-1/2 pr-24"></div>
-                          <div className="w-4 h-4 bg-gray-600 rounded-full border-2 border-white shadow-lg absolute left-1/2 transform -translate-x-1/2 z-10 mt-6"></div>
-                          <div className="w-1/2 pl-8">
-                            <div className="text-3xl sm:text-5xl font-serif text-gray-800 font-semibold mb-2">
-                              {timeNumber}<span className="text-xl sm:text-3xl">{timePeriod}</span>
-                            </div>
-                            <div className="text-base sm:text-xl font-serif text-gray-700">
-                              {event.title}
-                            </div>
-                          </div>
-                        </>
+        <div ref={eventsRef} className="space-y-12 sm:space-y-16 md:space-y-20 lg:space-y-24">
+          {scheduleData.events.map((event, index) => {
+            const isLeft = index % 2 === 0
+            return (
+              <div key={event.id} className="schedule-event-row flex items-center relative min-h-[60px]">
+                {isLeft ? (
+                  <>
+                    <div className="w-1/2 pr-6 text-right flex flex-col justify-center">
+                      <div className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold mb-1" style={{ color: '#C46A3A' }}>
+                        {event.time}
+                      </div>
+                      <div className="border-b border-dashed mb-1 opacity-50" style={{ borderColor: 'rgba(143, 166, 191, 0.5)' }} />
+                      <div className="text-sm sm:text-base md:text-lg font-poppins" style={{ color: '#5a524a' }}>
+                        {event.title}
+                      </div>
+                      {event.description && (
+                        <div className="text-xs sm:text-sm font-poppins mt-0.5 opacity-90" style={{ color: '#5a524a' }}>
+                          {event.description}
+                        </div>
                       )}
                     </div>
-                  )
-                })}
+                    <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full z-10" style={{ backgroundColor: '#7E95A6', border: '2px solid #F4EEE8' }} />
+                    <div className="w-1/2 pl-6" />
+                  </>
+                ) : (
+                  <>
+                    <div className="w-1/2 pr-6" />
+                    <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full z-10" style={{ backgroundColor: '#7E95A6', border: '2px solid #F4EEE8' }} />
+                    <div className="w-1/2 pl-6 text-left flex flex-col justify-center">
+                      <div className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold mb-1" style={{ color: '#C46A3A' }}>
+                        {event.time}
+                      </div>
+                      <div className="border-b border-dashed mb-1 opacity-50" style={{ borderColor: 'rgba(143, 166, 191, 0.5)' }} />
+                      <div className="text-sm sm:text-base md:text-lg font-poppins" style={{ color: '#5a524a' }}>
+                        {event.title}
+                      </div>
+                      {event.description && (
+                        <div className="text-xs sm:text-sm font-poppins mt-0.5 opacity-90" style={{ color: '#5a524a' }}>
+                          {event.description}
+                        </div>
+                      )}
+                    </div>
+                  </>
+                )}
               </div>
-            </div>
-          </div>
+            )
+          })}
         </div>
       </div>
     </section>
   )
 }
 
-export default Schedule 
+export default Schedule

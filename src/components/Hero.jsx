@@ -117,7 +117,7 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center m-0 p-0"
+      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center m-0 p-0 pb-24 sm:pb-16 md:pb-0"
     >
       {/* Theme Background */}
       <div className={`absolute inset-0 z-0 ${themeConfig.backgrounds.theme}`}></div>
@@ -133,99 +133,93 @@ const Hero = () => {
         }}
       ></div>
       
-      {/* Corner Design - Top Left */}
+      {/* Corner Design - Top Left (larger & more visible on mobile) */}
       <img 
         src="/assets/images/graphics/flower-2.png" 
-        alt="Corner design top left" 
-        className="absolute z-50 corner-pulse-top-left"
-        style={{ 
-          top: '-100px', 
-          left: '-30px', 
-          width: '65vw', 
-          height: '65vh', 
-          maxWidth: '300px', 
-          maxHeight: '300px',
-          objectFit: 'contain',
-          objectPosition: 'top left'
-        }}
+        alt="" 
+        className="absolute z-50 corner-pulse-top-left object-contain
+          w-[62vw] h-[50vh] min-w-[200px] min-h-[180px] max-w-[260px] max-h-[240px]
+          sm:w-[55vw] sm:min-w-0 sm:max-w-[280px] sm:max-h-[260px]
+          md:w-[65vw] md:max-w-[300px] md:max-h-[300px]
+          top-[-12px] left-[-8px] sm:top-[-40px] sm:left-[-12px] md:top-[-60px] md:left-[-20px]"
+        style={{ objectPosition: 'top left' }}
       />
       
-      {/* Corner Design - Bottom Right */}
+      {/* Corner Design - Bottom Right (larger & more visible on mobile) */}
       <img 
         src="/assets/images/graphics/flower-2.png" 
-        alt="Corner design bottom right" 
-        className="absolute z-50 corner-pulse-bottom-right"
-        style={{ 
-          bottom: '-100px', 
-          right: '-30px', 
-          width: '65vw', 
-          height: '65vh', 
-          maxWidth: '300px', 
-          maxHeight: '300px',
-          objectFit: 'contain',
-          objectPosition: 'bottom right'
-        }}
+        alt="" 
+        className="absolute z-50 corner-pulse-bottom-right object-contain
+          w-[62vw] h-[50vh] min-w-[200px] min-h-[180px] max-w-[260px] max-h-[240px]
+          sm:w-[55vw] sm:min-w-0 sm:max-w-[280px] sm:max-h-[260px]
+          md:w-[65vw] md:max-w-[300px] md:max-h-[300px]
+          bottom-[-12px] right-[-8px] sm:bottom-[-40px] sm:right-[-12px] md:bottom-[-60px] md:right-[-20px]"
+        style={{ objectPosition: 'bottom right' }}
       />
       
-      {/* Couple Graphic Photo - Bottom Left */}
+      {/* Couple Graphic Photo - Bottom Left (smaller on mobile) */}
       <img 
         src="/assets/images/graphics/couple.png" 
-        alt="Couple graphic" 
-        className="absolute z-10"
+        alt="" 
+        className="absolute z-10 w-[55vw] max-w-[280px] sm:w-[65vw] sm:max-w-[350px] md:w-[80vw] md:max-w-[450px] h-auto object-contain opacity-40 sm:opacity-50"
         style={{ 
-          bottom: '-30px', 
-          left: '-50px', 
-          width: '80vw', 
-          maxWidth: '450px',
-          height: 'auto',
-          objectFit: 'contain',
-          objectPosition: 'bottom left',
-          opacity: 0.5
+          bottom: '-20px', 
+          left: '-30px',
+          objectPosition: 'bottom left'
         }}
       />
       
       {/* Content */}
-      <div ref={contentRef} className="relative z-20 text-center px-4 py-8 sm:py-12 md:py-16" style={{ transform: 'scale(1.02)', opacity: 0 }}>
-        {/* Couple Names - Script Font */}
-        <div className="mb-6 sm:mb-8 md:mb-10">
+      <div 
+        ref={contentRef} 
+        className="relative z-20 text-center px-4 sm:px-6 py-6 sm:py-8 md:py-12 lg:py-16 w-full max-w-2xl mx-auto box-border" 
+        style={{ transform: 'scale(1.02)', opacity: 0 }}
+      >
+        {/* Couple Names - Script Font (scales for mobile) */}
+        <div className="mb-4 sm:mb-6 md:mb-10">
           <h1 
-            className="text-7xl sm:text-9xl md:text-[10rem] lg:text-[12rem] xl:text-[14rem] font-antsvalley leading-tight my-8 sm:my-12 md:my-16"
-            style={{ transform: 'rotate(-10deg)', color: '#1e3a5f', fontSize: 'clamp(4rem, 10vw, 10rem)' }}
+            className="font-antsvalley leading-tight my-4 sm:my-8 md:my-12"
+            style={{ transform: 'rotate(-10deg)', color: '#C46A3A', fontSize: 'clamp(2.5rem, 12vw, 10rem)' }}
           >
             <span className="block">{couples.couple.names.first} &</span>
             <span className="block">{couples.couple.names.second}</span>
           </h1>
         </div>
 
-        {/* Join Us Text */}
-        <div className="text-xs sm:text-sm md:text-base tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins mx-auto" style={{ color: '#666666', width: '60%' }}>
+        {/* Join Us Text - full width on mobile */}
+        <div className="text-xs sm:text-sm md:text-base tracking-wider mb-3 sm:mb-6 md:mb-8 font-poppins mx-auto w-[90%] sm:w-4/5 md:w-[60%]" style={{ color: '#5a524a' }}>
           together with our families, we invite you to join us on our wedding
         </div>
 
         {/* Date */}
-        <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider mb-1 sm:mb-1 md:mb-1 font-poppins font-bold" style={{ color: '#1e3a5f' }}>
+        <div className="text-sm sm:text-base md:text-xl uppercase tracking-wider mb-1 font-poppins font-bold break-words" style={{ color: '#C46A3A' }}>
           {formatWeddingDate()}
         </div>
 
         {/* Time */}
-        <div className="text-base sm:text-lg md:text-xl tracking-wider mb-4 sm:mb-6 md:mb-8 font-antsvalley" style={{ color: '#1e3a5f' }}>
+        <div className="text-sm sm:text-base md:text-xl tracking-wider mb-3 sm:mb-6 md:mb-8 font-antsvalley" style={{ color: '#C46A3A' }}>
           at three o'clock in the afternoon
         </div>
 
         {/* Location */}
-        <div className="text-base sm:text-lg md:text-xl uppercase tracking-wider mb-1 sm:mb-1 md:mb-1 font-poppins font-bold" style={{ color: '#1e3a5f', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
+        <div className="text-sm sm:text-base md:text-xl uppercase tracking-wider mb-1 font-poppins font-bold break-words px-1" style={{ color: '#C46A3A', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)' }}>
           {weddingConfig.venue.ceremony.name.toUpperCase()}
         </div>
-        <div className="text-sm sm:text-base md:text-lg uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins" style={{ color: '#666666' }}>
-          SAN ANTONIO, TIGAON<br />
-          CAMARINES SUR
+        <div className="text-xs sm:text-sm md:text-lg uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 font-poppins break-words px-1" style={{ color: '#5a524a' }}>
+          {[weddingConfig.venue.ceremony.address, weddingConfig.venue.ceremony.city].filter(Boolean).join(', ')}
+          {(weddingConfig.venue.ceremony.state || weddingConfig.venue.ceremony.zip) && (
+            <>
+              <br />
+              {[weddingConfig.venue.ceremony.state, weddingConfig.venue.ceremony.zip].filter(Boolean).join(weddingConfig.venue.ceremony.zip ? ', ' : '')}
+            </>
+          )}
         </div>
 
-        {/* RSVP */}
+        {/* RSVP / Hashtag button - touch-friendly on mobile */}
         <button
           type="button"
-          className="text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-wider font-antsvalley cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none relative mt-8 sm:mt-12 md:mt-16" 
-          style={{ color: '#666666', zIndex: 100, position: 'relative' }}
+          className="min-h-[44px] sm:min-h-0 text-base sm:text-xl md:text-2xl lg:text-3xl tracking-wider font-antsvalley cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none outline-none relative mt-6 sm:mt-12 md:mt-16 px-2 py-3 sm:py-0 break-words text-center max-w-full" 
+          style={{ color: '#5a524a', zIndex: 100, position: 'relative' }}
           onClick={(e) => {
             e.preventDefault()
             e.stopPropagation()
@@ -327,7 +321,7 @@ const Hero = () => {
             }
           }}
         >
-          Ricarte & Gacer
+          {weddingConfig.details.hashtag}
         </button>
       </div>
     </section>

@@ -47,8 +47,8 @@ body {
   font-family: 'Elsie Swash Caps', cursive;
   font-weight: 400;
   line-height: 1.6;
-  color: #ad8369;
-  background-color: #f6f1ee; /* Calendar background color */
+  color: #2F2F2F;
+  background-color: #F4EEE8;
 }
 
 @layer base {
@@ -69,18 +69,18 @@ body {
   }
   
   .text-gradient {
-    background: linear-gradient(135deg, #bfa094 0%, #a18072 100%);
+    background: linear-gradient(135deg, #E9C2A8 0%, #C46A3A 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .card-shadow {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   }
   
   .elegant-border {
-    border: 1px solid rgba(191, 160, 148, 0.2);
+    border: 1px solid rgba(233, 194, 168, 0.4);
   }
 }
 
@@ -131,7 +131,7 @@ body {
   footer:has(a:hover),
   footer:has(a:active),
   footer:has(a:focus) {
-    background-color: #013718 !important;
+    background-color: #2F2F2F !important;
   }
   
   footer a:hover,
@@ -328,20 +328,20 @@ body {
   }
 }
 
-/* Envelope Styles */
+/* Envelope Styles - Rustic Boho */
 :root {
   --envelope-x: 300px;
   --envelope-y: 200px;
-  --envelope-bg: #f5f0e8;
-  --envelope-shadow: #d4c5b0;
-  --heart-bg: darkred;
-  --heart-text: white;
+  --envelope-bg: #F4EEE8;
+  --envelope-shadow: #E9C2A8;
+  --heart-bg: transparent;
+  --heart-text: #2F2F2F;
   --letter-font: "Dancing Script", serif;
   --letter-x: 250px;
   --letter-y: calc(250px - 1rem - 10px);
-  --letter-bg: AntiqueWhite;
-  --letter-shadow: BurlyWood;
-  --letter-text: #180d07;
+  --letter-bg: #F4EEE8;
+  --letter-shadow: #C46A3A;
+  --letter-text: #2F2F2F;
 }
 
 @media (min-width: 650px) {
@@ -688,21 +688,42 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #F4EEE8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e3a5f;
+  background: #7E95A6;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #152a42;
+  background: #5F7484;
 }
 
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #1e3a5f #f1f1f1;
+  scrollbar-color: #7E95A6 #F4EEE8;
+}
+
+/* Upload Section (Oh Snap) */
+.upload-title {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.upload-title-text {
+  line-height: 0.8;
+  color: #C46A3A; /* Terracotta (primary) */
+}
+
+.upload-qr-container {
+  max-width: 360px;
+  aspect-ratio: 1 / 1;
+}
+
+.upload-stack {
+  width: 100%;
+  max-width: 420px;
 }
 

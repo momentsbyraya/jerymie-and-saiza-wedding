@@ -8,44 +8,44 @@ export const weddingConfig = {
   // Basic Wedding Information
   couple: {
     bride: {
-      firstName: "Yhaly",
-      lastName: "Gacer",
-      fullName: "Yhaly Gacer"
+      firstName: "Saiza Jane",
+      lastName: "Llido",
+      fullName: "Saiza Jane Llido"
     },
     groom: {
-      firstName: "James Henry",
-      lastName: "Ricarte",
-      fullName: "James Henry Ricarte"
+      firstName: "Jerymie",
+      lastName: "Vega",
+      fullName: "Jerymie Vega"
     },
-    together: "James & Yhaly"
+    together: "Jerymie & Saiza"
   },
 
   // Wedding Details
   wedding: {
-    date: "2026-06-20", // YYYY-MM-DD format
+    date: "2026-05-17", // YYYY-MM-DD format
     time: "3:00 PM",
-    dayOfWeek: "Saturday",
-    month: "June",
-    day: "20",
+    dayOfWeek: "Sunday",
+    month: "May",
+    day: "17",
     year: "2026"
   },
 
   // Venue Information
   venue: {
     ceremony: {
-      name: "Churinga Eco-Resort",
-      address: "Zone 2, National Highway",
-      city: "San Antonio",
-      state: "Tigaon",
-      zip: "Camarines Sur",
+      name: "San Roque's Peak Resort",
+      address: "Don Enrique Heights, Dulong Crasher",
+      city: "Antipolo",
+      state: "Rizal",
+      zip: "",
       time: "3:00 PM",
       details: "Please arrive 30 minutes early"
     },
     reception: {
-      name: "Churinga Eco-Resort",
-      address: "",
-      city: "",
-      state: "",
+      name: "San Roque's Peak Resort",
+      address: "Don Enrique Heights, Dulong Crasher",
+      city: "Antipolo",
+      state: "Rizal",
       zip: "",
       time: "6:00 PM",
       details: "Casual/Semi-formal attire requested"
@@ -54,11 +54,11 @@ export const weddingConfig = {
 
   // RSVP Information
   rsvp: {
-    deadline: "2024-05-15",
-    email: "rsvp@johnsonwilliams.com",
+    deadline: "2026-03-23",
+    email: "rsvp@jerymieandsaiza.com",
     phone: "(555) 123-4567",
-    website: "https://johnsonwilliams.rsvp",
-    message: "Please RSVP by May 15th, 2024"
+    website: "https://jerymieandsaiza.rsvp",
+    message: "Please RSVP by March 23rd, 2026"
   },
 
   // Theme and Styling
@@ -84,8 +84,11 @@ export const weddingConfig = {
 
   // Additional Information
   details: {
-    hashtag: "#LifetimeAdJAMEStureWithYHALY",
-    website: "https://johnsonwilliams.com",
+    hashtag: "#FinallySettledDownwithJEM",
+    hashtag2: "To be added",
+    uploadLink: "To be added",
+    uploadQrImage: "To be added",
+    website: "https://jerymieandsaiza.com",
     registry: "https://registry.example.com",
     message: "We're excited to celebrate our special day with you!",
     covidInfo: "We're following local health guidelines. Please stay home if you're feeling unwell."
@@ -93,9 +96,9 @@ export const weddingConfig = {
 
   // Social Media
   social: {
-    instagram: "@johnsonwilliams",
-    facebook: "JohnsonWilliamsWedding",
-    twitter: "@johnsonwilliams"
+    instagram: "@jerymieandsaiza",
+    facebook: "JerymieAndSaizaWedding",
+    twitter: "@jerymieandsaiza"
   }
 };
 

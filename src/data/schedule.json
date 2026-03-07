@@ -3,30 +3,30 @@
     {
       "id": 1,
       "time": "2:30 PM",
-      "title": "Guest Gathering",
+      "title": "Gathering",
       "description": "Guests arrive and gather",
-      "venue": "Churinga Eco-Resort"
+      "venue": "San Roque's Peak Resort"
     },
     {
       "id": 2,
       "time": "3:00 PM",
-      "title": "Wedding Ceremony",
-      "description": "Wedding ceremony begins",
-      "venue": "Churinga Eco-Resort"
+      "title": "Ceremony",
+      "description": "Wedding ceremony",
+      "venue": "San Roque's Peak Resort"
     },
     {
       "id": 3,
       "time": "6:00 PM",
       "title": "Reception Dinner",
       "description": "Dinner and celebration",
-      "venue": "Churinga Eco-Resort"
+      "venue": "San Roque's Peak Resort"
     },
     {
       "id": 4,
       "time": "9:00 PM",
-      "title": "Evening Ends",
+      "title": "End",
       "description": "Thank you for celebrating with us",
-      "venue": "Churinga Eco-Resort"
+      "venue": "San Roque's Peak Resort"
     }
   ]
 }

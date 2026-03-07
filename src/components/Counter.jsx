@@ -1,51 +1,42 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Calendar, Clock } from 'lucide-react'
 import { themeConfig } from '../config/themeConfig'
-import { couples } from '../data'
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
 
 const Counter = ({ countdown }) => {
   const sectionRef = useRef(null)
   const countdownRef = useRef(null)
-  const dateTimeRef = useRef(null)
 
   useEffect(() => {
-    // Scroll-triggered animations
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse"
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
       }
     })
 
-
-    // Countdown container animation
-    tl.fromTo(countdownRef.current, 
+    tl.fromTo(countdownRef.current,
       { opacity: 0, y: 50, scale: 0.9 },
-      { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power2.out" },
-      "-=0.3"
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'power2.out' },
+      '-=0.3'
     )
 
-    // Countdown numbers stagger animation
-    tl.fromTo(".countdown-number", 
+    tl.fromTo('.countdown-number',
       { opacity: 0, y: 30 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 0.8, 
-        ease: "power2.out",
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
         stagger: 0.2
       },
-      "-=0.5"
+      '-=0.5'
     )
 
-    // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
     }
@@ -58,10 +49,10 @@ const Counter = ({ countdown }) => {
       className="relative min-h-screen md:min-h-0 md:h-fit lg:pt-40 lg:pb-24 overflow-hidden flex items-center justify-center text-center py-20"
     >
       {/* Theme Background */}
-      <div className={`absolute inset-0 ${themeConfig.backgrounds.theme}`}></div>
-      
+      <div className={`absolute inset-0 ${themeConfig.backgrounds.theme}`} />
+
       {/* Crumpled Paper Background on top */}
-      <div 
+      <div
         className="absolute inset-0 opacity-30 z-10"
         style={{
           backgroundImage: 'url(/assets/images/crumpled-paper.png)',
@@ -69,98 +60,87 @@ const Counter = ({ countdown }) => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
-      ></div>
-      
-      {/* Corner Design - Top Left */}
-      <img 
-        src="/assets/images/graphics/flower-2.png" 
-        alt="Corner design top left" 
-        className="absolute z-50 corner-pulse-top-left"
-        style={{ 
-          top: '-100px', 
-          left: '-30px', 
-          width: '65vw', 
-          height: '65vh', 
-          maxWidth: '300px', 
-          maxHeight: '300px',
-          objectFit: 'contain',
-          objectPosition: 'top left'
-        }}
       />
-      
-      {/* Corner Design - Bottom Right */}
-      <img 
-        src="/assets/images/graphics/flower-2.png" 
-        alt="Corner design bottom right" 
-        className="absolute z-50 corner-pulse-bottom-right"
-        style={{ 
-          bottom: '-100px', 
-          right: '-30px', 
-          width: '65vw', 
-          height: '65vh', 
-          maxWidth: '300px', 
-          maxHeight: '300px',
-          objectFit: 'contain',
-          objectPosition: 'bottom right'
-        }}
-      />
-      
+
       {/* Main Content Container */}
       <div className={`relative z-20 ${themeConfig.container.maxWidth} ${themeConfig.container.center} ${themeConfig.container.padding} w-full`}>
-        {/* Countdown Timer */}
         <div
           ref={countdownRef}
-          className="mb-12 max-w-sm sm:max-w-lg lg:max-w-2xl mx-auto px-8 sm:px-12 "
+          className="mb-12 max-w-md sm:max-w-xl lg:max-w-3xl mx-auto px-8 sm:px-12"
         >
-          <div className="flex justify-center mb-4">
-            <h3 className={`flex flex-col scale-75 sm:scale-90 md:scale-75 lg:scale-100 origin-center sm:origin-center md:origin-center lg:origin-center`}>
-              <div className={`text-7xl sm:text-8xl md:text-9xl lg:text-8xl font-antsvalley ${themeConfig.text.custom} text-left`} style={{ marginLeft: '-5vw' }}>Save</div>
-              <div className={`flex items-center justify-center gap-2 text-center`} style={{ marginRight: '-3vw' }}>
-                <span className={`text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-antsvalley ${themeConfig.text.custom} self-start pt-2 sm:pt-3 md:pt-4 lg:pt-3`}>the</span>
-                <span className={`text-7xl sm:text-8xl md:text-9xl lg:text-8xl font-antsvalley ${themeConfig.text.custom}`}>Date</span>
+          <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+            {/* Left Column - Countdown Timer */}
+            <div className="lg:order-1">
+              <h3 className={`text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-serif mb-4 scale-75 sm:scale-90 md:scale-75 lg:scale-100 origin-center`} style={{ color: '#2F2F2F' }}>
+                Save the Date
+              </h3>
+
+              <div className="flex justify-center lg:justify-start items-center space-x-3 mb-6 px-4">
+                <div className="text-center">
+                  <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin mb-1 countdown-number`} style={{ color: '#2F2F2F' }}>
+                    {countdown.days}
+                  </div>
+                  <div className="text-xs sm:text-sm font-medium" style={{ color: '#C46A3A' }}>Days</div>
+                </div>
+
+                <div className="text-2xl sm:text-3xl md:text-4xl font-albert font-thin" style={{ color: '#2F2F2F' }}>:</div>
+
+                <div className="text-center">
+                  <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin mb-1 countdown-number`} style={{ color: '#2F2F2F' }}>
+                    {countdown.hours}
+                  </div>
+                  <div className="text-xs sm:text-sm font-medium" style={{ color: '#C46A3A' }}>Hours</div>
+                </div>
+
+                <div className="text-2xl sm:text-3xl md:text-4xl font-albert font-thin" style={{ color: '#2F2F2F' }}>:</div>
+
+                <div className="text-center">
+                  <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin mb-1 countdown-number`} style={{ color: '#2F2F2F' }}>
+                    {countdown.minutes}
+                  </div>
+                  <div className="text-xs sm:text-sm font-medium" style={{ color: '#C46A3A' }}>Minutes</div>
+                </div>
+
+                <div className="text-2xl sm:text-3xl md:text-4xl font-albert font-thin" style={{ color: '#2F2F2F' }}>:</div>
+
+                <div className="text-center">
+                  <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin mb-1 countdown-number`} style={{ color: '#2F2F2F' }}>
+                    {countdown.seconds}
+                  </div>
+                  <div className="text-xs sm:text-sm font-medium" style={{ color: '#C46A3A' }}>Seconds</div>
+                </div>
               </div>
-            </h3>
-          </div>
-          
-          <div className="flex justify-center items-center space-x-2 mb-6 px-4 max-w-md mx-auto">
-            <div className="text-center">
-              <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin ${themeConfig.text.custom} mb-1 countdown-number`}>
-                {countdown.days}
-              </div>
-              <div className="text-xs sm:text-sm font-medium" style={{ color: '#1e3a5f' }}>Days</div>
             </div>
-            
-            <div className={`text-2xl sm:text-3xl md:text-4xl font-albert font-thin ${themeConfig.text.custom}`}>:</div>
-            
-            <div className="text-center">
-              <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin ${themeConfig.text.custom} mb-1 countdown-number`}>
-                {countdown.hours}
+
+            {/* Right Column - Polaroid Photo */}
+            <div className="lg:order-2">
+              <div className="flex flex-col items-center lg:items-end px-8 sm:px-12 lg:px-0 mt-12 sm:mt-24 lg:mt-0">
+                <div className="relative bg-white p-3 pb-10 shadow-xl transform rotate-1 counter-polaroid">
+                  <div
+                    className="w-56 h-72 sm:w-72 sm:h-96 lg:w-64 lg:h-80 bg-cover bg-center bg-no-repeat rounded-sm"
+                    style={{ backgroundImage: 'url(/assets/images/graphics/Prenup4.png)' }}
+                  />
+                  <div className="absolute bottom-3 left-0 right-0 text-center">
+                    <p className="text-right pe-4 text-sm sm:text-lg md:text-xl font-handwritten mb-1 leading-none" style={{ color: '#2F2F2F' }}>
+                      We await your presence
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-6 max-w-sm sm:max-w-md">
+                  <p className="text-xs sm:text-sm font-poppins font-semibold uppercase tracking-wider mb-2 text-center lg:text-right" style={{ color: '#C46A3A' }}>
+                    Our Love Story
+                  </p>
+                  <p className="text-center lg:text-right text-sm sm:text-base font-poppins leading-relaxed italic" style={{ color: '#5a524a' }}>
+                    We started working together, dated, fell in love, and were separated for a decade, only to meet again over time
+                  </p>
+                </div>
               </div>
-              <div className="text-xs sm:text-sm font-medium" style={{ color: '#1e3a5f' }}>Hours</div>
-            </div>
-            
-            <div className={`text-2xl sm:text-3xl md:text-4xl font-albert font-thin ${themeConfig.text.custom}`}>:</div>
-            
-            <div className="text-center">
-              <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin ${themeConfig.text.custom} mb-1 countdown-number`}>
-                {countdown.minutes}
-              </div>
-              <div className="text-xs sm:text-sm font-medium" style={{ color: '#1e3a5f' }}>Minutes</div>
-            </div>
-            
-            <div className={`text-2xl sm:text-3xl md:text-4xl font-albert font-thin ${themeConfig.text.custom}`}>:</div>
-            
-            <div className="text-center">
-              <div className={`text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-albert font-thin ${themeConfig.text.custom} mb-1 countdown-number`}>
-                {countdown.seconds}
-              </div>
-              <div className="text-xs sm:text-sm font-medium" style={{ color: '#1e3a5f' }}>Seconds</div>
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </section>
   )
 }
 
-export default Counter 
+export default Counter

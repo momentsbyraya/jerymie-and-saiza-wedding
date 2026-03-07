@@ -12,7 +12,7 @@
   },
   "venues": {
     "church": "/assets/images/church.jpg",
-    "reception": "/assets/images/reception.jpg"
+    "reception": "/assets/images/venue/venue1.jpg"
   },
   "favicon": "/assets/images/favicon.png"
 } 

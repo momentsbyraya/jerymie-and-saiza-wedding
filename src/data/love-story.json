@@ -1,22 +1,11 @@
 {
+  "story": "We started working together, dated, fell in love, and were separated for a decade, only to meet again over time.",
   "timeline": [
     {
-      "title": "First Date",
-      "date": "Tuesday, July 4th, 2023",
-      "description": "Our first official date was filled with laughter, deep conversations, and the undeniable feeling that we had found something special. That evening, we both knew this was the start of something beautiful.",
+      "title": "Our Story",
+      "date": "",
+      "description": "We started working together, dated, fell in love, and were separated for a decade, only to meet again over time.",
       "image": "couple2"
-    },
-    {
-      "title": "Meeting the Families",
-      "date": "August 2023",
-      "description": "We introduced each other to our families, and it was clear that everyone could see what we saw in each other. The love and acceptance we received made our bond even stronger.",
-      "image": "couple4"
-    },
-    {
-      "title": "The Proposal",
-      "date": "March 15th, 2024",
-      "description": "On a beautiful spring day, Michael got down on one knee and asked the most important question of our lives. The answer was an immediate and joyful 'Yes!'",
-      "image": "couple7"
     }
   ]
 } 

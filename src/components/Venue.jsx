@@ -15,34 +15,26 @@ const MapDirections = () => {
   const receptionButtonRef = useRef(null)
 
   useEffect(() => {
-    // Scroll-triggered animations
+    const section = sectionRef.current
+    const details = receptionDetailsRef.current
+    const photo = receptionPhotoRef.current
+    const button = receptionButtonRef.current
+    if (!section || !details || !photo || !button) return
+
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 50%",
+        trigger: section,
+        start: "top 85%",
         end: "bottom 20%",
         toggleActions: "play none none reverse"
       }
     })
 
-    // Venue section animations
-    tl.fromTo(receptionDetailsRef.current, 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-      "-=0.2"
-    )
-    .fromTo(receptionPhotoRef.current, 
-      { opacity: 0, scale: 0.9 },
-      { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" },
-      "-=0.4"
-    )
-    .fromTo(receptionButtonRef.current, 
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-      "-=0.4"
-    )
+    tl.fromTo(details, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "-=0.2")
+      .fromTo(photo, { opacity: 0, scale: 0.98 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, "-=0.4")
+      .fromTo(button, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, "-=0.4")
 
-    // Cleanup function
+    ScrollTrigger.refresh()
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
     }
@@ -77,7 +69,7 @@ const MapDirections = () => {
     <section
       id="map"
       ref={sectionRef}
-      className="relative py-20 w-full"
+      className="relative py-12 sm:py-20 w-full overflow-visible"
     >
       {/* Theme Background */}
       <div className={`absolute inset-0 ${themeConfig.backgrounds.theme}`}></div>
@@ -115,10 +107,16 @@ const MapDirections = () => {
               </div>
               
               <div ref={receptionPhotoRef} className="relative mb-4 flex justify-center">
-                <div className="w-full h-50 sm:h-fit bg-white shadow-2xl hover:scale-105 transition-transform duration-300">
-                  <div className="w-full h-40 sm:h-64 bg-cover bg-center border-l-8 border-r-8 border-t-8 border-white" style={{backgroundImage: `url(${venues.reception.image || venues.ceremony.image || images.venues.reception})`}}></div>
+                <div className="w-full bg-white shadow-2xl hover:scale-105 transition-transform duration-300 overflow-hidden">
+                  <div 
+                    className="w-full border-l-8 border-r-8 border-t-8 border-white bg-cover bg-center bg-no-repeat min-h-[180px] sm:min-h-64"
+                    style={{
+                      backgroundImage: `url(${venues.reception.image || venues.ceremony.image || images.venues.reception})`,
+                      aspectRatio: '16 / 9'
+                    }}
+                  />
                   <div className="p-3 text-center">
-                    <div className="text-right text-sm sm:text-base text-gray-600 font-handwritten">{venues.reception.name}</div>
+                    <div className="text-right text-sm sm:text-base font-handwritten" style={{ color: '#5a524a' }}>{venues.reception.name}</div>
                   </div>
                 </div>
               </div>
@@ -126,7 +124,7 @@ const MapDirections = () => {
               {/* Map Button */}
               <div ref={receptionButtonRef} className="flex justify-center mt-8">
                 <a
-                  href="https://maps.app.goo.gl/gqfdSb4x853Jse4C9"
+                  href={venues.reception.directionsUrl || venues.ceremony.directionsUrl || venues.directionsUrl || venues.googleMapsUrl || getDirectionsUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full inline-flex items-center justify-center px-8 py-3 sm:py-5 lg:py-2 bg-white ${themeConfig.text.custom} rounded-sm text-sm sm:text-2xl lg:text-base font-medium transition-colors duration-200 hover:opacity-90`}

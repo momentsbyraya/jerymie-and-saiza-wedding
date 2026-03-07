@@ -1,10 +1,10 @@
 {
   "venue": {
-    "name": "Churinga Eco-Resort",
-    "address": "Zone 2, National Highway",
-    "city": "San Antonio",
-    "state": "Tigaon",
-    "zip": "Camarines Sur",
+    "name": "San Roque's Peak Resort",
+    "address": "Don Enrique Heights, Dulong Crasher",
+    "city": "Antipolo",
+    "state": "Rizal",
+    "zip": "",
     "ceremony": {
       "time": "3:00 PM",
       "details": "Please arrive 30 minutes early."
@@ -13,8 +13,8 @@
       "time": "6:00 PM",
       "details": "Casual/Semi-formal attire requested."
     },
-    "image": "/assets/images/venue/venue.webp",
-    "googleMapsUrl": "",
-    "directionsUrl": ""
+    "image": "/assets/images/venue/venue1.jpg",
+    "googleMapsUrl": "https://maps.app.goo.gl/eaMb6AM26xhKM6rH7?g_st=afm",
+    "directionsUrl": "https://maps.app.goo.gl/eaMb6AM26xhKM6rH7?g_st=afm"
   }
 } 

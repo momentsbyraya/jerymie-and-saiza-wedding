@@ -96,10 +96,10 @@ const Calendar = () => {
     <div ref={sectionRef} className={`relative w-full max-w-md sm:max-w-xl lg:max-w-3xl xl:max-w-6xl mx-auto px-4 ${themeConfig.calendar.background}`} style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
       {/* Invitation Text */}
       <div className="text-center mb-8 sm:my-12">
-        <h1 ref={headerRef} className="text-3xl sm:text-5xl font-serif font-light mb-4 text-gray-800" style={{ opacity: 0 }}>
+        <h1 ref={headerRef} className="text-3xl sm:text-5xl font-serif font-light mb-4" style={{ opacity: 0, color: '#C46A3A' }}>
           The Day
         </h1>
-        <p ref={descriptionRef} className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-sm sm:max-w-md mx-auto font-poppins" style={{ opacity: 0 }}>
+        <p ref={descriptionRef} className="text-lg md:text-xl leading-relaxed max-w-sm sm:max-w-md mx-auto font-poppins" style={{ opacity: 0, color: '#5a524a' }}>
           A memorable day awaits us this year, and we want to celebrate it surrounded by loved ones and friends.
         </p>
       </div>

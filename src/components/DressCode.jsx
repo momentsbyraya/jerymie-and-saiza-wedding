@@ -130,14 +130,14 @@ const DressCode = () => {
         <div className="max-w-md sm:max-w-xl lg:max-w-3xl w-full mx-auto px-8 sm:px-12 lg:px-16">
             {/* Header Section */}
           <div ref={headerRef} className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-script text-gray-800 mb-6" style={{ color: '#1e3a5f' }}>
+            <h2 className="text-4xl md:text-5xl font-script text-[#2F2F2F] mb-6" style={{ color: '#C46A3A' }}>
                 Dress Code
               </h2>
           </div>
 
           {/* Text Section */}
           <div ref={textRef} className="text-center mb-12">
-            <p className="text-base sm:text-lg font-albert font-thin text-[#333333] max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg font-albert font-thin text-[#2F2F2F] max-w-3xl mx-auto leading-relaxed">
               We'd be grateful if your outfit could match the color theme of our celebration
               </p>
             </div>
@@ -149,13 +149,13 @@ const DressCode = () => {
                 {/* Section Title */}
                 <h3 
                   className="text-lg sm:text-xl md:text-2xl font-albert font-bold mb-4 tracking-wider"
-                  style={{ color: '#1e3a5f' }}
+                  style={{ color: '#C46A3A' }}
                   dangerouslySetInnerHTML={{ __html: section.title }}
                 />
                 
                 {/* Description */}
                 {section.description && (
-                  <p className="text-sm sm:text-base font-albert text-[#333333] mb-4 max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: section.description }} />
+                  <p className="text-sm sm:text-base font-albert text-[#2F2F2F] mb-4 max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: section.description }} />
                 )}
                 
                 {/* Section Content */}
