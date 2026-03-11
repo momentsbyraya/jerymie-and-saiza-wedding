@@ -93,19 +93,20 @@ const Calendar = () => {
   }, [])
   
   return (
-    <div ref={sectionRef} className={`relative w-full max-w-md sm:max-w-xl lg:max-w-3xl xl:max-w-6xl mx-auto px-4 ${themeConfig.calendar.background}`} style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+    <div ref={sectionRef} className={`relative w-full min-w-full ${themeConfig.calendar.background}`} style={{ paddingTop: '5rem', paddingBottom: '5rem', boxSizing: 'border-box' }}>
+      <div className="w-full max-w-md sm:max-w-xl lg:max-w-3xl xl:max-w-6xl mx-auto px-4">
       {/* Invitation Text */}
       <div className="text-center mb-8 sm:my-12">
-        <h1 ref={headerRef} className="text-3xl sm:text-5xl font-serif font-light mb-4" style={{ opacity: 0, color: '#C46A3A' }}>
+        <h1 ref={headerRef} className="text-3xl sm:text-5xl font-serif font-light mb-4" style={{ opacity: 0, color: '#F4EEE8' }}>
           The Day
         </h1>
-        <p ref={descriptionRef} className="text-lg md:text-xl leading-relaxed max-w-sm sm:max-w-md mx-auto font-poppins" style={{ opacity: 0, color: '#5a524a' }}>
+        <p ref={descriptionRef} className="text-lg md:text-xl leading-relaxed max-w-sm sm:max-w-md mx-auto font-poppins" style={{ opacity: 0, color: '#F4EEE8' }}>
           A memorable day awaits us this year, and we want to celebrate it surrounded by loved ones and friends.
         </p>
       </div>
 
       {/* Calendar Section */}
-      <div className="xl:scale-90 origin-center max-w-[660px] mx-auto">
+      <div className="xl:scale-90 origin-center max-w-[660px] mx-auto overflow-visible">
         <div className="p-8">
           {/* Month Header */}
           <div className={`text-center mb-4 ${themeConfig.calendar.headerColor}`}>
@@ -153,6 +154,7 @@ const Calendar = () => {
             })}
           </div>
         </div>
+      </div>
       </div>
     </div>
   )

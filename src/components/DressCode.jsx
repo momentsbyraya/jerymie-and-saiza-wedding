@@ -96,7 +96,7 @@ const DressCode = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 w-full overflow-hidden"
+      className="relative w-full overflow-hidden"
     >
       {/* Background Image - Base layer (old-book-2) */}
       <div 
@@ -162,27 +162,34 @@ const DressCode = () => {
                 {section.type === "image" && section.image ? (
                 <div 
                     ref={el => sectionContentRefs.current[sectionIndex] = el}
-                    className="flex flex-row items-center gap-4 w-full"
+                    className="flex flex-col items-center gap-4 w-full"
                   >
-                    <div className="w-[80%]">
+                    <div className="w-full">
                       <img 
                         src={section.image} 
                         alt={section.title} 
                         className="w-full h-auto"
                       />
                     </div>
-                    {/* Three stacked circles */}
+                    {/* All color swatches side by side */}
                     {section.colors && section.colors.length > 0 && (
-                      <div className="flex flex-col gap-2 w-[20%] items-center">
+                      <div className="flex flex-row flex-wrap gap-2 w-full items-center justify-center">
                         {section.colors.map((color, colorIndex) => (
-                          <div 
+                          <div
                             key={colorIndex}
-                            className="w-8 h-8 rounded-full"
-                  style={{ backgroundColor: color.hex }}
-                  title={color.name}
-                ></div>
-              ))}
-            </div>
+                            className="group relative cursor-pointer"
+                            title={color.name}
+                          >
+                            <div 
+                              className="w-8 h-8 rounded-full shrink-0 ring-2 ring-transparent group-hover:ring-[#2F2F2F]/20 transition-shadow"
+                              style={{ backgroundColor: color.hex }}
+                            />
+                            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 text-xs font-medium text-white bg-[#2F2F2F] rounded whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10">
+                              {color.name}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
                     )}
                 </div>
                 ) : section.type === "colors" && section.colors ? (
@@ -191,12 +198,19 @@ const DressCode = () => {
                     className="flex items-center justify-center gap-4"
                   >
                     {section.colors.map((color, colorIndex) => (
-                      <div 
-                        key={colorIndex} 
-                        className="w-[calc((100%-2*1rem)/3)] h-8 rounded-sm max-w-[120px]"
-                        style={{ backgroundColor: color.hex }}
+                      <div
+                        key={colorIndex}
+                        className="group relative cursor-pointer w-[calc((100%-2*1rem)/3)] max-w-[120px]"
                         title={color.name}
-                      ></div>
+                      >
+                        <div 
+                          className="h-8 rounded-sm"
+                          style={{ backgroundColor: color.hex }}
+                        />
+                        <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 text-xs font-medium text-white bg-[#2F2F2F] rounded whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10">
+                          {color.name}
+                        </span>
+                      </div>
                     ))}
               </div>
                 ) : null}

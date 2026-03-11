@@ -51,28 +51,29 @@ const CTASection = () => {
         id="rsvp-section"
         data-rsvp="true"
         ref={sectionRef}
-        className={`relative py-20 w-full overflow-hidden ${themeConfig.calendar.background}`}
+        className="relative py-20 w-full overflow-hidden"
+        style={{ backgroundColor: 'rgba(196, 106, 58, 1)' }}
       >
         {/* Content */}
         <div className="relative z-20 flex items-center justify-center">
           <div ref={contentRef} className="max-w-md sm:max-w-xl lg:max-w-3xl w-full mx-auto px-8">
-            {/* Header Section */}
+            {/* Header Section - same treatment as Calendar/Schedule: cream text on terracotta */}
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-script mb-6" style={{ color: '#C46A3A' }}>
+              <h2 className="text-4xl md:text-5xl font-script mb-6" style={{ color: '#F4EEE8' }}>
                 We Await Your Presence
               </h2>
-              <p className="text-base md:text-lg max-w-3xl mx-auto font-poppins" style={{ color: '#5a524a' }}>
+              <p className="text-base md:text-lg max-w-3xl mx-auto font-poppins" style={{ color: '#F4EEE8' }}>
                 Your presence would make our special day even more meaningful.<br />
                 Please let us know if you'll be joining us for our celebration.
               </p>
             </div>
 
-            {/* RSVP Button */}
+            {/* RSVP Button - cream background so it stands out on terracotta */}
             <div className="text-center">
               <button
                 onClick={openRSVPModal}
-                className="w-full inline-flex items-center justify-center space-x-3 px-8 py-3 sm:py-5 lg:py-2 text-white rounded-sm transition-colors duration-200 text-sm sm:text-2xl lg:text-base font-medium hover:opacity-90"
-                style={{ backgroundColor: '#C46A3A' }}
+                className="w-full inline-flex items-center justify-center space-x-3 px-8 py-3 sm:py-5 lg:py-2 rounded-sm transition-colors duration-200 text-sm sm:text-2xl lg:text-base font-medium hover:opacity-90"
+                style={{ backgroundColor: '#F4EEE8', color: '#C46A3A' }}
               >
                 <span>RSVP</span>
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6" />

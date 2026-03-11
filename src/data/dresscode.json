@@ -2,34 +2,30 @@
   "sections": [
     {
       "title": "PRINCIPAL SPONSORS",
-      "description": "We invite our principal sponsors to dress in <strong>terracotta</strong> and <strong>peach sand</strong> tones—gentleman in traditional or semi-formal attire, ladies in floor-length or formal wear in these shades.",
+      "description": "We invite our principal sponsors to dress in tones from the color palette below—gentlemen in traditional or semi-formal attire, ladies in floor-length or formal wear.",
       "type": "image",
-      "image": "/assets/images/dresscode/sponsors.png",
+      "image": "/assets/images/graphics/for%20envelopes%20(5).png",
       "colors": [
-        {
-          "name": "Terracotta",
-          "hex": "#C46A3A"
-        },
-        {
-          "name": "Peach Sand",
-          "hex": "#E9C2A8"
-        }
+        { "name": "Dusty pink (light)", "hex": "#E8C4C8" },
+        { "name": "Dusty pink (medium)", "hex": "#D4A5A5" },
+        { "name": "Dusty pink (dark)", "hex": "#B87D7D" },
+        { "name": "Light beige", "hex": "#e7b491" },
+        { "name": "Khaki", "hex": "#a47f5d" },
+        { "name": "Creamy beige", "hex": "#e8c8a4" }
       ]
     },
     {
       "title": "GUESTS",
-      "description": "CASUAL / SEMI-FORMAL<br/>We'd love to see you in <strong>terracotta</strong> and <strong>peach sand</strong> shades to match our celebration.",
+      "description": "CASUAL / SEMI-FORMAL<br/>We'd love to see you in any of the colors below to match our celebration.",
       "type": "image",
-      "image": "/assets/images/graphics/guest (2).png",
+      "image": "/assets/images/graphics/for%20envelopes%20(4).png",
       "colors": [
-        {
-          "name": "Terracotta",
-          "hex": "#C46A3A"
-        },
-        {
-          "name": "Peach Sand",
-          "hex": "#E9C2A8"
-        }
+        { "name": "Dusty pink (light)", "hex": "#E8C4C8" },
+        { "name": "Dusty pink (medium)", "hex": "#D4A5A5" },
+        { "name": "Dusty pink (dark)", "hex": "#B87D7D" },
+        { "name": "Light beige", "hex": "#e7b491" },
+        { "name": "Khaki", "hex": "#a47f5d" },
+        { "name": "Creamy beige", "hex": "#e8c8a4" }
       ]
     }
   ]

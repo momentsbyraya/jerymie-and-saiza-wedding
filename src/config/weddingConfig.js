@@ -79,15 +79,19 @@ export const weddingConfig = {
       "/assets/images/couple-3.jpg",
       "/assets/images/couple-4.jpg"
     ],
-    background: "/assets/images/background-pattern.jpg"
+    background: "/assets/images/background-pattern.jpg",
+    // Image shown in the section after Entourage (leave empty string to hide section)
+    sectionAfterEntourage: "/assets/images/graphics/prenup01.png",
+    // Image shown in the section before Gift Guide (leave empty string to hide section)
+    sectionBeforeGift: "/assets/images/couple-2.jpg"
   },
 
   // Additional Information
   details: {
-    hashtag: "#FinallySettledDownwithJEM",
+    hashtag: "#FinallySAIttledDownwithJEM",
     hashtag2: "To be added",
-    uploadLink: "To be added",
-    uploadQrImage: "To be added",
+    uploadLink: "https://drive.google.com/drive/folders/1ZAieG48s-3Q_QT9cFqXy-MqYDVLNKJue?usp=sharing",
+    uploadQrImage: "/assets/images/graphics/qr-code%20(1)%20(2).png",
     website: "https://jerymieandsaiza.com",
     registry: "https://registry.example.com",
     message: "We're excited to celebrate our special day with you!",

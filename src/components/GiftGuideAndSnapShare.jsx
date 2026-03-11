@@ -41,7 +41,7 @@ const GiftGuideAndSnapShare = () => {
   return (
     <section
       ref={sectionRef}
-      className={`relative py-20 w-full overflow-hidden ${themeConfig.calendar.background}`}
+      className={`relative pt-0 pb-20 w-full overflow-hidden ${themeConfig.calendar.background}`}
     >
       {/* Content */}
       <div className="relative z-20 flex items-center justify-center">
@@ -50,10 +50,10 @@ const GiftGuideAndSnapShare = () => {
           {/* Gift Guide Section */}
           <div className="mb-16">
             <div className="text-center mb-6">
-              <h2 className="text-4xl md:text-5xl font-script mb-6" style={{ color: '#C46A3A' }}>
+              <h2 className="text-4xl md:text-5xl font-script mb-6" style={{ color: '#F4EEE8' }}>
                 Gift Guide
               </h2>
-              <p className="text-base md:text-lg font-poppins max-w-3xl mx-auto mb-8" style={{ color: '#5a524a' }}>
+              <p className="text-base md:text-lg font-poppins max-w-3xl mx-auto mb-8" style={{ color: '#F4EEE8' }}>
                 Your presence is our greatest gift. If you’d like to give something more, a small envelope for our future would be a blessing.
               </p>
             </div>
@@ -69,7 +69,7 @@ const GiftGuideAndSnapShare = () => {
                   />
                 </div>
               </div>
-              <p className="text-sm sm:text-base font-poppins text-center max-w-sm" style={{ color: '#5a524a' }}>
+              <p className="text-sm sm:text-base font-poppins text-center max-w-sm" style={{ color: '#F4EEE8' }}>
                 Scan to send a gift
               </p>
             </div>

@@ -57,6 +57,7 @@ const Entourage = () => {
   }, [])
 
   const ringBearer = entourageData.entourageList?.find(item => item.category === 'Ring Bearer')
+  const principalSponsors = entourageData.entourageList?.find(item => item.category === 'Principal Sponsors')
 
   return (
     <section
@@ -105,6 +106,18 @@ const Entourage = () => {
               <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-center" style={{ color: '#C46A3A' }}>Ring Bearer</p>
               {ringBearer.names.map((name, index) => (
                 <p key={index} className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase text-[#2F2F2F] text-center whitespace-nowrap overflow-hidden text-ellipsis">
+                  {name}
+                </p>
+              ))}
+            </div>
+          )}
+
+          {/* Principal Sponsors */}
+          {principalSponsors && principalSponsors.names && principalSponsors.names.length > 0 && (
+            <div className="mb-6">
+              <p className="text-[16px] sm:text-lg md:text-xl lg:text-2xl imperial-script-regular mb-2 text-center" style={{ color: '#C46A3A' }}>Principal Sponsors</p>
+              {principalSponsors.names.map((name, index) => (
+                <p key={index} className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins text-[#2F2F2F] text-center overflow-hidden text-ellipsis">
                   {name}
                 </p>
               ))}

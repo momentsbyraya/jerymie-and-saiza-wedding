@@ -11,6 +11,7 @@ const EnhancedLazySection = ({
   animationClass = 'fade-slide-up',
   onIntersect = null,
   sectionName = 'unnamed-section',
+  overflowVisible = false,
   ...props 
 }) => {
   const { elementRef, isVisible, isLoaded } = useAdvancedLazyLoading({
@@ -40,7 +41,7 @@ const EnhancedLazySection = ({
   return (
     <section 
       ref={elementRef} 
-      className={`transition-all duration-700 ease-out overflow-hidden w-full max-w-full ${getAnimationClasses()} ${className}`}
+      className={`transition-all duration-700 ease-out w-full max-w-full ${overflowVisible ? 'overflow-visible' : 'overflow-hidden'} ${getAnimationClasses()} ${className}`}
       data-section-name={sectionName}
       style={{ 
         transform: 'translateZ(0)', // Force hardware acceleration

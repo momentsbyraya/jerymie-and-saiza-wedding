@@ -36,8 +36,6 @@ function App() {
 
   const handleEnvelopeOpen = () => {
     setShowOpeningScreen(false)
-    // Start music when wedding invitation is shown
-    startMusic()
   }
 
   return (
@@ -54,7 +52,7 @@ function App() {
       </div> */}
       
       {showOpeningScreen ? (
-        <OpeningScreen onEnvelopeOpen={handleEnvelopeOpen} />
+        <OpeningScreen onEnvelopeOpen={handleEnvelopeOpen} onStampClick={startMusic} />
       ) : (
         <>
           <DynamicTitle />

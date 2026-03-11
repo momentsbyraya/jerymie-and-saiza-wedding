@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { IoHeart } from 'react-icons/io5'
 import { getTimeUntilWedding } from '../utils/countdown'
+import { weddingConfig } from '../config/weddingConfig'
 import Hero from './Hero'
 import Calendar from './Calendar'
 import Counter from './Counter'
 import Schedule from './Schedule'
 import Entourage from './Entourage'
+import ImageSection from './ImageSection'
 import DressCode from './DressCode'
 import MapDirections from './Venue'
 import CTASection from './CTASection'
@@ -34,11 +36,11 @@ const WeddingInvitation = () => {
   return (
     <div className="min-h-screen w-full overflow-hidden">
       <main className="main-container h-full section-container">
-        {/* Hero Section - Always visible */}
-        <section className='h-full'><Hero /></section>
+        {/* Hero Section - tiny negative margin so gradient just covers the seam */}
+        <section className="h-full -mt-1.5 -mb-1.5"><Hero /></section>
         
-        {/* Calendar Section */}
-        <EnhancedLazySection animationClass="fade-slide-up" sectionName="calendar">
+        {/* Calendar Section - full-width background, pulled up by Hero overlap */}
+        <EnhancedLazySection animationClass="fade-slide-up" sectionName="calendar" overflowVisible>
           <Calendar />
         </EnhancedLazySection>
 
@@ -56,6 +58,13 @@ const WeddingInvitation = () => {
         <EnhancedLazySection animationClass="fade-scale" sectionName="entourage">
           <Entourage />
         </EnhancedLazySection>
+
+        {/* Image Section (after Entourage) - only render if image path is set */}
+        {weddingConfig.photos?.sectionAfterEntourage && (
+          <EnhancedLazySection animationClass="fade-scale" sectionName="image-after-entourage">
+            <ImageSection />
+          </EnhancedLazySection>
+        )}
 
         {/* Dress Code Section */}
         <EnhancedLazySection animationClass="fade-slide-right" sectionName="dress-code">

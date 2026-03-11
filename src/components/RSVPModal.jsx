@@ -89,7 +89,14 @@ const RSVPModal = ({ isOpen, onClose }) => {
         
         {/* RSVP Content */}
         <div className="p-6 overflow-y-auto max-h-[70vh] flex items-center justify-center min-h-[200px]">
-          <p className="text-wedding-600 text-lg">To be added later</p>
+          <div className="w-full max-w-3xl aspect-[3/4] sm:aspect-[4/3]">
+            <iframe
+              title="RSVP for the Wedding of Jerymie & Saiza"
+              src="https://forms.gle/PXMFy1cyWGaFs9458"
+              className="w-full h-full border-0 rounded-lg"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </div>,

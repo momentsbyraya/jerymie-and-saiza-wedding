@@ -2,11 +2,14 @@ import React, { useRef } from 'react'
 import { couples } from '../data'
 import { weddingConfig } from '../config/weddingConfig'
 
-function OpeningScreen({ onEnvelopeOpen }) {
+function OpeningScreen({ onEnvelopeOpen, onStampClick }) {
   const envelopeRef = useRef(null)
   const openingSectionRef = useRef(null)
 
   const handleEnvelopeClick = () => {
+    // Start music immediately when stamp is clicked
+    if (onStampClick) onStampClick()
+
     const envelope = envelopeRef.current
     const openingSection = openingSectionRef.current
     
@@ -43,16 +46,14 @@ function OpeningScreen({ onEnvelopeOpen }) {
           backgroundRepeat: 'no-repeat'
         }}
       />
-      <section className="cssletter flex flex-col items-center relative z-10 w-full py-8" style={{ minHeight: 'auto', height: 'auto' }}>
-        {/* Click me text */}
-        <div className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 text-center click-me-container">
-          <h1 
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-antsvalley leading-tight"
-            style={{ color: '#C46A3A', fontSize: 'clamp(3rem, 8vw, 96px)', marginLeft: '-1rem' }}
-          >
-            Click me!
-          </h1>
-        </div>
+      <section className="cssletter flex flex-col items-center justify-center relative z-10 w-full flex-1" style={{ minHeight: 'auto', height: 'auto' }}>
+        {/* Click me! – at the top of the envelope */}
+        <h1 
+          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-antsvalley leading-tight text-center mb-6 sm:mb-8 md:mb-10 click-me-container"
+          style={{ color: '#C46A3A', fontSize: 'clamp(3rem, 8vw, 96px)' }}
+        >
+          Click me!
+        </h1>
         <div className="envelope" ref={envelopeRef}>
           <button 
             className="heart stamp-button" 

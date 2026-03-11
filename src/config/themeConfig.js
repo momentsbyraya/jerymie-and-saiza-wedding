@@ -52,15 +52,15 @@ export const themeConfig = {
         center: 'mx-auto',
     },
 
-    // Calendar Configuration (Rustic Boho)
+    // Calendar Configuration (Rustic Boho) - section uses title color as background; titles/text in cream for contrast
     calendar: {
         weddingDate: '2026-05-17',
-        highlightColor: 'bg-[#C46A3A]',
+        highlightColor: 'bg-[#F4EEE8]',
         heartColor: 'text-[#7E95A6]',
-        textColor: 'text-[#2F2F2F]',
-        headerColor: 'text-[#C46A3A]',
-        dayNamesColor: 'text-[#5F7484]',
-        background: 'bg-[#F4EEE8]',
+        textColor: 'text-[#F4EEE8]',
+        headerColor: 'text-[#F4EEE8]',
+        dayNamesColor: 'text-[#F4EEE8]/90',
+        background: 'bg-[#C46A3A]',
     },
 
     // Custom CSS Variables (Rustic Boho)
