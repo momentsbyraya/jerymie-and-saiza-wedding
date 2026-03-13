@@ -79,16 +79,11 @@ const Hero = () => {
     <div className="relative w-full" style={{ height: '100vh' }}>
       <audio ref={audioRef} src={audio.background} loop />
 
-      {/* Hero image: object-position keeps both faces visible and centered – web view shifted left to reveal faces */}
+      {/* Hero image: object-position keeps couple's faces visible; on 992px+ anchor higher so faces stay in frame */}
       <img
         src="/assets/images/graphics/Prenup4.png"
         alt=""
-        className="absolute inset-0 w-full h-full object-cover
-          object-[center_42%]
-          sm:object-[center_42%]
-          md:object-[55%_42%]
-          lg:object-[55%_42%]
-          xl:object-[55%_42%]"
+        className="absolute inset-0 w-full h-full object-cover object-[50%_35%] min-[992px]:object-[50%_28%]"
       />
 
       {/* Top gradient overlay – rustic boho dark warm brown, fades down to transparent */}
